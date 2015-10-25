@@ -33,3 +33,5 @@ DEPENDPATH += $$PWD/../../../../../usr/include
 
 LIBS += -L$$PWD/../../../../../usr/include/libusb-1.0  -lusb-1.0
 LIBS += -L$$PWD/../../../../../usr/include -lusb
+
+

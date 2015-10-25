@@ -6,6 +6,7 @@
 #include <QElapsedTimer>
 #include <QDebug>
 #include <libusb-1.0/libusb.h>
+//#include "libusb.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <usb.h>

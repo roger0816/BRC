@@ -5,8 +5,9 @@
 #include <QTimerEvent>
 #include "CUsbDetect.h"
 #include <QProcess>
+#include <QApplication>
 
-#define BRC_PATH "/home/pi/brc_project/bin/BRC"
+#define BRC_PATH QApplication::applicationDirPath()+"/../bin/BRC"
 
 namespace Ui {
 class Widget;
