@@ -13,7 +13,6 @@
 #include <QtWidgets/QAction>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QButtonGroup>
-#include <QtWidgets/QGridLayout>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QStackedWidget>
 #include <QtWidgets/QWidget>
@@ -26,7 +25,6 @@ QT_BEGIN_NAMESPACE
 class Ui_Widget
 {
 public:
-    QGridLayout *gridLayout;
     QStackedWidget *stackedWidget;
     StageTest *vTest;
     StageSetting *vSetting;
@@ -37,13 +35,9 @@ public:
         if (Widget->objectName().isEmpty())
             Widget->setObjectName(QStringLiteral("Widget"));
         Widget->resize(400, 300);
-        gridLayout = new QGridLayout(Widget);
-        gridLayout->setSpacing(0);
-        gridLayout->setContentsMargins(11, 11, 11, 11);
-        gridLayout->setObjectName(QStringLiteral("gridLayout"));
-        gridLayout->setContentsMargins(0, 0, 0, 0);
         stackedWidget = new QStackedWidget(Widget);
         stackedWidget->setObjectName(QStringLiteral("stackedWidget"));
+        stackedWidget->setGeometry(QRect(0, 0, 400, 300));
         vTest = new StageTest();
         vTest->setObjectName(QStringLiteral("vTest"));
         stackedWidget->addWidget(vTest);
@@ -53,9 +47,6 @@ public:
         vBarcode = new StageBarcode();
         vBarcode->setObjectName(QStringLiteral("vBarcode"));
         stackedWidget->addWidget(vBarcode);
-
-        gridLayout->addWidget(stackedWidget, 0, 0, 1, 1);
-
 
         retranslateUi(Widget);
 

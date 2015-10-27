@@ -13,30 +13,19 @@
   <property name="windowTitle">
    <string>Widget</string>
   </property>
-  <layout class="QGridLayout" name="gridLayout">
-   <property name="leftMargin">
-    <number>0</number>
+  <widget class="QStackedWidget" name="stackedWidget">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>400</width>
+     <height>300</height>
+    </rect>
    </property>
-   <property name="topMargin">
-    <number>0</number>
-   </property>
-   <property name="rightMargin">
-    <number>0</number>
-   </property>
-   <property name="bottomMargin">
-    <number>0</number>
-   </property>
-   <property name="spacing">
-    <number>0</number>
-   </property>
-   <item row="0" column="0">
-    <widget class="QStackedWidget" name="stackedWidget">
-     <widget class="StageTest" name="vTest"/>
-     <widget class="StageSetting" name="vSetting"/>
-     <widget class="StageBarcode" name="vBarcode"/>
-    </widget>
-   </item>
-  </layout>
+   <widget class="StageTest" name="vTest"/>
+   <widget class="StageSetting" name="vSetting"/>
+   <widget class="StageBarcode" name="vBarcode"/>
+  </widget>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <customwidgets>

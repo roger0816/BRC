@@ -21,28 +21,34 @@ SOURCES += main.cpp\
         widget.cpp \
     StageSetting.cpp \
     StageBarcode.cpp \
-    ItemSetting.cpp \
     ItemBarcode.cpp \
     StageTest.cpp \
     CTcpClient.cpp \
-    Global.cpp
+    Global.cpp \
+    Vinput.cpp \
+    Vkeybord.cpp \
+    ItemKey.cpp
 
 HEADERS  += widget.h \
     StageSetting.h \
     StageBarcode.h \
-    ItemSetting.h \
     ItemBarcode.h \
     StageTest.h \
     CTcpClient.h \
-    Global.h
+    Global.h \
+    Vinput.h \
+    Vkeybord.h \
+    ItemKey.h
 
 
 FORMS    += widget.ui \
     StageSetting.ui \
     StageBarcode.ui \
-    ItemSetting.ui \
     ItemBarcode.ui \
-    StageTest.ui
+    StageTest.ui \
+    Vinput.ui \
+    Vkeybord.ui \
+    ItemKey.ui
 
 
 

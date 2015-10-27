@@ -5,22 +5,14 @@
 #include <QStackedWidget>
 #include "Global.h"
 #include <QDebug>
-
+#include "Vkeybord.h"
 
 
 namespace Ui {
 class Widget;
 }
 
-namespace StageIdx
-{
-enum
-{
-    _test=0,
-    _setting,
-    _barcode
-};
-}
+
 
 class Widget : public QWidget
 {
@@ -35,10 +27,11 @@ public:
 
 private:
     Ui::Widget *ui;
+    Vkeybord *m_keybord;
 
 private slots:
 
-    void slotSetting(int, QString sObjName);
+    void slotSetting(int, QString);
 
 };
 

@@ -15,8 +15,8 @@
 #include <QtWidgets/QButtonGroup>
 #include <QtWidgets/QGridLayout>
 #include <QtWidgets/QHeaderView>
-#include <QtWidgets/QLineEdit>
 #include <QtWidgets/QWidget>
+#include "Vkeybord.h"
 
 QT_BEGIN_NAMESPACE
 
@@ -24,8 +24,7 @@ class Ui_StageTest
 {
 public:
     QGridLayout *gridLayout;
-    QWidget *widget;
-    QLineEdit *lineEdit;
+    Vkeybord *widget;
 
     void setupUi(QWidget *StageTest)
     {
@@ -33,13 +32,11 @@ public:
             StageTest->setObjectName(QStringLiteral("StageTest"));
         StageTest->resize(426, 401);
         gridLayout = new QGridLayout(StageTest);
+        gridLayout->setSpacing(0);
         gridLayout->setObjectName(QStringLiteral("gridLayout"));
-        widget = new QWidget(StageTest);
+        gridLayout->setContentsMargins(0, 0, 0, 0);
+        widget = new Vkeybord(StageTest);
         widget->setObjectName(QStringLiteral("widget"));
-        widget->setStyleSheet(QStringLiteral("QWidget#wBg{background-color: rgb(0, 0, 255);}"));
-        lineEdit = new QLineEdit(widget);
-        lineEdit->setObjectName(QStringLiteral("lineEdit"));
-        lineEdit->setGeometry(QRect(40, 10, 131, 51));
 
         gridLayout->addWidget(widget, 0, 0, 1, 1);
 

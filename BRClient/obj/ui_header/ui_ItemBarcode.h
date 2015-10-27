@@ -46,15 +46,17 @@ public:
     {
         if (ItemBarcode->objectName().isEmpty())
             ItemBarcode->setObjectName(QStringLiteral("ItemBarcode"));
-        ItemBarcode->resize(690, 300);
+        ItemBarcode->resize(690, 160);
+        ItemBarcode->setMinimumSize(QSize(0, 0));
+        ItemBarcode->setMaximumSize(QSize(16777215, 10000));
         gridLayout = new QGridLayout(ItemBarcode);
         gridLayout->setSpacing(0);
         gridLayout->setObjectName(QStringLiteral("gridLayout"));
         gridLayout->setContentsMargins(0, 0, 0, 0);
         w0 = new QWidget(ItemBarcode);
         w0->setObjectName(QStringLiteral("w0"));
-        w0->setMinimumSize(QSize(121, 40));
-        w0->setMaximumSize(QSize(16777215, 400));
+        w0->setMinimumSize(QSize(121, 0));
+        w0->setMaximumSize(QSize(16777215, 100000));
         w0->setStyleSheet(QLatin1String("QWidget#w0{ border: 2px solid gray;\n"
 "    border-radius: 3px;\n"
 "    padding: 1px 18px 1px 3px;\n"

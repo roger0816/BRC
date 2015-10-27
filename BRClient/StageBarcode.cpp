@@ -30,6 +30,9 @@ void StageBarcode::keyPressEvent(QKeyEvent *e)
 {
   //  qDebug()<<"barcode : "<<e->key();
 
+    //Test keybord
+
+
     QChar c(e->key());
     QString st(c);
 

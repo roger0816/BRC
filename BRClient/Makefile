@@ -52,35 +52,43 @@ SOURCES       = main.cpp \
 		widget.cpp \
 		StageSetting.cpp \
 		StageBarcode.cpp \
-		ItemSetting.cpp \
 		ItemBarcode.cpp \
 		StageTest.cpp \
 		CTcpClient.cpp \
-		Global.cpp obj/moc_widget.cpp \
+		Global.cpp \
+		Vinput.cpp \
+		Vkeybord.cpp \
+		ItemKey.cpp obj/moc_widget.cpp \
 		obj/moc_StageSetting.cpp \
 		obj/moc_StageBarcode.cpp \
-		obj/moc_ItemSetting.cpp \
 		obj/moc_ItemBarcode.cpp \
 		obj/moc_StageTest.cpp \
 		obj/moc_CTcpClient.cpp \
-		obj/moc_Global.cpp
+		obj/moc_Global.cpp \
+		obj/moc_Vinput.cpp \
+		obj/moc_Vkeybord.cpp \
+		obj/moc_ItemKey.cpp
 OBJECTS       = obj/main.o \
 		obj/widget.o \
 		obj/StageSetting.o \
 		obj/StageBarcode.o \
-		obj/ItemSetting.o \
 		obj/ItemBarcode.o \
 		obj/StageTest.o \
 		obj/CTcpClient.o \
 		obj/Global.o \
+		obj/Vinput.o \
+		obj/Vkeybord.o \
+		obj/ItemKey.o \
 		obj/moc_widget.o \
 		obj/moc_StageSetting.o \
 		obj/moc_StageBarcode.o \
-		obj/moc_ItemSetting.o \
 		obj/moc_ItemBarcode.o \
 		obj/moc_StageTest.o \
 		obj/moc_CTcpClient.o \
-		obj/moc_Global.o
+		obj/moc_Global.o \
+		obj/moc_Vinput.o \
+		obj/moc_Vkeybord.o \
+		obj/moc_ItemKey.o
 DIST          = ../../../../Qt5.5.1/5.5/clang_64/mkspecs/features/spec_pre.prf \
 		../../../../Qt5.5.1/5.5/clang_64/mkspecs/qdevice.pri \
 		../../../../Qt5.5.1/5.5/clang_64/mkspecs/features/device_config.prf \
@@ -226,19 +234,23 @@ DIST          = ../../../../Qt5.5.1/5.5/clang_64/mkspecs/features/spec_pre.prf \
 		BRClient.pro widget.h \
 		StageSetting.h \
 		StageBarcode.h \
-		ItemSetting.h \
 		ItemBarcode.h \
 		StageTest.h \
 		CTcpClient.h \
-		Global.h main.cpp \
+		Global.h \
+		Vinput.h \
+		Vkeybord.h \
+		ItemKey.h main.cpp \
 		widget.cpp \
 		StageSetting.cpp \
 		StageBarcode.cpp \
-		ItemSetting.cpp \
 		ItemBarcode.cpp \
 		StageTest.cpp \
 		CTcpClient.cpp \
-		Global.cpp
+		Global.cpp \
+		Vinput.cpp \
+		Vkeybord.cpp \
+		ItemKey.cpp
 QMAKE_TARGET  = BRClient
 DESTDIR       = ../bin/#avoid trailing-slash linebreak
 TARGET        = ../bin/BRClient.app/Contents/MacOS/BRClient
@@ -276,7 +288,7 @@ first: all
 
 ####### Build rules
 
-$(TARGET): obj/ui_header/ui_widget.h obj/ui_header/ui_StageSetting.h obj/ui_header/ui_StageBarcode.h obj/ui_header/ui_ItemSetting.h obj/ui_header/ui_ItemBarcode.h obj/ui_header/ui_StageTest.h $(OBJECTS)  
+$(TARGET): obj/ui_header/ui_widget.h obj/ui_header/ui_StageSetting.h obj/ui_header/ui_StageBarcode.h obj/ui_header/ui_ItemBarcode.h obj/ui_header/ui_StageTest.h obj/ui_header/ui_Vinput.h obj/ui_header/ui_Vkeybord.h obj/ui_header/ui_ItemKey.h $(OBJECTS)  
 	@test -d ../bin/BRClient.app/Contents/MacOS/ || mkdir -p ../bin/BRClient.app/Contents/MacOS/
 	$(LINK) $(LFLAGS) -o $(TARGET) $(OBJECTS) $(OBJCOMP) $(LIBS)
 
@@ -604,9 +616,9 @@ dist: distdir FORCE
 distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
-	$(COPY_FILE) --parents widget.h StageSetting.h StageBarcode.h ItemSetting.h ItemBarcode.h StageTest.h CTcpClient.h Global.h $(DISTDIR)/
-	$(COPY_FILE) --parents main.cpp widget.cpp StageSetting.cpp StageBarcode.cpp ItemSetting.cpp ItemBarcode.cpp StageTest.cpp CTcpClient.cpp Global.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents widget.ui StageSetting.ui StageBarcode.ui ItemSetting.ui ItemBarcode.ui StageTest.ui $(DISTDIR)/
+	$(COPY_FILE) --parents widget.h StageSetting.h StageBarcode.h ItemBarcode.h StageTest.h CTcpClient.h Global.h Vinput.h Vkeybord.h ItemKey.h $(DISTDIR)/
+	$(COPY_FILE) --parents main.cpp widget.cpp StageSetting.cpp StageBarcode.cpp ItemBarcode.cpp StageTest.cpp CTcpClient.cpp Global.cpp Vinput.cpp Vkeybord.cpp ItemKey.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents widget.ui StageSetting.ui StageBarcode.ui ItemBarcode.ui StageTest.ui Vinput.ui Vkeybord.ui ItemKey.ui $(DISTDIR)/
 
 
 clean: compiler_clean 
@@ -632,9 +644,9 @@ compiler_objective_c_make_all:
 compiler_objective_c_clean:
 compiler_rcc_make_all:
 compiler_rcc_clean:
-compiler_moc_header_make_all: obj/moc_widget.cpp obj/moc_StageSetting.cpp obj/moc_StageBarcode.cpp obj/moc_ItemSetting.cpp obj/moc_ItemBarcode.cpp obj/moc_StageTest.cpp obj/moc_CTcpClient.cpp obj/moc_Global.cpp
+compiler_moc_header_make_all: obj/moc_widget.cpp obj/moc_StageSetting.cpp obj/moc_StageBarcode.cpp obj/moc_ItemBarcode.cpp obj/moc_StageTest.cpp obj/moc_CTcpClient.cpp obj/moc_Global.cpp obj/moc_Vinput.cpp obj/moc_Vkeybord.cpp obj/moc_ItemKey.cpp
 compiler_moc_header_clean:
-	-$(DEL_FILE) obj/moc_widget.cpp obj/moc_StageSetting.cpp obj/moc_StageBarcode.cpp obj/moc_ItemSetting.cpp obj/moc_ItemBarcode.cpp obj/moc_StageTest.cpp obj/moc_CTcpClient.cpp obj/moc_Global.cpp
+	-$(DEL_FILE) obj/moc_widget.cpp obj/moc_StageSetting.cpp obj/moc_StageBarcode.cpp obj/moc_ItemBarcode.cpp obj/moc_StageTest.cpp obj/moc_CTcpClient.cpp obj/moc_Global.cpp obj/moc_Vinput.cpp obj/moc_Vkeybord.cpp obj/moc_ItemKey.cpp
 obj/moc_widget.cpp: ../../../../Qt5.5.1/5.5/clang_64/lib/QtWidgets.framework/Headers/QWidget \
 		../../../../Qt5.5.1/5.5/clang_64/lib/QtWidgets.framework/Headers/qwidget.h \
 		../../../../Qt5.5.1/5.5/clang_64/lib/QtWidgets.framework/Headers/QStackedWidget \
@@ -648,11 +660,26 @@ obj/moc_widget.cpp: ../../../../Qt5.5.1/5.5/clang_64/lib/QtWidgets.framework/Hea
 		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/qsettings.h \
 		../../../../Qt5.5.1/5.5/clang_64/lib/QtWidgets.framework/Headers/QApplication \
 		../../../../Qt5.5.1/5.5/clang_64/lib/QtWidgets.framework/Headers/qapplication.h \
+		Vkeybord.h \
+		ItemKey.h \
 		widget.h
 	/Users/chenchaowei/Qt5.5.1/5.5/clang_64/bin/moc $(DEFINES) -D__APPLE__ -D__GNUC__=4 -D__APPLE_CC__ -I/Users/chenchaowei/Qt5.5.1/5.5/clang_64/mkspecs/macx-clang -I/Users/chenchaowei/Desktop/git/BRC/BRClient -I/Users/chenchaowei/Qt5.5.1/5.5/clang_64/lib/QtWidgets.framework/Headers -I/Users/chenchaowei/Qt5.5.1/5.5/clang_64/lib/QtGui.framework/Headers -I/Users/chenchaowei/Qt5.5.1/5.5/clang_64/lib/QtNetwork.framework/Headers -I/Users/chenchaowei/Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers -F/Users/chenchaowei/Qt5.5.1/5.5/clang_64/lib widget.h -o obj/moc_widget.cpp
 
 obj/moc_StageSetting.cpp: ../../../../Qt5.5.1/5.5/clang_64/lib/QtWidgets.framework/Headers/QWidget \
 		../../../../Qt5.5.1/5.5/clang_64/lib/QtWidgets.framework/Headers/qwidget.h \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtWidgets.framework/Headers/QButtonGroup \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtWidgets.framework/Headers/qbuttongroup.h \
+		Global.h \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/QObject \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/qobject.h \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/QDebug \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/qdebug.h \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/QSettings \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/qsettings.h \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtWidgets.framework/Headers/QApplication \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtWidgets.framework/Headers/qapplication.h \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtWidgets.framework/Headers/QPushButton \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtWidgets.framework/Headers/qpushbutton.h \
 		StageSetting.h
 	/Users/chenchaowei/Qt5.5.1/5.5/clang_64/bin/moc $(DEFINES) -D__APPLE__ -D__GNUC__=4 -D__APPLE_CC__ -I/Users/chenchaowei/Qt5.5.1/5.5/clang_64/mkspecs/macx-clang -I/Users/chenchaowei/Desktop/git/BRC/BRClient -I/Users/chenchaowei/Qt5.5.1/5.5/clang_64/lib/QtWidgets.framework/Headers -I/Users/chenchaowei/Qt5.5.1/5.5/clang_64/lib/QtGui.framework/Headers -I/Users/chenchaowei/Qt5.5.1/5.5/clang_64/lib/QtNetwork.framework/Headers -I/Users/chenchaowei/Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers -F/Users/chenchaowei/Qt5.5.1/5.5/clang_64/lib StageSetting.h -o obj/moc_StageSetting.cpp
 
@@ -666,13 +693,6 @@ obj/moc_StageBarcode.cpp: ../../../../Qt5.5.1/5.5/clang_64/lib/QtWidgets.framewo
 		../../../../Qt5.5.1/5.5/clang_64/lib/QtWidgets.framework/Headers/qpushbutton.h \
 		StageBarcode.h
 	/Users/chenchaowei/Qt5.5.1/5.5/clang_64/bin/moc $(DEFINES) -D__APPLE__ -D__GNUC__=4 -D__APPLE_CC__ -I/Users/chenchaowei/Qt5.5.1/5.5/clang_64/mkspecs/macx-clang -I/Users/chenchaowei/Desktop/git/BRC/BRClient -I/Users/chenchaowei/Qt5.5.1/5.5/clang_64/lib/QtWidgets.framework/Headers -I/Users/chenchaowei/Qt5.5.1/5.5/clang_64/lib/QtGui.framework/Headers -I/Users/chenchaowei/Qt5.5.1/5.5/clang_64/lib/QtNetwork.framework/Headers -I/Users/chenchaowei/Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers -F/Users/chenchaowei/Qt5.5.1/5.5/clang_64/lib StageBarcode.h -o obj/moc_StageBarcode.cpp
-
-obj/moc_ItemSetting.cpp: ../../../../Qt5.5.1/5.5/clang_64/lib/QtWidgets.framework/Headers/QWidget \
-		../../../../Qt5.5.1/5.5/clang_64/lib/QtWidgets.framework/Headers/qwidget.h \
-		../../../../Qt5.5.1/5.5/clang_64/lib/QtWidgets.framework/Headers/QPushButton \
-		../../../../Qt5.5.1/5.5/clang_64/lib/QtWidgets.framework/Headers/qpushbutton.h \
-		ItemSetting.h
-	/Users/chenchaowei/Qt5.5.1/5.5/clang_64/bin/moc $(DEFINES) -D__APPLE__ -D__GNUC__=4 -D__APPLE_CC__ -I/Users/chenchaowei/Qt5.5.1/5.5/clang_64/mkspecs/macx-clang -I/Users/chenchaowei/Desktop/git/BRC/BRClient -I/Users/chenchaowei/Qt5.5.1/5.5/clang_64/lib/QtWidgets.framework/Headers -I/Users/chenchaowei/Qt5.5.1/5.5/clang_64/lib/QtGui.framework/Headers -I/Users/chenchaowei/Qt5.5.1/5.5/clang_64/lib/QtNetwork.framework/Headers -I/Users/chenchaowei/Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers -F/Users/chenchaowei/Qt5.5.1/5.5/clang_64/lib ItemSetting.h -o obj/moc_ItemSetting.cpp
 
 obj/moc_ItemBarcode.cpp: ../../../../Qt5.5.1/5.5/clang_64/lib/QtWidgets.framework/Headers/QWidget \
 		../../../../Qt5.5.1/5.5/clang_64/lib/QtWidgets.framework/Headers/qwidget.h \
@@ -720,17 +740,50 @@ obj/moc_Global.cpp: ../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Header
 		Global.h
 	/Users/chenchaowei/Qt5.5.1/5.5/clang_64/bin/moc $(DEFINES) -D__APPLE__ -D__GNUC__=4 -D__APPLE_CC__ -I/Users/chenchaowei/Qt5.5.1/5.5/clang_64/mkspecs/macx-clang -I/Users/chenchaowei/Desktop/git/BRC/BRClient -I/Users/chenchaowei/Qt5.5.1/5.5/clang_64/lib/QtWidgets.framework/Headers -I/Users/chenchaowei/Qt5.5.1/5.5/clang_64/lib/QtGui.framework/Headers -I/Users/chenchaowei/Qt5.5.1/5.5/clang_64/lib/QtNetwork.framework/Headers -I/Users/chenchaowei/Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers -F/Users/chenchaowei/Qt5.5.1/5.5/clang_64/lib Global.h -o obj/moc_Global.cpp
 
+obj/moc_Vinput.cpp: ../../../../Qt5.5.1/5.5/clang_64/lib/QtWidgets.framework/Headers/QWidget \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtWidgets.framework/Headers/qwidget.h \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtGui.framework/Headers/QMouseEvent \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtGui.framework/Headers/qevent.h \
+		Vinput.h
+	/Users/chenchaowei/Qt5.5.1/5.5/clang_64/bin/moc $(DEFINES) -D__APPLE__ -D__GNUC__=4 -D__APPLE_CC__ -I/Users/chenchaowei/Qt5.5.1/5.5/clang_64/mkspecs/macx-clang -I/Users/chenchaowei/Desktop/git/BRC/BRClient -I/Users/chenchaowei/Qt5.5.1/5.5/clang_64/lib/QtWidgets.framework/Headers -I/Users/chenchaowei/Qt5.5.1/5.5/clang_64/lib/QtGui.framework/Headers -I/Users/chenchaowei/Qt5.5.1/5.5/clang_64/lib/QtNetwork.framework/Headers -I/Users/chenchaowei/Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers -F/Users/chenchaowei/Qt5.5.1/5.5/clang_64/lib Vinput.h -o obj/moc_Vinput.cpp
+
+obj/moc_Vkeybord.cpp: ../../../../Qt5.5.1/5.5/clang_64/lib/QtWidgets.framework/Headers/QWidget \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtWidgets.framework/Headers/qwidget.h \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/QDebug \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/qdebug.h \
+		ItemKey.h \
+		Vkeybord.h
+	/Users/chenchaowei/Qt5.5.1/5.5/clang_64/bin/moc $(DEFINES) -D__APPLE__ -D__GNUC__=4 -D__APPLE_CC__ -I/Users/chenchaowei/Qt5.5.1/5.5/clang_64/mkspecs/macx-clang -I/Users/chenchaowei/Desktop/git/BRC/BRClient -I/Users/chenchaowei/Qt5.5.1/5.5/clang_64/lib/QtWidgets.framework/Headers -I/Users/chenchaowei/Qt5.5.1/5.5/clang_64/lib/QtGui.framework/Headers -I/Users/chenchaowei/Qt5.5.1/5.5/clang_64/lib/QtNetwork.framework/Headers -I/Users/chenchaowei/Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers -F/Users/chenchaowei/Qt5.5.1/5.5/clang_64/lib Vkeybord.h -o obj/moc_Vkeybord.cpp
+
+obj/moc_ItemKey.cpp: ../../../../Qt5.5.1/5.5/clang_64/lib/QtWidgets.framework/Headers/QWidget \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtWidgets.framework/Headers/qwidget.h \
+		ItemKey.h
+	/Users/chenchaowei/Qt5.5.1/5.5/clang_64/bin/moc $(DEFINES) -D__APPLE__ -D__GNUC__=4 -D__APPLE_CC__ -I/Users/chenchaowei/Qt5.5.1/5.5/clang_64/mkspecs/macx-clang -I/Users/chenchaowei/Desktop/git/BRC/BRClient -I/Users/chenchaowei/Qt5.5.1/5.5/clang_64/lib/QtWidgets.framework/Headers -I/Users/chenchaowei/Qt5.5.1/5.5/clang_64/lib/QtGui.framework/Headers -I/Users/chenchaowei/Qt5.5.1/5.5/clang_64/lib/QtNetwork.framework/Headers -I/Users/chenchaowei/Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers -F/Users/chenchaowei/Qt5.5.1/5.5/clang_64/lib ItemKey.h -o obj/moc_ItemKey.cpp
+
 compiler_moc_source_make_all:
 compiler_moc_source_clean:
-compiler_uic_make_all: obj/ui_header/ui_widget.h obj/ui_header/ui_StageSetting.h obj/ui_header/ui_StageBarcode.h obj/ui_header/ui_ItemSetting.h obj/ui_header/ui_ItemBarcode.h obj/ui_header/ui_StageTest.h
+compiler_uic_make_all: obj/ui_header/ui_widget.h obj/ui_header/ui_StageSetting.h obj/ui_header/ui_StageBarcode.h obj/ui_header/ui_ItemBarcode.h obj/ui_header/ui_StageTest.h obj/ui_header/ui_Vinput.h obj/ui_header/ui_Vkeybord.h obj/ui_header/ui_ItemKey.h
 compiler_uic_clean:
-	-$(DEL_FILE) obj/ui_header/ui_widget.h obj/ui_header/ui_StageSetting.h obj/ui_header/ui_StageBarcode.h obj/ui_header/ui_ItemSetting.h obj/ui_header/ui_ItemBarcode.h obj/ui_header/ui_StageTest.h
+	-$(DEL_FILE) obj/ui_header/ui_widget.h obj/ui_header/ui_StageSetting.h obj/ui_header/ui_StageBarcode.h obj/ui_header/ui_ItemBarcode.h obj/ui_header/ui_StageTest.h obj/ui_header/ui_Vinput.h obj/ui_header/ui_Vkeybord.h obj/ui_header/ui_ItemKey.h
 obj/ui_header/ui_widget.h: widget.ui \
 		StageSetting.h \
 		StageBarcode.h \
 		StageTest.h \
 		../../../../Qt5.5.1/5.5/clang_64/lib/QtWidgets.framework/Headers/QWidget \
 		../../../../Qt5.5.1/5.5/clang_64/lib/QtWidgets.framework/Headers/qwidget.h \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtWidgets.framework/Headers/QButtonGroup \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtWidgets.framework/Headers/qbuttongroup.h \
+		Global.h \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/QObject \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/qobject.h \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/QDebug \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/qdebug.h \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/QSettings \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/qsettings.h \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtWidgets.framework/Headers/QApplication \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtWidgets.framework/Headers/qapplication.h \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtWidgets.framework/Headers/QPushButton \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtWidgets.framework/Headers/qpushbutton.h \
 		../../../../Qt5.5.1/5.5/clang_64/lib/QtWidgets.framework/Headers/QWidget \
 		../../../../Qt5.5.1/5.5/clang_64/lib/QtWidgets.framework/Headers/qwidget.h \
 		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/QDebug \
@@ -748,11 +801,11 @@ obj/ui_header/ui_widget.h: widget.ui \
 	/Users/chenchaowei/Qt5.5.1/5.5/clang_64/bin/uic widget.ui -o obj/ui_header/ui_widget.h
 
 obj/ui_header/ui_StageSetting.h: StageSetting.ui \
-		ItemSetting.h \
+		Vinput.h \
 		../../../../Qt5.5.1/5.5/clang_64/lib/QtWidgets.framework/Headers/QWidget \
 		../../../../Qt5.5.1/5.5/clang_64/lib/QtWidgets.framework/Headers/qwidget.h \
-		../../../../Qt5.5.1/5.5/clang_64/lib/QtWidgets.framework/Headers/QPushButton \
-		../../../../Qt5.5.1/5.5/clang_64/lib/QtWidgets.framework/Headers/qpushbutton.h
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtGui.framework/Headers/QMouseEvent \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtGui.framework/Headers/qevent.h
 	/Users/chenchaowei/Qt5.5.1/5.5/clang_64/bin/uic StageSetting.ui -o obj/ui_header/ui_StageSetting.h
 
 obj/ui_header/ui_StageBarcode.h: StageBarcode.ui \
@@ -765,14 +818,29 @@ obj/ui_header/ui_StageBarcode.h: StageBarcode.ui \
 		../../../../Qt5.5.1/5.5/clang_64/lib/QtWidgets.framework/Headers/qlabel.h
 	/Users/chenchaowei/Qt5.5.1/5.5/clang_64/bin/uic StageBarcode.ui -o obj/ui_header/ui_StageBarcode.h
 
-obj/ui_header/ui_ItemSetting.h: ItemSetting.ui
-	/Users/chenchaowei/Qt5.5.1/5.5/clang_64/bin/uic ItemSetting.ui -o obj/ui_header/ui_ItemSetting.h
-
 obj/ui_header/ui_ItemBarcode.h: ItemBarcode.ui
 	/Users/chenchaowei/Qt5.5.1/5.5/clang_64/bin/uic ItemBarcode.ui -o obj/ui_header/ui_ItemBarcode.h
 
-obj/ui_header/ui_StageTest.h: StageTest.ui
+obj/ui_header/ui_StageTest.h: StageTest.ui \
+		Vkeybord.h \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtWidgets.framework/Headers/QWidget \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtWidgets.framework/Headers/qwidget.h \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/QDebug \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/qdebug.h \
+		ItemKey.h
 	/Users/chenchaowei/Qt5.5.1/5.5/clang_64/bin/uic StageTest.ui -o obj/ui_header/ui_StageTest.h
+
+obj/ui_header/ui_Vinput.h: Vinput.ui
+	/Users/chenchaowei/Qt5.5.1/5.5/clang_64/bin/uic Vinput.ui -o obj/ui_header/ui_Vinput.h
+
+obj/ui_header/ui_Vkeybord.h: Vkeybord.ui \
+		ItemKey.h \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtWidgets.framework/Headers/QWidget \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtWidgets.framework/Headers/qwidget.h
+	/Users/chenchaowei/Qt5.5.1/5.5/clang_64/bin/uic Vkeybord.ui -o obj/ui_header/ui_Vkeybord.h
+
+obj/ui_header/ui_ItemKey.h: ItemKey.ui
+	/Users/chenchaowei/Qt5.5.1/5.5/clang_64/bin/uic ItemKey.ui -o obj/ui_header/ui_ItemKey.h
 
 compiler_rez_source_make_all:
 compiler_rez_source_clean:
@@ -800,6 +868,8 @@ obj/main.o: main.cpp widget.h \
 		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/qsettings.h \
 		../../../../Qt5.5.1/5.5/clang_64/lib/QtWidgets.framework/Headers/QApplication \
 		../../../../Qt5.5.1/5.5/clang_64/lib/QtWidgets.framework/Headers/qapplication.h \
+		Vkeybord.h \
+		ItemKey.h \
 		../../../../Qt5.5.1/5.5/clang_64/lib/QtWidgets.framework/Headers/QDesktopWidget \
 		../../../../Qt5.5.1/5.5/clang_64/lib/QtWidgets.framework/Headers/qdesktopwidget.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/main.o main.cpp
@@ -813,9 +883,6 @@ obj/StageSetting.o: StageSetting.cpp
 obj/StageBarcode.o: StageBarcode.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/StageBarcode.o StageBarcode.cpp
 
-obj/ItemSetting.o: ItemSetting.cpp 
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/ItemSetting.o ItemSetting.cpp
-
 obj/ItemBarcode.o: ItemBarcode.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/ItemBarcode.o ItemBarcode.cpp
 
@@ -828,6 +895,15 @@ obj/CTcpClient.o: CTcpClient.cpp
 obj/Global.o: Global.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/Global.o Global.cpp
 
+obj/Vinput.o: Vinput.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/Vinput.o Vinput.cpp
+
+obj/Vkeybord.o: Vkeybord.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/Vkeybord.o Vkeybord.cpp
+
+obj/ItemKey.o: ItemKey.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/ItemKey.o ItemKey.cpp
+
 obj/moc_widget.o: obj/moc_widget.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/moc_widget.o obj/moc_widget.cpp
 
@@ -836,9 +912,6 @@ obj/moc_StageSetting.o: obj/moc_StageSetting.cpp
 
 obj/moc_StageBarcode.o: obj/moc_StageBarcode.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/moc_StageBarcode.o obj/moc_StageBarcode.cpp
-
-obj/moc_ItemSetting.o: obj/moc_ItemSetting.cpp 
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/moc_ItemSetting.o obj/moc_ItemSetting.cpp
 
 obj/moc_ItemBarcode.o: obj/moc_ItemBarcode.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/moc_ItemBarcode.o obj/moc_ItemBarcode.cpp
@@ -851,6 +924,15 @@ obj/moc_CTcpClient.o: obj/moc_CTcpClient.cpp
 
 obj/moc_Global.o: obj/moc_Global.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/moc_Global.o obj/moc_Global.cpp
+
+obj/moc_Vinput.o: obj/moc_Vinput.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/moc_Vinput.o obj/moc_Vinput.cpp
+
+obj/moc_Vkeybord.o: obj/moc_Vkeybord.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/moc_Vkeybord.o obj/moc_Vkeybord.cpp
+
+obj/moc_ItemKey.o: obj/moc_ItemKey.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/moc_ItemKey.o obj/moc_ItemKey.cpp
 
 ####### Install
 

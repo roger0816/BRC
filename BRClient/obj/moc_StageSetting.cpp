@@ -19,8 +19,8 @@
 
 QT_BEGIN_MOC_NAMESPACE
 struct qt_meta_stringdata_StageSetting_t {
-    QByteArrayData data[4];
-    char stringdata0[34];
+    QByteArrayData data[12];
+    char stringdata0[146];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -32,10 +32,21 @@ static const qt_meta_stringdata_StageSetting_t qt_meta_stringdata_StageSetting =
 QT_MOC_LITERAL(0, 0, 12), // "StageSetting"
 QT_MOC_LITERAL(1, 13, 7), // "clicked"
 QT_MOC_LITERAL(2, 21, 0), // ""
-QT_MOC_LITERAL(3, 22, 11) // "slotClicked"
+QT_MOC_LITERAL(3, 22, 9), // "iStageIdx"
+QT_MOC_LITERAL(4, 32, 2), // "st"
+QT_MOC_LITERAL(5, 35, 19), // "slotLanguageClicked"
+QT_MOC_LITERAL(6, 55, 9), // "showEvent"
+QT_MOC_LITERAL(7, 65, 11), // "QShowEvent*"
+QT_MOC_LITERAL(8, 77, 11), // "resizeEvent"
+QT_MOC_LITERAL(9, 89, 13), // "QResizeEvent*"
+QT_MOC_LITERAL(10, 103, 21), // "on_btnCancel_released"
+QT_MOC_LITERAL(11, 125, 20) // "on_btnCheck_released"
 
     },
-    "StageSetting\0clicked\0\0slotClicked"
+    "StageSetting\0clicked\0\0iStageIdx\0st\0"
+    "slotLanguageClicked\0showEvent\0QShowEvent*\0"
+    "resizeEvent\0QResizeEvent*\0"
+    "on_btnCancel_released\0on_btnCheck_released"
 };
 #undef QT_MOC_LITERAL
 
@@ -45,23 +56,33 @@ static const uint qt_meta_data_StageSetting[] = {
        7,       // revision
        0,       // classname
        0,    0, // classinfo
-       2,   14, // methods
+       7,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
        0,       // flags
-       1,       // signalCount
+       2,       // signalCount
 
  // signals: name, argc, parameters, tag, flags
-       1,    2,   24,    2, 0x06 /* Public */,
+       1,    2,   49,    2, 0x06 /* Public */,
+       1,    1,   54,    2, 0x26 /* Public | MethodCloned */,
 
  // slots: name, argc, parameters, tag, flags
-       3,    0,   29,    2, 0x08 /* Private */,
+       5,    0,   57,    2, 0x08 /* Private */,
+       6,    1,   58,    2, 0x08 /* Private */,
+       8,    1,   61,    2, 0x08 /* Private */,
+      10,    0,   64,    2, 0x08 /* Private */,
+      11,    0,   65,    2, 0x08 /* Private */,
 
  // signals: parameters
-    QMetaType::Void, QMetaType::Int, QMetaType::QString,    2,    2,
+    QMetaType::Void, QMetaType::Int, QMetaType::QString,    3,    4,
+    QMetaType::Void, QMetaType::Int,    3,
 
  // slots: parameters
+    QMetaType::Void,
+    QMetaType::Void, 0x80000000 | 7,    2,
+    QMetaType::Void, 0x80000000 | 9,    2,
+    QMetaType::Void,
     QMetaType::Void,
 
        0        // eod
@@ -74,7 +95,12 @@ void StageSetting::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id
         Q_UNUSED(_t)
         switch (_id) {
         case 0: _t->clicked((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< QString(*)>(_a[2]))); break;
-        case 1: _t->slotClicked(); break;
+        case 1: _t->clicked((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 2: _t->slotLanguageClicked(); break;
+        case 3: _t->showEvent((*reinterpret_cast< QShowEvent*(*)>(_a[1]))); break;
+        case 4: _t->resizeEvent((*reinterpret_cast< QResizeEvent*(*)>(_a[1]))); break;
+        case 5: _t->on_btnCancel_released(); break;
+        case 6: _t->on_btnCheck_released(); break;
         default: ;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {
@@ -114,13 +140,13 @@ int StageSetting::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 2)
+        if (_id < 7)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 2;
+        _id -= 7;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 2)
+        if (_id < 7)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 2;
+        _id -= 7;
     }
     return _id;
 }

@@ -16,12 +16,11 @@
 #include <QtWidgets/QGridLayout>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
-#include <QtWidgets/QLineEdit>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QSpacerItem>
 #include <QtWidgets/QStackedWidget>
 #include <QtWidgets/QWidget>
-#include "ItemSetting.h"
+#include "Vinput.h"
 
 QT_BEGIN_NAMESPACE
 
@@ -31,8 +30,6 @@ public:
     QGridLayout *gridLayout;
     QWidget *wBg;
     QGridLayout *gridLayout_2;
-    QWidget *widget;
-    QGridLayout *gridLayout_3;
     QWidget *wTitle;
     QGridLayout *gridLayout_5;
     QLabel *label_3;
@@ -40,36 +37,42 @@ public:
     QGridLayout *gridLayout_10;
     QStackedWidget *stackedWidget;
     QWidget *page;
-    QGridLayout *gridLayout_23;
-    ItemSetting *vNetSetting3;
-    ItemSetting *vNetSetting2;
-    QWidget *wFreeSetting;
-    QGridLayout *gridLayout_8;
-    QWidget *w0;
+    QGridLayout *gridLayout_6;
+    QSpacerItem *verticalSpacer;
+    QWidget *wNetwork;
     QGridLayout *gridLayout_4;
-    QWidget *w0_0;
-    QGridLayout *gridLayout_7;
-    QPushButton *btn0_2;
+    QLabel *label;
     QWidget *w0_1;
     QGridLayout *gridLayout_11;
-    QLineEdit *lineEdit;
-    QLabel *lb0;
-    QLineEdit *lineEdit_2;
+    Vinput *txtPort;
+    Vinput *txtIp;
     QLabel *lbTitle0;
-    ItemSetting *vNetSetting1;
-    QSpacerItem *verticalSpacer;
-    ItemSetting *vNetSetting0;
+    QLabel *lb0;
+    QWidget *wLanguage;
+    QGridLayout *gridLayout_12;
+    QLabel *lb0_2;
+    QWidget *w2;
+    QGridLayout *gridLayout_8;
+    QPushButton *btnEn;
+    QPushButton *btnTw;
+    QPushButton *btnCn;
+    QWidget *widget;
+    QGridLayout *gridLayout_3;
+    QPushButton *btnCancel;
+    QPushButton *btnCheck;
+    QSpacerItem *horizontalSpacer;
+    QWidget *wMachine;
+    QGridLayout *gridLayout_7;
+    QLabel *label_2;
+    QLabel *txtMachineId;
+    QSpacerItem *horizontalSpacer_2;
     QWidget *page_2;
-    QWidget *wSub;
-    QGridLayout *gridLayout_9;
-    QPushButton *pushButton;
-    QPushButton *pushButton_2;
 
     void setupUi(QWidget *StageSetting)
     {
         if (StageSetting->objectName().isEmpty())
             StageSetting->setObjectName(QStringLiteral("StageSetting"));
-        StageSetting->resize(700, 1338);
+        StageSetting->resize(800, 480);
         gridLayout = new QGridLayout(StageSetting);
         gridLayout->setSpacing(0);
         gridLayout->setObjectName(QStringLiteral("gridLayout"));
@@ -82,20 +85,15 @@ public:
         gridLayout_2->setSpacing(0);
         gridLayout_2->setObjectName(QStringLiteral("gridLayout_2"));
         gridLayout_2->setContentsMargins(0, 0, 0, 0);
-        widget = new QWidget(wBg);
-        widget->setObjectName(QStringLiteral("widget"));
-        gridLayout_3 = new QGridLayout(widget);
-        gridLayout_3->setObjectName(QStringLiteral("gridLayout_3"));
-        gridLayout_3->setHorizontalSpacing(0);
-        gridLayout_3->setVerticalSpacing(4);
-        gridLayout_3->setContentsMargins(0, 0, 0, 0);
-        wTitle = new QWidget(widget);
+        wTitle = new QWidget(wBg);
         wTitle->setObjectName(QStringLiteral("wTitle"));
-        wTitle->setMinimumSize(QSize(0, 160));
+        wTitle->setMinimumSize(QSize(0, 80));
         wTitle->setMaximumSize(QSize(16777215, 160));
         wTitle->setStyleSheet(QStringLiteral("background-color: rgb(102, 102, 102);"));
         gridLayout_5 = new QGridLayout(wTitle);
+        gridLayout_5->setSpacing(0);
         gridLayout_5->setObjectName(QStringLiteral("gridLayout_5"));
+        gridLayout_5->setContentsMargins(0, 0, 0, 0);
         label_3 = new QLabel(wTitle);
         label_3->setObjectName(QStringLiteral("label_3"));
         QFont font;
@@ -110,96 +108,82 @@ public:
         gridLayout_5->addWidget(label_3, 0, 0, 1, 1);
 
 
-        gridLayout_3->addWidget(wTitle, 0, 0, 1, 1);
+        gridLayout_2->addWidget(wTitle, 0, 0, 1, 1);
 
-        wBody = new QWidget(widget);
+        wBody = new QWidget(wBg);
         wBody->setObjectName(QStringLiteral("wBody"));
         gridLayout_10 = new QGridLayout(wBody);
+        gridLayout_10->setSpacing(0);
         gridLayout_10->setObjectName(QStringLiteral("gridLayout_10"));
-        gridLayout_10->setContentsMargins(5, 5, 5, 5);
+        gridLayout_10->setContentsMargins(0, 0, 0, 0);
         stackedWidget = new QStackedWidget(wBody);
         stackedWidget->setObjectName(QStringLiteral("stackedWidget"));
         page = new QWidget();
         page->setObjectName(QStringLiteral("page"));
-        gridLayout_23 = new QGridLayout(page);
-        gridLayout_23->setObjectName(QStringLiteral("gridLayout_23"));
-        gridLayout_23->setVerticalSpacing(40);
-        gridLayout_23->setContentsMargins(5, 5, 5, 0);
-        vNetSetting3 = new ItemSetting(page);
-        vNetSetting3->setObjectName(QStringLiteral("vNetSetting3"));
-        vNetSetting3->setMinimumSize(QSize(0, 120));
-        vNetSetting3->setMaximumSize(QSize(16777215, 400));
+        gridLayout_6 = new QGridLayout(page);
+        gridLayout_6->setObjectName(QStringLiteral("gridLayout_6"));
+        gridLayout_6->setContentsMargins(10, 10, 10, 10);
+        verticalSpacer = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Minimum);
 
-        gridLayout_23->addWidget(vNetSetting3, 9, 0, 1, 1);
+        gridLayout_6->addItem(verticalSpacer, 3, 0, 1, 1);
 
-        vNetSetting2 = new ItemSetting(page);
-        vNetSetting2->setObjectName(QStringLiteral("vNetSetting2"));
-        vNetSetting2->setMinimumSize(QSize(0, 120));
-        vNetSetting2->setMaximumSize(QSize(16777215, 400));
-
-        gridLayout_23->addWidget(vNetSetting2, 8, 0, 1, 1);
-
-        wFreeSetting = new QWidget(page);
-        wFreeSetting->setObjectName(QStringLiteral("wFreeSetting"));
-        wFreeSetting->setMinimumSize(QSize(0, 120));
-        gridLayout_8 = new QGridLayout(wFreeSetting);
-        gridLayout_8->setSpacing(0);
-        gridLayout_8->setObjectName(QStringLiteral("gridLayout_8"));
-        gridLayout_8->setContentsMargins(0, 0, 0, 0);
-        w0 = new QWidget(wFreeSetting);
-        w0->setObjectName(QStringLiteral("w0"));
-        w0->setMinimumSize(QSize(121, 40));
-        w0->setMaximumSize(QSize(16777215, 200));
-        w0->setStyleSheet(QLatin1String("QWidget#w0{ border: 2px solid gray;\n"
+        wNetwork = new QWidget(page);
+        wNetwork->setObjectName(QStringLiteral("wNetwork"));
+        wNetwork->setMinimumSize(QSize(121, 80));
+        wNetwork->setStyleSheet(QLatin1String("QWidget#wNetwork{ border: 2px solid gray;\n"
 "    border-radius: 3px;\n"
 "    padding: 1px 18px 1px 3px;\n"
+"    min-width: 6em;}\n"
+"\n"
+"QWidget#w0_1{    border: 1px solid gray;\n"
+"    padding: 1px 18px 1px 3px;\n"
 "    min-width: 6em;}"));
-        gridLayout_4 = new QGridLayout(w0);
+        gridLayout_4 = new QGridLayout(wNetwork);
         gridLayout_4->setSpacing(0);
         gridLayout_4->setObjectName(QStringLiteral("gridLayout_4"));
         gridLayout_4->setContentsMargins(0, 0, 0, 0);
-        w0_0 = new QWidget(w0);
-        w0_0->setObjectName(QStringLiteral("w0_0"));
-        w0_0->setMinimumSize(QSize(0, 0));
-        w0_0->setMaximumSize(QSize(200, 16777215));
-        gridLayout_7 = new QGridLayout(w0_0);
-        gridLayout_7->setObjectName(QStringLiteral("gridLayout_7"));
-        gridLayout_7->setContentsMargins(5, 5, 5, 5);
-        btn0_2 = new QPushButton(w0_0);
-        btn0_2->setObjectName(QStringLiteral("btn0_2"));
-        QSizePolicy sizePolicy(QSizePolicy::Minimum, QSizePolicy::Minimum);
-        sizePolicy.setHorizontalStretch(0);
-        sizePolicy.setVerticalStretch(0);
-        sizePolicy.setHeightForWidth(btn0_2->sizePolicy().hasHeightForWidth());
-        btn0_2->setSizePolicy(sizePolicy);
-        btn0_2->setMinimumSize(QSize(160, 0));
-        btn0_2->setMaximumSize(QSize(160, 16777215));
-        btn0_2->setStyleSheet(QStringLiteral(""));
-        btn0_2->setCheckable(true);
+        label = new QLabel(wNetwork);
+        label->setObjectName(QStringLiteral("label"));
+        label->setMaximumSize(QSize(80, 16777215));
+        QFont font1;
+        font1.setPointSize(14);
+        label->setFont(font1);
+        label->setAlignment(Qt::AlignCenter);
 
-        gridLayout_7->addWidget(btn0_2, 0, 0, 1, 1);
+        gridLayout_4->addWidget(label, 0, 0, 1, 1);
 
-
-        gridLayout_4->addWidget(w0_0, 0, 0, 2, 1);
-
-        w0_1 = new QWidget(w0);
+        w0_1 = new QWidget(wNetwork);
         w0_1->setObjectName(QStringLiteral("w0_1"));
-        w0_1->setStyleSheet(QLatin1String("QWidget#w0_1{    border: 1px solid gray;\n"
-"    padding: 1px 18px 1px 3px;\n"
-"    min-width: 6em;}"));
+        w0_1->setMinimumSize(QSize(119, 80));
+        QFont font2;
+        font2.setPointSize(16);
+        w0_1->setFont(font2);
+        w0_1->setStyleSheet(QStringLiteral(""));
         gridLayout_11 = new QGridLayout(w0_1);
         gridLayout_11->setObjectName(QStringLiteral("gridLayout_11"));
-        gridLayout_11->setHorizontalSpacing(0);
-        gridLayout_11->setContentsMargins(-1, 20, -1, 20);
-        lineEdit = new QLineEdit(w0_1);
-        lineEdit->setObjectName(QStringLiteral("lineEdit"));
-        QSizePolicy sizePolicy1(QSizePolicy::Expanding, QSizePolicy::Minimum);
-        sizePolicy1.setHorizontalStretch(0);
-        sizePolicy1.setVerticalStretch(0);
-        sizePolicy1.setHeightForWidth(lineEdit->sizePolicy().hasHeightForWidth());
-        lineEdit->setSizePolicy(sizePolicy1);
+        gridLayout_11->setHorizontalSpacing(20);
+        gridLayout_11->setContentsMargins(20, 20, 20, 20);
+        txtPort = new Vinput(w0_1);
+        txtPort->setObjectName(QStringLiteral("txtPort"));
+        txtPort->setStyleSheet(QLatin1String("background-color: rgb(255, 255, 255);\n"
+"color: rgb(0, 0, 0);"));
 
-        gridLayout_11->addWidget(lineEdit, 0, 1, 1, 1);
+        gridLayout_11->addWidget(txtPort, 0, 3, 1, 1);
+
+        txtIp = new Vinput(w0_1);
+        txtIp->setObjectName(QStringLiteral("txtIp"));
+        txtIp->setStyleSheet(QLatin1String("background-color: rgb(255, 255, 255);\n"
+"color: rgb(0, 0, 0);"));
+
+        gridLayout_11->addWidget(txtIp, 0, 1, 1, 1);
+
+        lbTitle0 = new QLabel(w0_1);
+        lbTitle0->setObjectName(QStringLiteral("lbTitle0"));
+        lbTitle0->setMinimumSize(QSize(40, 0));
+        lbTitle0->setMaximumSize(QSize(40, 16777215));
+        lbTitle0->setFont(font1);
+
+        gridLayout_11->addWidget(lbTitle0, 0, 0, 1, 1);
 
         lb0 = new QLabel(w0_1);
         lb0->setObjectName(QStringLiteral("lb0"));
@@ -208,49 +192,145 @@ public:
 
         gridLayout_11->addWidget(lb0, 0, 2, 1, 1);
 
-        lineEdit_2 = new QLineEdit(w0_1);
-        lineEdit_2->setObjectName(QStringLiteral("lineEdit_2"));
-        sizePolicy1.setHeightForWidth(lineEdit_2->sizePolicy().hasHeightForWidth());
-        lineEdit_2->setSizePolicy(sizePolicy1);
 
-        gridLayout_11->addWidget(lineEdit_2, 0, 3, 1, 1);
-
-        lbTitle0 = new QLabel(w0_1);
-        lbTitle0->setObjectName(QStringLiteral("lbTitle0"));
-        lbTitle0->setMinimumSize(QSize(40, 0));
-        lbTitle0->setMaximumSize(QSize(40, 16777215));
-        QFont font1;
-        font1.setPointSize(14);
-        lbTitle0->setFont(font1);
-
-        gridLayout_11->addWidget(lbTitle0, 0, 0, 1, 1);
+        gridLayout_4->addWidget(w0_1, 0, 1, 1, 1);
 
 
-        gridLayout_4->addWidget(w0_1, 0, 1, 2, 1);
+        gridLayout_6->addWidget(wNetwork, 1, 0, 1, 1);
+
+        wLanguage = new QWidget(page);
+        wLanguage->setObjectName(QStringLiteral("wLanguage"));
+        wLanguage->setMinimumSize(QSize(121, 80));
+        wLanguage->setMaximumSize(QSize(16777215, 100000));
+        wLanguage->setFont(font2);
+        wLanguage->setStyleSheet(QLatin1String("QWidget#wLanguage{ border: 2px solid gray;\n"
+"    border-radius: 3px;\n"
+"    padding: 1px 18px 1px 3px;\n"
+"    min-width: 6em;}\n"
+"\n"
+"QWidget#w2{    border: 1px solid gray;\n"
+"    padding: 1px 18px 1px 3px;\n"
+"    min-width: 6em;}\n"
+""));
+        gridLayout_12 = new QGridLayout(wLanguage);
+        gridLayout_12->setSpacing(0);
+        gridLayout_12->setObjectName(QStringLiteral("gridLayout_12"));
+        gridLayout_12->setContentsMargins(0, 0, 0, 0);
+        lb0_2 = new QLabel(wLanguage);
+        lb0_2->setObjectName(QStringLiteral("lb0_2"));
+        lb0_2->setMinimumSize(QSize(40, 0));
+        lb0_2->setMaximumSize(QSize(80, 16777215));
+        lb0_2->setFont(font1);
+        lb0_2->setAlignment(Qt::AlignCenter);
+
+        gridLayout_12->addWidget(lb0_2, 0, 0, 1, 1);
+
+        w2 = new QWidget(wLanguage);
+        w2->setObjectName(QStringLiteral("w2"));
+        gridLayout_8 = new QGridLayout(w2);
+        gridLayout_8->setObjectName(QStringLiteral("gridLayout_8"));
+        btnEn = new QPushButton(w2);
+        btnEn->setObjectName(QStringLiteral("btnEn"));
+        QSizePolicy sizePolicy(QSizePolicy::Minimum, QSizePolicy::Minimum);
+        sizePolicy.setHorizontalStretch(0);
+        sizePolicy.setVerticalStretch(0);
+        sizePolicy.setHeightForWidth(btnEn->sizePolicy().hasHeightForWidth());
+        btnEn->setSizePolicy(sizePolicy);
+        btnEn->setCheckable(true);
+        btnEn->setFlat(true);
+
+        gridLayout_8->addWidget(btnEn, 0, 0, 1, 1);
+
+        btnTw = new QPushButton(w2);
+        btnTw->setObjectName(QStringLiteral("btnTw"));
+        sizePolicy.setHeightForWidth(btnTw->sizePolicy().hasHeightForWidth());
+        btnTw->setSizePolicy(sizePolicy);
+        btnTw->setCheckable(true);
+        btnTw->setFlat(true);
+
+        gridLayout_8->addWidget(btnTw, 0, 1, 1, 1);
+
+        btnCn = new QPushButton(w2);
+        btnCn->setObjectName(QStringLiteral("btnCn"));
+        sizePolicy.setHeightForWidth(btnCn->sizePolicy().hasHeightForWidth());
+        btnCn->setSizePolicy(sizePolicy);
+        btnCn->setCheckable(true);
+        btnCn->setFlat(true);
+
+        gridLayout_8->addWidget(btnCn, 0, 2, 1, 1);
 
 
-        gridLayout_8->addWidget(w0, 0, 0, 1, 1);
+        gridLayout_12->addWidget(w2, 0, 1, 1, 1);
 
 
-        gridLayout_23->addWidget(wFreeSetting, 5, 0, 1, 1);
+        gridLayout_6->addWidget(wLanguage, 2, 0, 1, 1);
 
-        vNetSetting1 = new ItemSetting(page);
-        vNetSetting1->setObjectName(QStringLiteral("vNetSetting1"));
-        vNetSetting1->setMinimumSize(QSize(0, 120));
-        vNetSetting1->setMaximumSize(QSize(16777215, 400));
+        widget = new QWidget(page);
+        widget->setObjectName(QStringLiteral("widget"));
+        widget->setMinimumSize(QSize(0, 60));
+        gridLayout_3 = new QGridLayout(widget);
+        gridLayout_3->setObjectName(QStringLiteral("gridLayout_3"));
+        gridLayout_3->setHorizontalSpacing(40);
+        gridLayout_3->setContentsMargins(-1, -1, 40, -1);
+        btnCancel = new QPushButton(widget);
+        btnCancel->setObjectName(QStringLiteral("btnCancel"));
+        sizePolicy.setHeightForWidth(btnCancel->sizePolicy().hasHeightForWidth());
+        btnCancel->setSizePolicy(sizePolicy);
+        btnCancel->setMinimumSize(QSize(80, 0));
+        btnCancel->setMaximumSize(QSize(80, 16777215));
 
-        gridLayout_23->addWidget(vNetSetting1, 7, 0, 1, 1);
+        gridLayout_3->addWidget(btnCancel, 0, 1, 1, 1);
 
-        verticalSpacer = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
+        btnCheck = new QPushButton(widget);
+        btnCheck->setObjectName(QStringLiteral("btnCheck"));
+        sizePolicy.setHeightForWidth(btnCheck->sizePolicy().hasHeightForWidth());
+        btnCheck->setSizePolicy(sizePolicy);
+        btnCheck->setMinimumSize(QSize(80, 0));
+        btnCheck->setMaximumSize(QSize(80, 16777215));
 
-        gridLayout_23->addItem(verticalSpacer, 11, 0, 1, 1);
+        gridLayout_3->addWidget(btnCheck, 0, 2, 1, 1);
 
-        vNetSetting0 = new ItemSetting(page);
-        vNetSetting0->setObjectName(QStringLiteral("vNetSetting0"));
-        vNetSetting0->setMinimumSize(QSize(121, 120));
-        vNetSetting0->setMaximumSize(QSize(16777215, 400));
+        horizontalSpacer = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
-        gridLayout_23->addWidget(vNetSetting0, 6, 0, 1, 1);
+        gridLayout_3->addItem(horizontalSpacer, 0, 0, 1, 1);
+
+
+        gridLayout_6->addWidget(widget, 4, 0, 1, 1);
+
+        wMachine = new QWidget(page);
+        wMachine->setObjectName(QStringLiteral("wMachine"));
+        wMachine->setMinimumSize(QSize(121, 80));
+        wMachine->setStyleSheet(QLatin1String("QWidget#wMachine{ border: 2px solid gray;\n"
+"    border-radius: 3px;\n"
+"    padding: 1px 18px 1px 3px;\n"
+"    min-width: 6em;}\n"
+"\n"
+"QWidget#w2{    border: 1px solid gray;\n"
+"    padding: 1px 18px 1px 3px;\n"
+"    min-width: 6em;}"));
+        gridLayout_7 = new QGridLayout(wMachine);
+        gridLayout_7->setObjectName(QStringLiteral("gridLayout_7"));
+        label_2 = new QLabel(wMachine);
+        label_2->setObjectName(QStringLiteral("label_2"));
+        label_2->setMinimumSize(QSize(100, 0));
+        label_2->setMaximumSize(QSize(300, 16777215));
+        label_2->setAlignment(Qt::AlignCenter);
+
+        gridLayout_7->addWidget(label_2, 0, 1, 1, 1);
+
+        txtMachineId = new QLabel(wMachine);
+        txtMachineId->setObjectName(QStringLiteral("txtMachineId"));
+        txtMachineId->setMinimumSize(QSize(100, 0));
+        txtMachineId->setMaximumSize(QSize(300, 16777215));
+
+        gridLayout_7->addWidget(txtMachineId, 0, 2, 1, 1);
+
+        horizontalSpacer_2 = new QSpacerItem(40, 20, QSizePolicy::MinimumExpanding, QSizePolicy::Minimum);
+
+        gridLayout_7->addItem(horizontalSpacer_2, 0, 0, 1, 1);
+
+
+        gridLayout_6->addWidget(wMachine, 0, 0, 1, 1);
 
         stackedWidget->addWidget(page);
         page_2 = new QWidget();
@@ -260,38 +340,7 @@ public:
         gridLayout_10->addWidget(stackedWidget, 0, 0, 1, 1);
 
 
-        gridLayout_3->addWidget(wBody, 2, 0, 1, 1);
-
-        wSub = new QWidget(widget);
-        wSub->setObjectName(QStringLiteral("wSub"));
-        wSub->setMinimumSize(QSize(0, 90));
-        wSub->setMaximumSize(QSize(16777215, 100));
-        gridLayout_9 = new QGridLayout(wSub);
-        gridLayout_9->setObjectName(QStringLiteral("gridLayout_9"));
-        gridLayout_9->setContentsMargins(0, 0, 0, 0);
-        pushButton = new QPushButton(wSub);
-        pushButton->setObjectName(QStringLiteral("pushButton"));
-        sizePolicy.setHeightForWidth(pushButton->sizePolicy().hasHeightForWidth());
-        pushButton->setSizePolicy(sizePolicy);
-        QFont font2;
-        font2.setPointSize(16);
-        pushButton->setFont(font2);
-
-        gridLayout_9->addWidget(pushButton, 0, 1, 1, 1);
-
-        pushButton_2 = new QPushButton(wSub);
-        pushButton_2->setObjectName(QStringLiteral("pushButton_2"));
-        sizePolicy.setHeightForWidth(pushButton_2->sizePolicy().hasHeightForWidth());
-        pushButton_2->setSizePolicy(sizePolicy);
-        pushButton_2->setFont(font2);
-
-        gridLayout_9->addWidget(pushButton_2, 0, 0, 1, 1);
-
-
-        gridLayout_3->addWidget(wSub, 1, 0, 1, 1);
-
-
-        gridLayout_2->addWidget(widget, 0, 0, 1, 1);
+        gridLayout_2->addWidget(wBody, 1, 0, 1, 1);
 
 
         gridLayout->addWidget(wBg, 0, 0, 1, 1);
@@ -306,11 +355,17 @@ public:
     {
         StageSetting->setWindowTitle(QApplication::translate("StageSetting", "Form", 0));
         label_3->setText(QApplication::translate("StageSetting", "\350\250\255\345\256\232\347\225\253\351\235\242", 0));
-        btn0_2->setText(QApplication::translate("StageSetting", "\350\207\252\350\250\202", 0));
-        lb0->setText(QApplication::translate("StageSetting", "PORT:", 0));
+        label->setText(QApplication::translate("StageSetting", "\351\200\243\347\267\232", 0));
         lbTitle0->setText(QApplication::translate("StageSetting", "IP:", 0));
-        pushButton->setText(QApplication::translate("StageSetting", "\345\205\266\345\256\203", 0));
-        pushButton_2->setText(QApplication::translate("StageSetting", "\347\266\262\350\267\257", 0));
+        lb0->setText(QApplication::translate("StageSetting", "PORT:", 0));
+        lb0_2->setText(QApplication::translate("StageSetting", "\350\252\236\347\263\273", 0));
+        btnEn->setText(QApplication::translate("StageSetting", "English", 0));
+        btnTw->setText(QApplication::translate("StageSetting", "\347\271\201\351\253\224\344\270\255\346\226\207", 0));
+        btnCn->setText(QApplication::translate("StageSetting", "\347\256\200\344\275\223\344\270\255\346\226\207", 0));
+        btnCancel->setText(QApplication::translate("StageSetting", "cancel", 0));
+        btnCheck->setText(QApplication::translate("StageSetting", "ok", 0));
+        label_2->setText(QApplication::translate("StageSetting", "\346\251\237\345\231\250\344\273\243\350\231\237:", 0));
+        txtMachineId->setText(QString());
     } // retranslateUi
 
 };

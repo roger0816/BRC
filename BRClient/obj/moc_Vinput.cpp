@@ -1,16 +1,16 @@
 /****************************************************************************
-** Meta object code from reading C++ file 'widget.h'
+** Meta object code from reading C++ file 'Vinput.h'
 **
 ** Created by: The Qt Meta Object Compiler version 67 (Qt 5.5.1)
 **
 ** WARNING! All changes made in this file will be lost!
 *****************************************************************************/
 
-#include "../widget.h"
+#include "../Vinput.h"
 #include <QtCore/qbytearray.h>
 #include <QtCore/qmetatype.h>
 #if !defined(Q_MOC_OUTPUT_REVISION)
-#error "The header file 'widget.h' doesn't include <QObject>."
+#error "The header file 'Vinput.h' doesn't include <QObject>."
 #elif Q_MOC_OUTPUT_REVISION != 67
 #error "This file was generated using the moc from 5.5.1. It"
 #error "cannot be used with the include files from this version of Qt."
@@ -18,27 +18,28 @@
 #endif
 
 QT_BEGIN_MOC_NAMESPACE
-struct qt_meta_stringdata_Widget_t {
-    QByteArrayData data[3];
-    char stringdata0[20];
+struct qt_meta_stringdata_Vinput_t {
+    QByteArrayData data[4];
+    char stringdata0[21];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
-    qptrdiff(offsetof(qt_meta_stringdata_Widget_t, stringdata0) + ofs \
+    qptrdiff(offsetof(qt_meta_stringdata_Vinput_t, stringdata0) + ofs \
         - idx * sizeof(QByteArrayData)) \
     )
-static const qt_meta_stringdata_Widget_t qt_meta_stringdata_Widget = {
+static const qt_meta_stringdata_Vinput_t qt_meta_stringdata_Vinput = {
     {
-QT_MOC_LITERAL(0, 0, 6), // "Widget"
-QT_MOC_LITERAL(1, 7, 11), // "slotSetting"
-QT_MOC_LITERAL(2, 19, 0) // ""
+QT_MOC_LITERAL(0, 0, 6), // "Vinput"
+QT_MOC_LITERAL(1, 7, 7), // "setText"
+QT_MOC_LITERAL(2, 15, 0), // ""
+QT_MOC_LITERAL(3, 16, 4) // "text"
 
     },
-    "Widget\0slotSetting\0"
+    "Vinput\0setText\0\0text"
 };
 #undef QT_MOC_LITERAL
 
-static const uint qt_meta_data_Widget[] = {
+static const uint qt_meta_data_Vinput[] = {
 
  // content:
        7,       // revision
@@ -52,46 +53,46 @@ static const uint qt_meta_data_Widget[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags
-       1,    2,   19,    2, 0x08 /* Private */,
+       1,    1,   19,    2, 0x0a /* Public */,
 
  // slots: parameters
-    QMetaType::Void, QMetaType::Int, QMetaType::QString,    2,    2,
+    QMetaType::Void, QMetaType::QString,    3,
 
        0        // eod
 };
 
-void Widget::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
+void Vinput::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
 {
     if (_c == QMetaObject::InvokeMetaMethod) {
-        Widget *_t = static_cast<Widget *>(_o);
+        Vinput *_t = static_cast<Vinput *>(_o);
         Q_UNUSED(_t)
         switch (_id) {
-        case 0: _t->slotSetting((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< QString(*)>(_a[2]))); break;
+        case 0: _t->setText((*reinterpret_cast< const QString(*)>(_a[1]))); break;
         default: ;
         }
     }
 }
 
-const QMetaObject Widget::staticMetaObject = {
-    { &QWidget::staticMetaObject, qt_meta_stringdata_Widget.data,
-      qt_meta_data_Widget,  qt_static_metacall, Q_NULLPTR, Q_NULLPTR}
+const QMetaObject Vinput::staticMetaObject = {
+    { &QWidget::staticMetaObject, qt_meta_stringdata_Vinput.data,
+      qt_meta_data_Vinput,  qt_static_metacall, Q_NULLPTR, Q_NULLPTR}
 };
 
 
-const QMetaObject *Widget::metaObject() const
+const QMetaObject *Vinput::metaObject() const
 {
     return QObject::d_ptr->metaObject ? QObject::d_ptr->dynamicMetaObject() : &staticMetaObject;
 }
 
-void *Widget::qt_metacast(const char *_clname)
+void *Vinput::qt_metacast(const char *_clname)
 {
     if (!_clname) return Q_NULLPTR;
-    if (!strcmp(_clname, qt_meta_stringdata_Widget.stringdata0))
-        return static_cast<void*>(const_cast< Widget*>(this));
+    if (!strcmp(_clname, qt_meta_stringdata_Vinput.stringdata0))
+        return static_cast<void*>(const_cast< Vinput*>(this));
     return QWidget::qt_metacast(_clname);
 }
 
-int Widget::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
+int Vinput::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
 {
     _id = QWidget::qt_metacall(_c, _id, _a);
     if (_id < 0)

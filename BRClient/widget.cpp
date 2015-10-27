@@ -9,11 +9,20 @@ Widget::Widget(QWidget *parent) :
     qDebug()<<"BRC1 start ";
     GLOBAL();
     ui->setupUi(this);
-    ui->stackedWidget->setCurrentIndex(StageIdx::_barcode);
+
     //ui->vTest->setFocus();
     ui->vSetting->connect(ui->vSetting,SIGNAL(clicked(int,QString)),this,SLOT(slotSetting(int,QString)));
    // setWindowState(Qt::WindowFullScreen);
     ui->vBarcode->connect(ui->vBarcode,SIGNAL(clicked(int,QString)),this,SLOT(slotSetting(int,QString)));
+
+    ui->stackedWidget->move(0,0);
+    ui->stackedWidget->resize(GLOBAL().m_SizeWindow);
+
+    m_keybord=new Vkeybord(this);
+    m_keybord->setGeometry(0,0,GLOBAL().m_SizeWindow.width(),GLOBAL().m_SizeWindow.height());
+    //m_keybord->hide();
+
+    ui->stackedWidget->setCurrentIndex(StageIdx::_barcode);
 }
 
 Widget::~Widget()
@@ -23,7 +32,7 @@ Widget::~Widget()
 
 
 
-void Widget::slotSetting(int iPageIdx,QString sObjName)
+void Widget::slotSetting(int iPageIdx,QString)
 {
     QWidget *w=dynamic_cast<QWidget*>(sender());
 
