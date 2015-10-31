@@ -3,7 +3,10 @@
 Global *Global::m_pInstance = 0;
 Global::Global()
 {
+
     qDebug()<<"global class ok";
+
+
     readConfig(m_config);
 }
 
@@ -28,6 +31,9 @@ int Global::readConfig(ConfigFile::Ini &ini)
     ini.sPort=settings.value(CONFIG_PORT,"60000").toString();
     ini.sLanguage=settings.value(CONFIG_LANGUAGE,"EN").toString();
     iRe=0;
+
+    QString sPath=":/language/translations/";//cn.qm";
+    m_sNowTransPath=sPath+ini.sLanguage.toLower()+".qm";
     return iRe;
 }
 
@@ -68,9 +74,26 @@ int Global::writeConfig(QString sKey,QString sValue)
     return iRe;
 }
 
+int Global::tcpSend(QString sId,QString sNum)
+{
+    TcpData input;
+    input.iAction=3001;
+    input.iType=1;
+    input.listValue.append(sId);
+    input.listValue.append(sNum);
+
+    TcpData output;
+    return m_tcp.blockTcpSend(input,output,m_config.sIp,m_config.sPort.toInt(),5000);
+}
+
 Global::~Global()
 {
 
 
+}
+
+void Global::callKeybord(QLabel *lb)
+{
+    emit signalOpenKeybord(lb);
 }
 

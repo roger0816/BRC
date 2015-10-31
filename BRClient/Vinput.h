@@ -3,6 +3,7 @@
 
 #include <QWidget>
 #include <QMouseEvent>
+#include "Global.h"
 namespace Ui {
 class Vinput;
 }
@@ -16,6 +17,7 @@ public:
     ~Vinput();
     void setAlignment(Qt::Alignment alignment);
     QString text();
+    QLabel* label();
 private:
     Ui::Vinput *ui;
     void mouseReleaseEvent(QMouseEvent *);

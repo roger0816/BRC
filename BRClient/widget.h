@@ -6,7 +6,7 @@
 #include "Global.h"
 #include <QDebug>
 #include "Vkeybord.h"
-
+#include <QTranslator>
 
 namespace Ui {
 class Widget;

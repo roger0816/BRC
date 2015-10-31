@@ -4,6 +4,10 @@
 #include <QWidget>
 #include <QPushButton>
 #include <QLabel>
+#include <QTranslator>
+#include "Global.h"
+#include "Vinput.h"
+
 namespace Ui {
 class ItemBarcode;
 }
@@ -17,11 +21,12 @@ public:
     ~ItemBarcode();
     QPushButton *m_btn;
     void setLbTitle(QString sBtnTitle, QString sLb0, QString sLb1);
-    QLabel *m_lb0;
-    QLabel *m_lb1;
+    Vinput *m_lb0;
+    Vinput *m_lb1;
 
 private:
     Ui::ItemBarcode *ui;
+    void showEvent(QShowEvent *);
 };
 
 #endif // ITEMBARCODE_H

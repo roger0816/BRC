@@ -19,8 +19,8 @@
 
 QT_BEGIN_MOC_NAMESPACE
 struct qt_meta_stringdata_StageSetting_t {
-    QByteArrayData data[12];
-    char stringdata0[146];
+    QByteArrayData data[13];
+    char stringdata0[169];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -40,13 +40,15 @@ QT_MOC_LITERAL(7, 65, 11), // "QShowEvent*"
 QT_MOC_LITERAL(8, 77, 11), // "resizeEvent"
 QT_MOC_LITERAL(9, 89, 13), // "QResizeEvent*"
 QT_MOC_LITERAL(10, 103, 21), // "on_btnCancel_released"
-QT_MOC_LITERAL(11, 125, 20) // "on_btnCheck_released"
+QT_MOC_LITERAL(11, 125, 20), // "on_btnCheck_released"
+QT_MOC_LITERAL(12, 146, 22) // "on_btnLinkTest_clicked"
 
     },
     "StageSetting\0clicked\0\0iStageIdx\0st\0"
     "slotLanguageClicked\0showEvent\0QShowEvent*\0"
     "resizeEvent\0QResizeEvent*\0"
-    "on_btnCancel_released\0on_btnCheck_released"
+    "on_btnCancel_released\0on_btnCheck_released\0"
+    "on_btnLinkTest_clicked"
 };
 #undef QT_MOC_LITERAL
 
@@ -56,7 +58,7 @@ static const uint qt_meta_data_StageSetting[] = {
        7,       // revision
        0,       // classname
        0,    0, // classinfo
-       7,   14, // methods
+       8,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -64,15 +66,16 @@ static const uint qt_meta_data_StageSetting[] = {
        2,       // signalCount
 
  // signals: name, argc, parameters, tag, flags
-       1,    2,   49,    2, 0x06 /* Public */,
-       1,    1,   54,    2, 0x26 /* Public | MethodCloned */,
+       1,    2,   54,    2, 0x06 /* Public */,
+       1,    1,   59,    2, 0x26 /* Public | MethodCloned */,
 
  // slots: name, argc, parameters, tag, flags
-       5,    0,   57,    2, 0x08 /* Private */,
-       6,    1,   58,    2, 0x08 /* Private */,
-       8,    1,   61,    2, 0x08 /* Private */,
-      10,    0,   64,    2, 0x08 /* Private */,
-      11,    0,   65,    2, 0x08 /* Private */,
+       5,    0,   62,    2, 0x08 /* Private */,
+       6,    1,   63,    2, 0x08 /* Private */,
+       8,    1,   66,    2, 0x08 /* Private */,
+      10,    0,   69,    2, 0x08 /* Private */,
+      11,    0,   70,    2, 0x08 /* Private */,
+      12,    0,   71,    2, 0x08 /* Private */,
 
  // signals: parameters
     QMetaType::Void, QMetaType::Int, QMetaType::QString,    3,    4,
@@ -82,6 +85,7 @@ static const uint qt_meta_data_StageSetting[] = {
     QMetaType::Void,
     QMetaType::Void, 0x80000000 | 7,    2,
     QMetaType::Void, 0x80000000 | 9,    2,
+    QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
 
@@ -101,6 +105,7 @@ void StageSetting::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id
         case 4: _t->resizeEvent((*reinterpret_cast< QResizeEvent*(*)>(_a[1]))); break;
         case 5: _t->on_btnCancel_released(); break;
         case 6: _t->on_btnCheck_released(); break;
+        case 7: _t->on_btnLinkTest_clicked(); break;
         default: ;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {
@@ -140,13 +145,13 @@ int StageSetting::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 7)
+        if (_id < 8)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 7;
+        _id -= 8;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 7)
+        if (_id < 8)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 7;
+        _id -= 8;
     }
     return _id;
 }

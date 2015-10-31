@@ -5,6 +5,9 @@
 #include <QButtonGroup>
 #include "Global.h"
 #include <QPushButton>
+#include <QTranslator>
+#include <QApplication>
+
 
 namespace Ui {
 class StageSetting;
@@ -21,6 +24,7 @@ public:
 private:
     Ui::StageSetting *ui;
     QList<QPushButton*> m_listBtn;
+    QString m_sNowLanguage;
 signals:
     void clicked(int iStageIdx,QString st="");
 private slots:
@@ -30,6 +34,7 @@ private slots:
     void resizeEvent(QResizeEvent *);
     void on_btnCancel_released();
     void on_btnCheck_released();
+    void on_btnLinkTest_clicked();
 };
 
 #endif // STAGESETTING_H

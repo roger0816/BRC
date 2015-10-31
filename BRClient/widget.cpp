@@ -20,9 +20,16 @@ Widget::Widget(QWidget *parent) :
 
     m_keybord=new Vkeybord(this);
     m_keybord->setGeometry(0,0,GLOBAL().m_SizeWindow.width(),GLOBAL().m_SizeWindow.height());
-    //m_keybord->hide();
+    connect(&GLOBAL(),SIGNAL(signalOpenKeybord(QLabel*)),m_keybord,SLOT(slotOpenKeyBord(QLabel*)));
+    m_keybord->hide();
 
     ui->stackedWidget->setCurrentIndex(StageIdx::_barcode);
+
+    QString m_sPath=":/language/translations/tw.qm";
+
+   // ui->stackedWidget->setCurrentIndex(StageIdx::_test);
+
+
 }
 
 Widget::~Widget()

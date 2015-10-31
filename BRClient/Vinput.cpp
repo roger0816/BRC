@@ -6,6 +6,7 @@ Vinput::Vinput(QWidget *parent) :
     ui(new Ui::Vinput)
 {
     ui->setupUi(this);
+    setObjectName("Vinput");
 
 }
 
@@ -26,10 +27,15 @@ QString Vinput::text()
 
 void Vinput::mouseReleaseEvent(QMouseEvent *)
 {
-
+    GLOBAL().signalOpenKeybord(ui->label);
 }
 
 void Vinput::setText(const QString &text)
 {
     ui->label->setText(text);
+}
+
+QLabel* Vinput::label()
+{
+    return ui->label;
 }

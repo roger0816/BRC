@@ -63,7 +63,6 @@ public:
     QWidget *wNumber_3;
     QGridLayout *gridLayout_5;
     ItemKey *s;
-    ItemKey *a;
     QSpacerItem *horizontalSpacer_3;
     ItemKey *f;
     ItemKey *g;
@@ -73,21 +72,22 @@ public:
     ItemKey *d;
     ItemKey *l;
     QSpacerItem *horizontalSpacer_4;
+    ItemKey *a;
     QWidget *wNumber_4;
     QGridLayout *gridLayout_6;
-    ItemKey *n;
-    ItemKey *v;
-    ItemKey *c;
-    ItemKey *back;
-    ItemKey *b;
-    ItemKey *z;
-    QSpacerItem *horizontalSpacer_6;
-    QSpacerItem *horizontalSpacer_5;
-    ItemKey *m;
     QWidget *widget_3;
     QGridLayout *gridLayout_10;
     QPushButton *btnShift;
     ItemKey *x;
+    ItemKey *v;
+    ItemKey *n;
+    QSpacerItem *horizontalSpacer_5;
+    ItemKey *m;
+    ItemKey *c;
+    ItemKey *b;
+    ItemKey *z;
+    QSpacerItem *horizontalSpacer_6;
+    ItemKey *back;
     QWidget *wNumber_5;
     QGridLayout *gridLayout_7;
     QWidget *widget_4;
@@ -99,6 +99,7 @@ public:
     QWidget *widget_5;
     QGridLayout *gridLayout_12;
     QPushButton *btnEnter;
+    ItemKey *end;
 
     void setupUi(QWidget *Vkeybord)
     {
@@ -317,13 +318,6 @@ public:
 
         gridLayout_5->addWidget(s, 0, 2, 1, 1);
 
-        a = new ItemKey(wNumber_3);
-        a->setObjectName(QStringLiteral("a"));
-        a->setMinimumSize(QSize(70, 0));
-        a->setMaximumSize(QSize(70, 16777215));
-
-        gridLayout_5->addWidget(a, 0, 1, 1, 1);
-
         horizontalSpacer_3 = new QSpacerItem(100, 20, QSizePolicy::Preferred, QSizePolicy::Minimum);
 
         gridLayout_5->addItem(horizontalSpacer_3, 0, 0, 1, 1);
@@ -381,6 +375,13 @@ public:
 
         gridLayout_5->addItem(horizontalSpacer_4, 0, 10, 1, 1);
 
+        a = new ItemKey(wNumber_3);
+        a->setObjectName(QStringLiteral("a"));
+        a->setMinimumSize(QSize(70, 0));
+        a->setMaximumSize(QSize(70, 16777215));
+
+        gridLayout_5->addWidget(a, 0, 1, 1, 1);
+
 
         gridLayout_8->addWidget(wNumber_3, 2, 0, 1, 1);
 
@@ -392,63 +393,6 @@ public:
         gridLayout_6->setSpacing(5);
         gridLayout_6->setObjectName(QStringLiteral("gridLayout_6"));
         gridLayout_6->setContentsMargins(10, 5, 10, 5);
-        n = new ItemKey(wNumber_4);
-        n->setObjectName(QStringLiteral("n"));
-        n->setMinimumSize(QSize(70, 0));
-        n->setMaximumSize(QSize(70, 16777215));
-
-        gridLayout_6->addWidget(n, 0, 8, 1, 1);
-
-        v = new ItemKey(wNumber_4);
-        v->setObjectName(QStringLiteral("v"));
-        v->setMinimumSize(QSize(70, 0));
-        v->setMaximumSize(QSize(70, 16777215));
-
-        gridLayout_6->addWidget(v, 0, 6, 1, 1);
-
-        c = new ItemKey(wNumber_4);
-        c->setObjectName(QStringLiteral("c"));
-        c->setMinimumSize(QSize(70, 0));
-        c->setMaximumSize(QSize(70, 16777215));
-
-        gridLayout_6->addWidget(c, 0, 5, 1, 1);
-
-        back = new ItemKey(wNumber_4);
-        back->setObjectName(QStringLiteral("back"));
-        back->setMinimumSize(QSize(100, 0));
-        back->setMaximumSize(QSize(100, 16777215));
-
-        gridLayout_6->addWidget(back, 0, 12, 1, 1);
-
-        b = new ItemKey(wNumber_4);
-        b->setObjectName(QStringLiteral("b"));
-        b->setMinimumSize(QSize(70, 0));
-        b->setMaximumSize(QSize(70, 16777215));
-
-        gridLayout_6->addWidget(b, 0, 7, 1, 1);
-
-        z = new ItemKey(wNumber_4);
-        z->setObjectName(QStringLiteral("z"));
-        z->setMinimumSize(QSize(70, 0));
-        z->setMaximumSize(QSize(70, 16777215));
-
-        gridLayout_6->addWidget(z, 0, 3, 1, 1);
-
-        horizontalSpacer_6 = new QSpacerItem(100, 20, QSizePolicy::Preferred, QSizePolicy::Minimum);
-
-        gridLayout_6->addItem(horizontalSpacer_6, 0, 11, 1, 1);
-
-        horizontalSpacer_5 = new QSpacerItem(100, 20, QSizePolicy::Preferred, QSizePolicy::Minimum);
-
-        gridLayout_6->addItem(horizontalSpacer_5, 0, 1, 1, 1);
-
-        m = new ItemKey(wNumber_4);
-        m->setObjectName(QStringLiteral("m"));
-        m->setMinimumSize(QSize(70, 0));
-        m->setMaximumSize(QSize(70, 16777215));
-
-        gridLayout_6->addWidget(m, 0, 10, 1, 1);
-
         widget_3 = new QWidget(wNumber_4);
         widget_3->setObjectName(QStringLiteral("widget_3"));
         widget_3->setMinimumSize(QSize(90, 0));
@@ -475,6 +419,63 @@ public:
 
         gridLayout_6->addWidget(x, 0, 4, 1, 1);
 
+        v = new ItemKey(wNumber_4);
+        v->setObjectName(QStringLiteral("v"));
+        v->setMinimumSize(QSize(70, 0));
+        v->setMaximumSize(QSize(70, 16777215));
+
+        gridLayout_6->addWidget(v, 0, 6, 1, 1);
+
+        n = new ItemKey(wNumber_4);
+        n->setObjectName(QStringLiteral("n"));
+        n->setMinimumSize(QSize(70, 0));
+        n->setMaximumSize(QSize(70, 16777215));
+
+        gridLayout_6->addWidget(n, 0, 8, 1, 1);
+
+        horizontalSpacer_5 = new QSpacerItem(100, 20, QSizePolicy::Preferred, QSizePolicy::Minimum);
+
+        gridLayout_6->addItem(horizontalSpacer_5, 0, 1, 1, 1);
+
+        m = new ItemKey(wNumber_4);
+        m->setObjectName(QStringLiteral("m"));
+        m->setMinimumSize(QSize(70, 0));
+        m->setMaximumSize(QSize(70, 16777215));
+
+        gridLayout_6->addWidget(m, 0, 10, 1, 1);
+
+        c = new ItemKey(wNumber_4);
+        c->setObjectName(QStringLiteral("c"));
+        c->setMinimumSize(QSize(70, 0));
+        c->setMaximumSize(QSize(70, 16777215));
+
+        gridLayout_6->addWidget(c, 0, 5, 1, 1);
+
+        b = new ItemKey(wNumber_4);
+        b->setObjectName(QStringLiteral("b"));
+        b->setMinimumSize(QSize(70, 0));
+        b->setMaximumSize(QSize(70, 16777215));
+
+        gridLayout_6->addWidget(b, 0, 7, 1, 1);
+
+        z = new ItemKey(wNumber_4);
+        z->setObjectName(QStringLiteral("z"));
+        z->setMinimumSize(QSize(70, 0));
+        z->setMaximumSize(QSize(70, 16777215));
+
+        gridLayout_6->addWidget(z, 0, 3, 1, 1);
+
+        horizontalSpacer_6 = new QSpacerItem(100, 20, QSizePolicy::Preferred, QSizePolicy::Minimum);
+
+        gridLayout_6->addItem(horizontalSpacer_6, 0, 11, 1, 1);
+
+        back = new ItemKey(wNumber_4);
+        back->setObjectName(QStringLiteral("back"));
+        back->setMinimumSize(QSize(100, 0));
+        back->setMaximumSize(QSize(100, 16777215));
+
+        gridLayout_6->addWidget(back, 0, 12, 1, 1);
+
 
         gridLayout_8->addWidget(wNumber_4, 3, 0, 1, 1);
 
@@ -491,7 +492,7 @@ public:
         widget_4->setMinimumSize(QSize(120, 0));
         gridLayout_11 = new QGridLayout(widget_4);
         gridLayout_11->setObjectName(QStringLiteral("gridLayout_11"));
-        gridLayout_11->setContentsMargins(5, 5, 5, 5);
+        gridLayout_11->setContentsMargins(20, 5, 20, 5);
         btnClose = new QPushButton(widget_4);
         btnClose->setObjectName(QStringLiteral("btnClose"));
         sizePolicy1.setHeightForWidth(btnClose->sizePolicy().hasHeightForWidth());
@@ -506,14 +507,14 @@ public:
 
         space = new ItemKey(wNumber_5);
         space->setObjectName(QStringLiteral("space"));
-        space->setMinimumSize(QSize(350, 0));
+        space->setMinimumSize(QSize(50, 0));
         space->setMaximumSize(QSize(350, 16777215));
 
         gridLayout_7->addWidget(space, 0, 2, 1, 1);
 
         horizontalSpacer_8 = new QSpacerItem(40, 20, QSizePolicy::Fixed, QSizePolicy::Minimum);
 
-        gridLayout_7->addItem(horizontalSpacer_8, 0, 4, 1, 1);
+        gridLayout_7->addItem(horizontalSpacer_8, 0, 5, 1, 1);
 
         horizontalSpacer_7 = new QSpacerItem(40, 20, QSizePolicy::Fixed, QSizePolicy::Minimum);
 
@@ -524,7 +525,7 @@ public:
         widget_5->setMinimumSize(QSize(150, 0));
         gridLayout_12 = new QGridLayout(widget_5);
         gridLayout_12->setObjectName(QStringLiteral("gridLayout_12"));
-        gridLayout_12->setContentsMargins(5, 5, 5, 5);
+        gridLayout_12->setContentsMargins(20, 5, 20, 5);
         btnEnter = new QPushButton(widget_5);
         btnEnter->setObjectName(QStringLiteral("btnEnter"));
         sizePolicy1.setHeightForWidth(btnEnter->sizePolicy().hasHeightForWidth());
@@ -535,7 +536,14 @@ public:
         gridLayout_12->addWidget(btnEnter, 0, 0, 1, 1);
 
 
-        gridLayout_7->addWidget(widget_5, 0, 3, 1, 1);
+        gridLayout_7->addWidget(widget_5, 0, 4, 1, 1);
+
+        end = new ItemKey(wNumber_5);
+        end->setObjectName(QStringLiteral("end"));
+        end->setMinimumSize(QSize(70, 70));
+        end->setMaximumSize(QSize(70, 70));
+
+        gridLayout_7->addWidget(end, 0, 3, 1, 1);
 
 
         gridLayout_8->addWidget(wNumber_5, 4, 0, 1, 1);

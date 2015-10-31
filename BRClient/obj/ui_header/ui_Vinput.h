@@ -24,7 +24,7 @@ class Ui_Vinput
 {
 public:
     QGridLayout *gridLayout;
-    QWidget *widget;
+    QWidget *wBg;
     QGridLayout *gridLayout_2;
     QLabel *label;
 
@@ -37,20 +37,31 @@ public:
         gridLayout->setSpacing(0);
         gridLayout->setObjectName(QStringLiteral("gridLayout"));
         gridLayout->setContentsMargins(0, 0, 0, 0);
-        widget = new QWidget(Vinput);
-        widget->setObjectName(QStringLiteral("widget"));
-        gridLayout_2 = new QGridLayout(widget);
+        wBg = new QWidget(Vinput);
+        wBg->setObjectName(QStringLiteral("wBg"));
+        QSizePolicy sizePolicy(QSizePolicy::Minimum, QSizePolicy::Minimum);
+        sizePolicy.setHorizontalStretch(0);
+        sizePolicy.setVerticalStretch(0);
+        sizePolicy.setHeightForWidth(wBg->sizePolicy().hasHeightForWidth());
+        wBg->setSizePolicy(sizePolicy);
+        gridLayout_2 = new QGridLayout(wBg);
+        gridLayout_2->setSpacing(0);
         gridLayout_2->setObjectName(QStringLiteral("gridLayout_2"));
-        label = new QLabel(widget);
+        gridLayout_2->setContentsMargins(0, 0, 0, 0);
+        label = new QLabel(wBg);
         label->setObjectName(QStringLiteral("label"));
+        sizePolicy.setHeightForWidth(label->sizePolicy().hasHeightForWidth());
+        label->setSizePolicy(sizePolicy);
         QFont font;
         font.setPointSize(14);
         label->setFont(font);
+        label->setStyleSheet(QLatin1String("color: rgb(0, 0, 0);\n"
+""));
 
         gridLayout_2->addWidget(label, 0, 0, 1, 1);
 
 
-        gridLayout->addWidget(widget, 0, 0, 1, 1);
+        gridLayout->addWidget(wBg, 0, 0, 1, 1);
 
 
         retranslateUi(Vinput);

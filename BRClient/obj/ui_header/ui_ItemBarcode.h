@@ -18,6 +18,7 @@
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QWidget>
+#include "Vinput.h"
 
 QT_BEGIN_NAMESPACE
 
@@ -31,13 +32,13 @@ public:
     QGridLayout *gridLayout_6;
     QPushButton *btn0;
     QWidget *w0_1;
-    QGridLayout *gridLayout_7;
+    QGridLayout *gridLayout_3;
     QLabel *lbTitle0;
-    QLabel *lb0;
+    Vinput *lb0;
     QWidget *w0_2;
     QGridLayout *gridLayout_8;
     QLabel *lbTitle1;
-    QLabel *lb1;
+    Vinput *lb1;
     QWidget *w0_3;
     QGridLayout *gridLayout_2;
     QLabel *lbTitle2;
@@ -79,7 +80,7 @@ public:
         sizePolicy.setVerticalStretch(0);
         sizePolicy.setHeightForWidth(btn0->sizePolicy().hasHeightForWidth());
         btn0->setSizePolicy(sizePolicy);
-        btn0->setMinimumSize(QSize(160, 0));
+        btn0->setMinimumSize(QSize(0, 0));
         btn0->setMaximumSize(QSize(300, 16777215));
         btn0->setStyleSheet(QStringLiteral(""));
         btn0->setCheckable(true);
@@ -94,8 +95,9 @@ public:
         w0_1->setStyleSheet(QLatin1String("QWidget#w0_1{    border: 1px solid gray;\n"
 "    padding: 1px 18px 1px 3px;\n"
 "    min-width: 6em;}"));
-        gridLayout_7 = new QGridLayout(w0_1);
-        gridLayout_7->setObjectName(QStringLiteral("gridLayout_7"));
+        gridLayout_3 = new QGridLayout(w0_1);
+        gridLayout_3->setObjectName(QStringLiteral("gridLayout_3"));
+        gridLayout_3->setContentsMargins(5, 5, 5, 5);
         lbTitle0 = new QLabel(w0_1);
         lbTitle0->setObjectName(QStringLiteral("lbTitle0"));
         lbTitle0->setMinimumSize(QSize(100, 0));
@@ -104,12 +106,13 @@ public:
         font.setPointSize(14);
         lbTitle0->setFont(font);
 
-        gridLayout_7->addWidget(lbTitle0, 0, 0, 1, 1);
+        gridLayout_3->addWidget(lbTitle0, 0, 0, 1, 1);
 
-        lb0 = new QLabel(w0_1);
+        lb0 = new Vinput(w0_1);
         lb0->setObjectName(QStringLiteral("lb0"));
+        lb0->setMinimumSize(QSize(30, 0));
 
-        gridLayout_7->addWidget(lb0, 0, 1, 1, 1);
+        gridLayout_3->addWidget(lb0, 0, 1, 1, 1);
 
 
         gridLayout_4->addWidget(w0_1, 0, 1, 1, 1);
@@ -121,6 +124,7 @@ public:
 "    min-width: 6em;}"));
         gridLayout_8 = new QGridLayout(w0_2);
         gridLayout_8->setObjectName(QStringLiteral("gridLayout_8"));
+        gridLayout_8->setContentsMargins(5, 5, 5, 5);
         lbTitle1 = new QLabel(w0_2);
         lbTitle1->setObjectName(QStringLiteral("lbTitle1"));
         lbTitle1->setMinimumSize(QSize(100, 0));
@@ -129,8 +133,10 @@ public:
 
         gridLayout_8->addWidget(lbTitle1, 0, 0, 1, 1);
 
-        lb1 = new QLabel(w0_2);
+        lb1 = new Vinput(w0_2);
         lb1->setObjectName(QStringLiteral("lb1"));
+        sizePolicy.setHeightForWidth(lb1->sizePolicy().hasHeightForWidth());
+        lb1->setSizePolicy(sizePolicy);
 
         gridLayout_8->addWidget(lb1, 0, 1, 1, 1);
 
@@ -157,6 +163,8 @@ public:
 
         gridLayout_4->addWidget(w0_3, 0, 2, 2, 1);
 
+        gridLayout_4->setRowStretch(0, 2);
+        gridLayout_4->setRowStretch(1, 3);
 
         gridLayout->addWidget(w0, 0, 0, 1, 1);
 
@@ -169,11 +177,9 @@ public:
     void retranslateUi(QWidget *ItemBarcode)
     {
         ItemBarcode->setWindowTitle(QApplication::translate("ItemBarcode", "Form", 0));
-        btn0->setText(QApplication::translate("ItemBarcode", "Barcode", 0));
+        btn0->setText(QApplication::translate("ItemBarcode", "\346\242\235\347\242\274\346\251\237", 0));
         lbTitle0->setText(QApplication::translate("ItemBarcode", "\345\223\241\345\267\245\347\267\250\350\231\237:", 0));
-        lb0->setText(QString());
         lbTitle1->setText(QApplication::translate("ItemBarcode", "\347\245\250\350\231\237:", 0));
-        lb1->setText(QString());
         lbTitle2->setText(QString());
     } // retranslateUi
 

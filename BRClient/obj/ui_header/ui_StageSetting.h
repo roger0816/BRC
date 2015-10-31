@@ -38,7 +38,6 @@ public:
     QStackedWidget *stackedWidget;
     QWidget *page;
     QGridLayout *gridLayout_6;
-    QSpacerItem *verticalSpacer;
     QWidget *wNetwork;
     QGridLayout *gridLayout_4;
     QLabel *label;
@@ -66,6 +65,11 @@ public:
     QLabel *label_2;
     QLabel *txtMachineId;
     QSpacerItem *horizontalSpacer_2;
+    QSpacerItem *verticalSpacer;
+    QWidget *widget_2;
+    QGridLayout *gridLayout_9;
+    QPushButton *btnLinkTest;
+    QLabel *label_4;
     QWidget *page_2;
 
     void setupUi(QWidget *StageSetting)
@@ -123,10 +127,6 @@ public:
         gridLayout_6 = new QGridLayout(page);
         gridLayout_6->setObjectName(QStringLiteral("gridLayout_6"));
         gridLayout_6->setContentsMargins(10, 10, 10, 10);
-        verticalSpacer = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Minimum);
-
-        gridLayout_6->addItem(verticalSpacer, 3, 0, 1, 1);
-
         wNetwork = new QWidget(page);
         wNetwork->setObjectName(QStringLiteral("wNetwork"));
         wNetwork->setMinimumSize(QSize(121, 80));
@@ -295,7 +295,7 @@ public:
         gridLayout_3->addItem(horizontalSpacer, 0, 0, 1, 1);
 
 
-        gridLayout_6->addWidget(widget, 4, 0, 1, 1);
+        gridLayout_6->addWidget(widget, 5, 0, 1, 1);
 
         wMachine = new QWidget(page);
         wMachine->setObjectName(QStringLiteral("wMachine"));
@@ -332,6 +332,33 @@ public:
 
         gridLayout_6->addWidget(wMachine, 0, 0, 1, 1);
 
+        verticalSpacer = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Minimum);
+
+        gridLayout_6->addItem(verticalSpacer, 3, 0, 1, 1);
+
+        widget_2 = new QWidget(page);
+        widget_2->setObjectName(QStringLiteral("widget_2"));
+        widget_2->setMinimumSize(QSize(0, 50));
+        gridLayout_9 = new QGridLayout(widget_2);
+        gridLayout_9->setObjectName(QStringLiteral("gridLayout_9"));
+        btnLinkTest = new QPushButton(widget_2);
+        btnLinkTest->setObjectName(QStringLiteral("btnLinkTest"));
+        QSizePolicy sizePolicy1(QSizePolicy::Fixed, QSizePolicy::Minimum);
+        sizePolicy1.setHorizontalStretch(0);
+        sizePolicy1.setVerticalStretch(0);
+        sizePolicy1.setHeightForWidth(btnLinkTest->sizePolicy().hasHeightForWidth());
+        btnLinkTest->setSizePolicy(sizePolicy1);
+
+        gridLayout_9->addWidget(btnLinkTest, 0, 0, 1, 1);
+
+        label_4 = new QLabel(widget_2);
+        label_4->setObjectName(QStringLiteral("label_4"));
+
+        gridLayout_9->addWidget(label_4, 0, 1, 1, 1);
+
+
+        gridLayout_6->addWidget(widget_2, 4, 0, 1, 1);
+
         stackedWidget->addWidget(page);
         page_2 = new QWidget();
         page_2->setObjectName(QStringLiteral("page_2"));
@@ -362,10 +389,12 @@ public:
         btnEn->setText(QApplication::translate("StageSetting", "English", 0));
         btnTw->setText(QApplication::translate("StageSetting", "\347\271\201\351\253\224\344\270\255\346\226\207", 0));
         btnCn->setText(QApplication::translate("StageSetting", "\347\256\200\344\275\223\344\270\255\346\226\207", 0));
-        btnCancel->setText(QApplication::translate("StageSetting", "cancel", 0));
-        btnCheck->setText(QApplication::translate("StageSetting", "ok", 0));
+        btnCancel->setText(QApplication::translate("StageSetting", "\345\217\226\346\266\210", 0));
+        btnCheck->setText(QApplication::translate("StageSetting", "\347\242\272\345\256\232", 0));
         label_2->setText(QApplication::translate("StageSetting", "\346\251\237\345\231\250\344\273\243\350\231\237:", 0));
         txtMachineId->setText(QString());
+        btnLinkTest->setText(QApplication::translate("StageSetting", "link test", 0));
+        label_4->setText(QString());
     } // retranslateUi
 
 };

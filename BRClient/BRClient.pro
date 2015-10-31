@@ -4,7 +4,7 @@
 #
 #-------------------------------------------------
 
-QT       += core gui network
+QT       += core gui network multimedia
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -16,6 +16,12 @@ RCC_DIR =$$PWD/../bin
 OBJECTS_DIR = $$PWD/obj
 MOC_DIR =$$PWD/obj
 UI_DIR = $$PWD/obj/ui_header
+
+
+TRANSLATIONS += $$PWD/translations/tw.ts \
+                $$PWD/translations/en.ts \
+                $$PWD/translations/cn.ts \
+
 
 SOURCES += main.cpp\
         widget.cpp \
@@ -49,6 +55,9 @@ FORMS    += widget.ui \
     Vinput.ui \
     Vkeybord.ui \
     ItemKey.ui
+
+RESOURCES += \
+    res.qrc
 
 
 

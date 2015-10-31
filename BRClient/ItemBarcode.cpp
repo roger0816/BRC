@@ -26,3 +26,11 @@ void ItemBarcode::setLbTitle(QString sBtnTitle, QString sLb0, QString sLb1)
     if(sLb1!="-1")
         ui->lb1->setText(sLb1);
 }
+
+ void ItemBarcode::showEvent(QShowEvent *)
+ {
+     QTranslator qtTranslator;
+     qtTranslator.load(GLOBAL().m_sNowTransPath);
+     QApplication::installTranslator(&qtTranslator);
+     ui->retranslateUi(this);
+ }

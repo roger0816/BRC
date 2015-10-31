@@ -24,6 +24,8 @@ private:
     void setUi();
     void keyPressEvent(QKeyEvent *e);
 
+    void showEvent(QShowEvent *);
+
     void loadBarcode(QString st);
 signals:
     void clicked(int,QString);

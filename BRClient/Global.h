@@ -3,8 +3,11 @@
 
 #include <QObject>
 #include <QDebug>
+#include <QLabel>
 #include <QSettings>
 #include <QApplication>
+#include <CTcpClient.h>
+
 #define GLOBAL Global::Instance
 
 #define CONFIG_PATH QApplication::applicationDirPath()+"/config.ini"
@@ -14,9 +17,9 @@
 #define CONFIG_PORT "port"
 #define CONFIG_LANGUAGE "language"
 
-#define LANGUAGE_EN "EN"
-#define LANGUAGE_CN "CN"
-#define LANGUAGE_TW "TW"
+#define LANGUAGE_EN "en"
+#define LANGUAGE_CN "cn"
+#define LANGUAGE_TW "tw"
 
 namespace StageIdx
 {
@@ -55,14 +58,20 @@ public:
 
     Ini m_config;
 
+    int tcpSend(QString sId, QString sNum);
+
     QSize m_SizeWindow;
+
+    void callKeybord(QLabel *lb);
+
+    QString m_sNowTransPath ;
 private:
     Global();
-
+    CTcpClient m_tcp;
     static Global* m_pInstance;
 
 signals:
-
+    void signalOpenKeybord(QLabel *lb);
 public slots:
 
 };

@@ -1,13 +1,16 @@
 ﻿#include "StageBarcode.h"
 #include "ui_StageBarcode.h"
 
+
 StageBarcode::StageBarcode(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::StageBarcode)
 {
     ui->setupUi(this);
+    setObjectName("StageBarcode");
     m_sBarcodeString="";
     setUi();
+
 }
 
 StageBarcode::~StageBarcode()
@@ -23,6 +26,8 @@ void StageBarcode::setUi()
     connect(ui->vBarcode1->m_btn,SIGNAL(released()),this,SLOT(slotClicked()));
     connect(ui->vBarcode2->m_btn,SIGNAL(released()),this,SLOT(slotClicked()));
     connect(ui->vBarcode3->m_btn,SIGNAL(released()),this,SLOT(slotClicked()));
+
+
 
 }
 
@@ -69,6 +74,7 @@ void StageBarcode::loadBarcode(QString st)
     {
         qDebug()<<"barcode is product";
         ui->vBarcode0->m_lb1->setText(st);
+        GLOBAL().tcpSend(ui->vBarcode0->m_lb0->text(),ui->vBarcode0->m_lb1->text());
     }
     else
     {
@@ -84,5 +90,14 @@ void StageBarcode::slotClicked()
     if(btn==ui->btnSub0)
         emit clicked(-1,btn->objectName());
     emit clicked(ui->stackedWidget->currentIndex(),btn->objectName());
+}
+
+void StageBarcode::showEvent(QShowEvent *)
+{
+    QTranslator qtTranslator;
+    qtTranslator.load(GLOBAL().m_sNowTransPath);
+    QApplication::installTranslator(&qtTranslator);
+    ui->retranslateUi(this);
+
 }
 

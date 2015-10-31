@@ -1,0 +1,13 @@
+<RCC>
+    <qresource prefix="/language">
+        <file>translations/en.qm</file>
+        <file>translations/tw.qm</file>
+        <file>translations/cn.qm</file>
+    </qresource>
+    <qresource prefix="/sound">
+        <file>res/sound/NOTIFY.wav</file>
+        <file>res/sound/REMINDER.wav</file>
+        <file>res/sound/surprise.mp3</file>
+        <file>res/sound/unanalyzable.mp3</file>
+    </qresource>
+</RCC>
