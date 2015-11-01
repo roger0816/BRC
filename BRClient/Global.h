@@ -21,6 +21,7 @@
 #define LANGUAGE_CN "cn"
 #define LANGUAGE_TW "tw"
 
+#include <QElapsedTimer>
 namespace StageIdx
 {
 enum

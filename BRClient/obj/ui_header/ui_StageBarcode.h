@@ -66,8 +66,8 @@ public:
         gridLayout_2->setContentsMargins(0, 0, 0, 0);
         wTitle = new QWidget(wBg);
         wTitle->setObjectName(QStringLiteral("wTitle"));
-        wTitle->setMinimumSize(QSize(0, 80));
-        wTitle->setMaximumSize(QSize(16777215, 160));
+        wTitle->setMinimumSize(QSize(0, 40));
+        wTitle->setMaximumSize(QSize(16777215, 1000));
         wTitle->setStyleSheet(QStringLiteral("QWidget#wTitle{background-color: rgb(102, 102, 102);}"));
         gridLayout_5 = new QGridLayout(wTitle);
         gridLayout_5->setSpacing(0);
@@ -168,6 +168,8 @@ public:
 
         gridLayout_2->addWidget(wBody, 1, 0, 1, 1);
 
+        gridLayout_2->setRowStretch(0, 1);
+        gridLayout_2->setRowStretch(1, 5);
 
         gridLayout->addWidget(wBg, 0, 0, 1, 1);
 

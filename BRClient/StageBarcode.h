@@ -25,12 +25,15 @@ private:
     void keyPressEvent(QKeyEvent *e);
 
     void showEvent(QShowEvent *);
-
+    bool m_bIsLock;
     void loadBarcode(QString st);
 signals:
     void clicked(int,QString);
 private slots:
     void slotClicked();
+
+    void slotToTcp();
+
 };
 
 #endif // STAGEBARCODE_H

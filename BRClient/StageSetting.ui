@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>800</width>
-    <height>480</height>
+    <height>540</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -35,7 +35,7 @@
       <string notr="true">QWidget#wBg{background-color: rgb(255, 255, 255);}
 </string>
      </property>
-     <layout class="QGridLayout" name="gridLayout_2">
+     <layout class="QGridLayout" name="gridLayout_2" rowstretch="1,5">
       <property name="leftMargin">
        <number>0</number>
       </property>
@@ -56,13 +56,13 @@
         <property name="minimumSize">
          <size>
           <width>0</width>
-          <height>80</height>
+          <height>40</height>
          </size>
         </property>
         <property name="maximumSize">
          <size>
           <width>16777215</width>
-          <height>160</height>
+          <height>1000</height>
          </size>
         </property>
         <property name="styleSheet">
@@ -129,7 +129,7 @@
          <item row="0" column="0">
           <widget class="QStackedWidget" name="stackedWidget">
            <widget class="QWidget" name="page">
-            <layout class="QGridLayout" name="gridLayout_6">
+            <layout class="QGridLayout" name="gridLayout_6" rowstretch="1,1,1,1,1">
              <property name="leftMargin">
               <number>10</number>
              </property>
@@ -142,12 +142,106 @@
              <property name="bottomMargin">
               <number>10</number>
              </property>
+             <item row="4" column="0">
+              <widget class="QWidget" name="widget" native="true">
+               <property name="minimumSize">
+                <size>
+                 <width>40</width>
+                 <height>40</height>
+                </size>
+               </property>
+               <layout class="QGridLayout" name="gridLayout_3" columnstretch="1,5,1,1">
+                <property name="rightMargin">
+                 <number>40</number>
+                </property>
+                <property name="horizontalSpacing">
+                 <number>40</number>
+                </property>
+                <item row="0" column="2">
+                 <widget class="QPushButton" name="btnCancel">
+                  <property name="sizePolicy">
+                   <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+                    <horstretch>0</horstretch>
+                    <verstretch>0</verstretch>
+                   </sizepolicy>
+                  </property>
+                  <property name="minimumSize">
+                   <size>
+                    <width>0</width>
+                    <height>0</height>
+                   </size>
+                  </property>
+                  <property name="maximumSize">
+                   <size>
+                    <width>1000</width>
+                    <height>16777215</height>
+                   </size>
+                  </property>
+                  <property name="text">
+                   <string>取消</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="0" column="1">
+                 <spacer name="horizontalSpacer">
+                  <property name="orientation">
+                   <enum>Qt::Horizontal</enum>
+                  </property>
+                  <property name="sizeHint" stdset="0">
+                   <size>
+                    <width>40</width>
+                    <height>20</height>
+                   </size>
+                  </property>
+                 </spacer>
+                </item>
+                <item row="0" column="3">
+                 <widget class="QPushButton" name="btnCheck">
+                  <property name="sizePolicy">
+                   <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+                    <horstretch>0</horstretch>
+                    <verstretch>0</verstretch>
+                   </sizepolicy>
+                  </property>
+                  <property name="minimumSize">
+                   <size>
+                    <width>0</width>
+                    <height>0</height>
+                   </size>
+                  </property>
+                  <property name="maximumSize">
+                   <size>
+                    <width>1000</width>
+                    <height>16777215</height>
+                   </size>
+                  </property>
+                  <property name="text">
+                   <string>確定</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="0" column="0">
+                 <widget class="QPushButton" name="btnLinkTest">
+                  <property name="sizePolicy">
+                   <sizepolicy hsizetype="Fixed" vsizetype="Minimum">
+                    <horstretch>0</horstretch>
+                    <verstretch>0</verstretch>
+                   </sizepolicy>
+                  </property>
+                  <property name="text">
+                   <string>link test</string>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </widget>
+             </item>
              <item row="1" column="0">
               <widget class="QWidget" name="wNetwork" native="true">
                <property name="minimumSize">
                 <size>
-                 <width>121</width>
-                 <height>80</height>
+                 <width>40</width>
+                 <height>40</height>
                 </size>
                </property>
                <property name="styleSheet">
@@ -160,7 +254,7 @@ QWidget#w0_1{    border: 1px solid gray;
     padding: 1px 18px 1px 3px;
     min-width: 6em;}</string>
                </property>
-               <layout class="QGridLayout" name="gridLayout_4">
+               <layout class="QGridLayout" name="gridLayout_4" columnstretch="1,4">
                 <property name="leftMargin">
                  <number>0</number>
                 </property>
@@ -180,7 +274,7 @@ QWidget#w0_1{    border: 1px solid gray;
                  <widget class="QLabel" name="label">
                   <property name="maximumSize">
                    <size>
-                    <width>80</width>
+                    <width>1000</width>
                     <height>16777215</height>
                    </size>
                   </property>
@@ -201,8 +295,8 @@ QWidget#w0_1{    border: 1px solid gray;
                  <widget class="QWidget" name="w0_1" native="true">
                   <property name="minimumSize">
                    <size>
-                    <width>119</width>
-                    <height>80</height>
+                    <width>40</width>
+                    <height>40</height>
                    </size>
                   </property>
                   <property name="font">
@@ -218,19 +312,25 @@ QWidget#w0_1{    border: 1px solid gray;
                     <number>20</number>
                    </property>
                    <property name="topMargin">
-                    <number>20</number>
+                    <number>5</number>
                    </property>
                    <property name="rightMargin">
                     <number>20</number>
                    </property>
                    <property name="bottomMargin">
-                    <number>20</number>
+                    <number>5</number>
                    </property>
                    <property name="horizontalSpacing">
                     <number>20</number>
                    </property>
                    <item row="0" column="3">
                     <widget class="Vinput" name="txtPort" native="true">
+                     <property name="sizePolicy">
+                      <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+                       <horstretch>0</horstretch>
+                       <verstretch>0</verstretch>
+                      </sizepolicy>
+                     </property>
                      <property name="styleSheet">
                       <string notr="true">background-color: rgb(255, 255, 255);
 color: rgb(0, 0, 0);</string>
@@ -239,6 +339,12 @@ color: rgb(0, 0, 0);</string>
                    </item>
                    <item row="0" column="1">
                     <widget class="Vinput" name="txtIp" native="true">
+                     <property name="sizePolicy">
+                      <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+                       <horstretch>0</horstretch>
+                       <verstretch>0</verstretch>
+                      </sizepolicy>
+                     </property>
                      <property name="styleSheet">
                       <string notr="true">background-color: rgb(255, 255, 255);
 color: rgb(0, 0, 0);</string>
@@ -294,12 +400,97 @@ color: rgb(0, 0, 0);</string>
                </layout>
               </widget>
              </item>
+             <item row="0" column="0">
+              <widget class="QWidget" name="wMachine" native="true">
+               <property name="minimumSize">
+                <size>
+                 <width>40</width>
+                 <height>40</height>
+                </size>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">QWidget#wMachine{ border: 2px solid gray;
+    border-radius: 3px;
+    padding: 1px 18px 1px 3px;
+    min-width: 6em;}
+
+QWidget#w2{    border: 1px solid gray;
+    padding: 1px 18px 1px 3px;
+    min-width: 6em;}</string>
+               </property>
+               <layout class="QGridLayout" name="gridLayout_7" columnstretch="5,1,1">
+                <property name="topMargin">
+                 <number>5</number>
+                </property>
+                <property name="bottomMargin">
+                 <number>5</number>
+                </property>
+                <item row="0" column="1">
+                 <widget class="QLabel" name="label_2">
+                  <property name="minimumSize">
+                   <size>
+                    <width>100</width>
+                    <height>0</height>
+                   </size>
+                  </property>
+                  <property name="maximumSize">
+                   <size>
+                    <width>300</width>
+                    <height>16777215</height>
+                   </size>
+                  </property>
+                  <property name="text">
+                   <string>機器代號:</string>
+                  </property>
+                  <property name="alignment">
+                   <set>Qt::AlignCenter</set>
+                  </property>
+                 </widget>
+                </item>
+                <item row="0" column="2">
+                 <widget class="QLabel" name="txtMachineId">
+                  <property name="minimumSize">
+                   <size>
+                    <width>100</width>
+                    <height>0</height>
+                   </size>
+                  </property>
+                  <property name="maximumSize">
+                   <size>
+                    <width>300</width>
+                    <height>16777215</height>
+                   </size>
+                  </property>
+                  <property name="text">
+                   <string/>
+                  </property>
+                 </widget>
+                </item>
+                <item row="0" column="0">
+                 <spacer name="horizontalSpacer_2">
+                  <property name="orientation">
+                   <enum>Qt::Horizontal</enum>
+                  </property>
+                  <property name="sizeType">
+                   <enum>QSizePolicy::MinimumExpanding</enum>
+                  </property>
+                  <property name="sizeHint" stdset="0">
+                   <size>
+                    <width>40</width>
+                    <height>20</height>
+                   </size>
+                  </property>
+                 </spacer>
+                </item>
+               </layout>
+              </widget>
+             </item>
              <item row="2" column="0">
               <widget class="QWidget" name="wLanguage" native="true">
                <property name="minimumSize">
                 <size>
-                 <width>121</width>
-                 <height>80</height>
+                 <width>40</width>
+                 <height>40</height>
                 </size>
                </property>
                <property name="maximumSize">
@@ -324,7 +515,7 @@ QWidget#w2{    border: 1px solid gray;
     min-width: 6em;}
 </string>
                </property>
-               <layout class="QGridLayout" name="gridLayout_12">
+               <layout class="QGridLayout" name="gridLayout_12" columnstretch="1,4">
                 <property name="leftMargin">
                  <number>0</number>
                 </property>
@@ -344,13 +535,13 @@ QWidget#w2{    border: 1px solid gray;
                  <widget class="QLabel" name="lb0_2">
                   <property name="minimumSize">
                    <size>
-                    <width>40</width>
+                    <width>0</width>
                     <height>0</height>
                    </size>
                   </property>
                   <property name="maximumSize">
                    <size>
-                    <width>80</width>
+                    <width>1000</width>
                     <height>16777215</height>
                    </size>
                   </property>
@@ -369,7 +560,19 @@ QWidget#w2{    border: 1px solid gray;
                 </item>
                 <item row="0" column="1">
                  <widget class="QWidget" name="w2" native="true">
+                  <property name="minimumSize">
+                   <size>
+                    <width>0</width>
+                    <height>0</height>
+                   </size>
+                  </property>
                   <layout class="QGridLayout" name="gridLayout_8">
+                   <property name="topMargin">
+                    <number>5</number>
+                   </property>
+                   <property name="bottomMargin">
+                    <number>5</number>
+                   </property>
                    <item row="0" column="0">
                     <widget class="QPushButton" name="btnEn">
                      <property name="sizePolicy">
@@ -433,166 +636,6 @@ QWidget#w2{    border: 1px solid gray;
                </layout>
               </widget>
              </item>
-             <item row="5" column="0">
-              <widget class="QWidget" name="widget" native="true">
-               <property name="minimumSize">
-                <size>
-                 <width>0</width>
-                 <height>60</height>
-                </size>
-               </property>
-               <layout class="QGridLayout" name="gridLayout_3">
-                <property name="rightMargin">
-                 <number>40</number>
-                </property>
-                <property name="horizontalSpacing">
-                 <number>40</number>
-                </property>
-                <item row="0" column="1">
-                 <widget class="QPushButton" name="btnCancel">
-                  <property name="sizePolicy">
-                   <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
-                    <horstretch>0</horstretch>
-                    <verstretch>0</verstretch>
-                   </sizepolicy>
-                  </property>
-                  <property name="minimumSize">
-                   <size>
-                    <width>80</width>
-                    <height>0</height>
-                   </size>
-                  </property>
-                  <property name="maximumSize">
-                   <size>
-                    <width>80</width>
-                    <height>16777215</height>
-                   </size>
-                  </property>
-                  <property name="text">
-                   <string>取消</string>
-                  </property>
-                 </widget>
-                </item>
-                <item row="0" column="2">
-                 <widget class="QPushButton" name="btnCheck">
-                  <property name="sizePolicy">
-                   <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
-                    <horstretch>0</horstretch>
-                    <verstretch>0</verstretch>
-                   </sizepolicy>
-                  </property>
-                  <property name="minimumSize">
-                   <size>
-                    <width>80</width>
-                    <height>0</height>
-                   </size>
-                  </property>
-                  <property name="maximumSize">
-                   <size>
-                    <width>80</width>
-                    <height>16777215</height>
-                   </size>
-                  </property>
-                  <property name="text">
-                   <string>確定</string>
-                  </property>
-                 </widget>
-                </item>
-                <item row="0" column="0">
-                 <spacer name="horizontalSpacer">
-                  <property name="orientation">
-                   <enum>Qt::Horizontal</enum>
-                  </property>
-                  <property name="sizeHint" stdset="0">
-                   <size>
-                    <width>40</width>
-                    <height>20</height>
-                   </size>
-                  </property>
-                 </spacer>
-                </item>
-               </layout>
-              </widget>
-             </item>
-             <item row="0" column="0">
-              <widget class="QWidget" name="wMachine" native="true">
-               <property name="minimumSize">
-                <size>
-                 <width>121</width>
-                 <height>80</height>
-                </size>
-               </property>
-               <property name="styleSheet">
-                <string notr="true">QWidget#wMachine{ border: 2px solid gray;
-    border-radius: 3px;
-    padding: 1px 18px 1px 3px;
-    min-width: 6em;}
-
-QWidget#w2{    border: 1px solid gray;
-    padding: 1px 18px 1px 3px;
-    min-width: 6em;}</string>
-               </property>
-               <layout class="QGridLayout" name="gridLayout_7">
-                <item row="0" column="1">
-                 <widget class="QLabel" name="label_2">
-                  <property name="minimumSize">
-                   <size>
-                    <width>100</width>
-                    <height>0</height>
-                   </size>
-                  </property>
-                  <property name="maximumSize">
-                   <size>
-                    <width>300</width>
-                    <height>16777215</height>
-                   </size>
-                  </property>
-                  <property name="text">
-                   <string>機器代號:</string>
-                  </property>
-                  <property name="alignment">
-                   <set>Qt::AlignCenter</set>
-                  </property>
-                 </widget>
-                </item>
-                <item row="0" column="2">
-                 <widget class="QLabel" name="txtMachineId">
-                  <property name="minimumSize">
-                   <size>
-                    <width>100</width>
-                    <height>0</height>
-                   </size>
-                  </property>
-                  <property name="maximumSize">
-                   <size>
-                    <width>300</width>
-                    <height>16777215</height>
-                   </size>
-                  </property>
-                  <property name="text">
-                   <string/>
-                  </property>
-                 </widget>
-                </item>
-                <item row="0" column="0">
-                 <spacer name="horizontalSpacer_2">
-                  <property name="orientation">
-                   <enum>Qt::Horizontal</enum>
-                  </property>
-                  <property name="sizeType">
-                   <enum>QSizePolicy::MinimumExpanding</enum>
-                  </property>
-                  <property name="sizeHint" stdset="0">
-                   <size>
-                    <width>40</width>
-                    <height>20</height>
-                   </size>
-                  </property>
-                 </spacer>
-                </item>
-               </layout>
-              </widget>
-             </item>
              <item row="3" column="0">
               <spacer name="verticalSpacer">
                <property name="orientation">
@@ -608,38 +651,6 @@ QWidget#w2{    border: 1px solid gray;
                 </size>
                </property>
               </spacer>
-             </item>
-             <item row="4" column="0">
-              <widget class="QWidget" name="widget_2" native="true">
-               <property name="minimumSize">
-                <size>
-                 <width>0</width>
-                 <height>50</height>
-                </size>
-               </property>
-               <layout class="QGridLayout" name="gridLayout_9">
-                <item row="0" column="0">
-                 <widget class="QPushButton" name="btnLinkTest">
-                  <property name="sizePolicy">
-                   <sizepolicy hsizetype="Fixed" vsizetype="Minimum">
-                    <horstretch>0</horstretch>
-                    <verstretch>0</verstretch>
-                   </sizepolicy>
-                  </property>
-                  <property name="text">
-                   <string>link test</string>
-                  </property>
-                 </widget>
-                </item>
-                <item row="0" column="1">
-                 <widget class="QLabel" name="label_4">
-                  <property name="text">
-                   <string/>
-                  </property>
-                 </widget>
-                </item>
-               </layout>
-              </widget>
              </item>
             </layout>
            </widget>

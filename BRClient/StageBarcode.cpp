@@ -10,7 +10,7 @@ StageBarcode::StageBarcode(QWidget *parent) :
     setObjectName("StageBarcode");
     m_sBarcodeString="";
     setUi();
-
+    m_bIsLock=false;
 }
 
 StageBarcode::~StageBarcode()
@@ -37,6 +37,10 @@ void StageBarcode::keyPressEvent(QKeyEvent *e)
 
     //Test keybord
 
+    if(m_bIsLock)
+        return;
+
+    m_bIsLock=true;
 
     QChar c(e->key());
     QString st(c);
@@ -74,7 +78,7 @@ void StageBarcode::loadBarcode(QString st)
     {
         qDebug()<<"barcode is product";
         ui->vBarcode0->m_lb1->setText(st);
-        GLOBAL().tcpSend(ui->vBarcode0->m_lb0->text(),ui->vBarcode0->m_lb1->text());
+        slotToTcp();
     }
     else
     {
@@ -82,14 +86,22 @@ void StageBarcode::loadBarcode(QString st)
     }
 
     qDebug()<<" barcode finish ";
+    m_bIsLock=false;
 }
 
 void StageBarcode::slotClicked()
 {
     QPushButton *btn=dynamic_cast<QPushButton*>(sender());
     if(btn==ui->btnSub0)
-        emit clicked(-1,btn->objectName());
-    emit clicked(ui->stackedWidget->currentIndex(),btn->objectName());
+        emit clicked(StageIdx::_setting,btn->objectName());
+   // emit clicked(ui->stackedWidget->currentIndex(),btn->objectName());
+    else if(btn==ui->vBarcode0->m_btn)
+        slotToTcp();
+}
+
+void StageBarcode::slotToTcp()
+{
+    GLOBAL().tcpSend(ui->vBarcode0->m_lb0->text(),ui->vBarcode0->m_lb1->text());
 }
 
 void StageBarcode::showEvent(QShowEvent *)

@@ -52,7 +52,7 @@ void Widget::slotSetting(int iPageIdx,QString)
 
     else if(w==ui->vBarcode)
     {
-        if(iPageIdx==-1)
+        if(iPageIdx==StageIdx::_setting)
         {
             ui->stackedWidget->setCurrentIndex(StageIdx::_setting);
         }

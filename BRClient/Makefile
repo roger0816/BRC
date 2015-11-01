@@ -681,6 +681,19 @@ obj/moc_widget.cpp: ../../../../Qt5.5.1/5.5/clang_64/lib/QtWidgets.framework/Hea
 		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/qsettings.h \
 		../../../../Qt5.5.1/5.5/clang_64/lib/QtWidgets.framework/Headers/QApplication \
 		../../../../Qt5.5.1/5.5/clang_64/lib/QtWidgets.framework/Headers/qapplication.h \
+		CTcpClient.h \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/QStringList \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/qstringlist.h \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/QString \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/qstring.h \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtNetwork.framework/Headers/QTcpSocket \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtNetwork.framework/Headers/qtcpsocket.h \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/QTime \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/qdatetime.h \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/QCoreApplication \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/qcoreapplication.h \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/QElapsedTimer \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/qelapsedtimer.h \
 		Vkeybord.h \
 		ItemKey.h \
 		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/QPropertyAnimation \
@@ -707,6 +720,19 @@ obj/moc_StageSetting.cpp: ../../../../Qt5.5.1/5.5/clang_64/lib/QtWidgets.framewo
 		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/qsettings.h \
 		../../../../Qt5.5.1/5.5/clang_64/lib/QtWidgets.framework/Headers/QApplication \
 		../../../../Qt5.5.1/5.5/clang_64/lib/QtWidgets.framework/Headers/qapplication.h \
+		CTcpClient.h \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/QStringList \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/qstringlist.h \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/QString \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/qstring.h \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtNetwork.framework/Headers/QTcpSocket \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtNetwork.framework/Headers/qtcpsocket.h \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/QTime \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/qdatetime.h \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/QCoreApplication \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/qcoreapplication.h \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/QElapsedTimer \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/qelapsedtimer.h \
 		../../../../Qt5.5.1/5.5/clang_64/lib/QtWidgets.framework/Headers/QPushButton \
 		../../../../Qt5.5.1/5.5/clang_64/lib/QtWidgets.framework/Headers/qpushbutton.h \
 		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/QTranslator \
@@ -742,6 +768,19 @@ obj/moc_ItemBarcode.cpp: ../../../../Qt5.5.1/5.5/clang_64/lib/QtWidgets.framewor
 		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/qsettings.h \
 		../../../../Qt5.5.1/5.5/clang_64/lib/QtWidgets.framework/Headers/QApplication \
 		../../../../Qt5.5.1/5.5/clang_64/lib/QtWidgets.framework/Headers/qapplication.h \
+		CTcpClient.h \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/QStringList \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/qstringlist.h \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/QString \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/qstring.h \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtNetwork.framework/Headers/QTcpSocket \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtNetwork.framework/Headers/qtcpsocket.h \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/QTime \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/qdatetime.h \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/QCoreApplication \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/qcoreapplication.h \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/QElapsedTimer \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/qelapsedtimer.h \
 		Vinput.h \
 		../../../../Qt5.5.1/5.5/clang_64/lib/QtGui.framework/Headers/QMouseEvent \
 		../../../../Qt5.5.1/5.5/clang_64/lib/QtGui.framework/Headers/qevent.h \
@@ -754,6 +793,28 @@ obj/moc_StageTest.cpp: ../../../../Qt5.5.1/5.5/clang_64/lib/QtWidgets.framework/
 		../../../../Qt5.5.1/5.5/clang_64/lib/QtGui.framework/Headers/qevent.h \
 		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/QDebug \
 		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/qdebug.h \
+		Global.h \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/QObject \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/qobject.h \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtWidgets.framework/Headers/QLabel \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtWidgets.framework/Headers/qlabel.h \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/QSettings \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/qsettings.h \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtWidgets.framework/Headers/QApplication \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtWidgets.framework/Headers/qapplication.h \
+		CTcpClient.h \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/QStringList \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/qstringlist.h \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/QString \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/qstring.h \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtNetwork.framework/Headers/QTcpSocket \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtNetwork.framework/Headers/qtcpsocket.h \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/QTime \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/qdatetime.h \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/QCoreApplication \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/qcoreapplication.h \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/QElapsedTimer \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/qelapsedtimer.h \
 		StageTest.h
 	/Users/chenchaowei/Qt5.5.1/5.5/clang_64/bin/moc $(DEFINES) -D__APPLE__ -D__GNUC__=4 -D__APPLE_CC__ -I/Users/chenchaowei/Qt5.5.1/5.5/clang_64/mkspecs/macx-clang -I/Users/chenchaowei/Desktop/git/BRC/BRClient -I/Users/chenchaowei/Qt5.5.1/5.5/clang_64/lib/QtMultimedia.framework/Headers -I/Users/chenchaowei/Qt5.5.1/5.5/clang_64/lib/QtWidgets.framework/Headers -I/Users/chenchaowei/Qt5.5.1/5.5/clang_64/lib/QtGui.framework/Headers -I/Users/chenchaowei/Qt5.5.1/5.5/clang_64/lib/QtNetwork.framework/Headers -I/Users/chenchaowei/Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers -F/Users/chenchaowei/Qt5.5.1/5.5/clang_64/lib StageTest.h -o obj/moc_StageTest.cpp
 
@@ -784,6 +845,19 @@ obj/moc_Global.cpp: ../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Header
 		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/qsettings.h \
 		../../../../Qt5.5.1/5.5/clang_64/lib/QtWidgets.framework/Headers/QApplication \
 		../../../../Qt5.5.1/5.5/clang_64/lib/QtWidgets.framework/Headers/qapplication.h \
+		CTcpClient.h \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/QStringList \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/qstringlist.h \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/QString \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/qstring.h \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtNetwork.framework/Headers/QTcpSocket \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtNetwork.framework/Headers/qtcpsocket.h \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/QTime \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/qdatetime.h \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/QCoreApplication \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/qcoreapplication.h \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/QElapsedTimer \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/qelapsedtimer.h \
 		Global.h
 	/Users/chenchaowei/Qt5.5.1/5.5/clang_64/bin/moc $(DEFINES) -D__APPLE__ -D__GNUC__=4 -D__APPLE_CC__ -I/Users/chenchaowei/Qt5.5.1/5.5/clang_64/mkspecs/macx-clang -I/Users/chenchaowei/Desktop/git/BRC/BRClient -I/Users/chenchaowei/Qt5.5.1/5.5/clang_64/lib/QtMultimedia.framework/Headers -I/Users/chenchaowei/Qt5.5.1/5.5/clang_64/lib/QtWidgets.framework/Headers -I/Users/chenchaowei/Qt5.5.1/5.5/clang_64/lib/QtGui.framework/Headers -I/Users/chenchaowei/Qt5.5.1/5.5/clang_64/lib/QtNetwork.framework/Headers -I/Users/chenchaowei/Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers -F/Users/chenchaowei/Qt5.5.1/5.5/clang_64/lib Global.h -o obj/moc_Global.cpp
 
@@ -802,6 +876,19 @@ obj/moc_Vinput.cpp: ../../../../Qt5.5.1/5.5/clang_64/lib/QtWidgets.framework/Hea
 		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/qsettings.h \
 		../../../../Qt5.5.1/5.5/clang_64/lib/QtWidgets.framework/Headers/QApplication \
 		../../../../Qt5.5.1/5.5/clang_64/lib/QtWidgets.framework/Headers/qapplication.h \
+		CTcpClient.h \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/QStringList \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/qstringlist.h \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/QString \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/qstring.h \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtNetwork.framework/Headers/QTcpSocket \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtNetwork.framework/Headers/qtcpsocket.h \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/QTime \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/qdatetime.h \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/QCoreApplication \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/qcoreapplication.h \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/QElapsedTimer \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/qelapsedtimer.h \
 		Vinput.h
 	/Users/chenchaowei/Qt5.5.1/5.5/clang_64/bin/moc $(DEFINES) -D__APPLE__ -D__GNUC__=4 -D__APPLE_CC__ -I/Users/chenchaowei/Qt5.5.1/5.5/clang_64/mkspecs/macx-clang -I/Users/chenchaowei/Desktop/git/BRC/BRClient -I/Users/chenchaowei/Qt5.5.1/5.5/clang_64/lib/QtMultimedia.framework/Headers -I/Users/chenchaowei/Qt5.5.1/5.5/clang_64/lib/QtWidgets.framework/Headers -I/Users/chenchaowei/Qt5.5.1/5.5/clang_64/lib/QtGui.framework/Headers -I/Users/chenchaowei/Qt5.5.1/5.5/clang_64/lib/QtNetwork.framework/Headers -I/Users/chenchaowei/Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers -F/Users/chenchaowei/Qt5.5.1/5.5/clang_64/lib Vinput.h -o obj/moc_Vinput.cpp
 
@@ -848,6 +935,19 @@ obj/ui_header/ui_widget.h: widget.ui \
 		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/qsettings.h \
 		../../../../Qt5.5.1/5.5/clang_64/lib/QtWidgets.framework/Headers/QApplication \
 		../../../../Qt5.5.1/5.5/clang_64/lib/QtWidgets.framework/Headers/qapplication.h \
+		CTcpClient.h \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/QStringList \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/qstringlist.h \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/QString \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/qstring.h \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtNetwork.framework/Headers/QTcpSocket \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtNetwork.framework/Headers/qtcpsocket.h \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/QTime \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/qdatetime.h \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/QCoreApplication \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/qcoreapplication.h \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/QElapsedTimer \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/qelapsedtimer.h \
 		../../../../Qt5.5.1/5.5/clang_64/lib/QtWidgets.framework/Headers/QPushButton \
 		../../../../Qt5.5.1/5.5/clang_64/lib/QtWidgets.framework/Headers/qpushbutton.h \
 		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/QTranslator \
@@ -865,7 +965,29 @@ obj/ui_header/ui_widget.h: widget.ui \
 		../../../../Qt5.5.1/5.5/clang_64/lib/QtGui.framework/Headers/QKeyEvent \
 		../../../../Qt5.5.1/5.5/clang_64/lib/QtGui.framework/Headers/qevent.h \
 		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/QDebug \
-		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/qdebug.h
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/qdebug.h \
+		Global.h \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/QObject \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/qobject.h \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtWidgets.framework/Headers/QLabel \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtWidgets.framework/Headers/qlabel.h \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/QSettings \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/qsettings.h \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtWidgets.framework/Headers/QApplication \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtWidgets.framework/Headers/qapplication.h \
+		CTcpClient.h \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/QStringList \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/qstringlist.h \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/QString \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/qstring.h \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtNetwork.framework/Headers/QTcpSocket \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtNetwork.framework/Headers/qtcpsocket.h \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/QTime \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/qdatetime.h \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/QCoreApplication \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/qcoreapplication.h \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/QElapsedTimer \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/qelapsedtimer.h
 	/Users/chenchaowei/Qt5.5.1/5.5/clang_64/bin/uic widget.ui -o obj/ui_header/ui_widget.h
 
 obj/ui_header/ui_StageSetting.h: StageSetting.ui \
@@ -884,7 +1006,20 @@ obj/ui_header/ui_StageSetting.h: StageSetting.ui \
 		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/QSettings \
 		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/qsettings.h \
 		../../../../Qt5.5.1/5.5/clang_64/lib/QtWidgets.framework/Headers/QApplication \
-		../../../../Qt5.5.1/5.5/clang_64/lib/QtWidgets.framework/Headers/qapplication.h
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtWidgets.framework/Headers/qapplication.h \
+		CTcpClient.h \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/QStringList \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/qstringlist.h \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/QString \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/qstring.h \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtNetwork.framework/Headers/QTcpSocket \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtNetwork.framework/Headers/qtcpsocket.h \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/QTime \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/qdatetime.h \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/QCoreApplication \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/qcoreapplication.h \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/QElapsedTimer \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/qelapsedtimer.h
 	/Users/chenchaowei/Qt5.5.1/5.5/clang_64/bin/uic StageSetting.ui -o obj/ui_header/ui_StageSetting.h
 
 obj/ui_header/ui_StageBarcode.h: StageBarcode.ui \
@@ -906,6 +1041,19 @@ obj/ui_header/ui_StageBarcode.h: StageBarcode.ui \
 		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/qsettings.h \
 		../../../../Qt5.5.1/5.5/clang_64/lib/QtWidgets.framework/Headers/QApplication \
 		../../../../Qt5.5.1/5.5/clang_64/lib/QtWidgets.framework/Headers/qapplication.h \
+		CTcpClient.h \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/QStringList \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/qstringlist.h \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/QString \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/qstring.h \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtNetwork.framework/Headers/QTcpSocket \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtNetwork.framework/Headers/qtcpsocket.h \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/QTime \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/qdatetime.h \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/QCoreApplication \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/qcoreapplication.h \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/QElapsedTimer \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/qelapsedtimer.h \
 		Vinput.h \
 		../../../../Qt5.5.1/5.5/clang_64/lib/QtGui.framework/Headers/QMouseEvent \
 		../../../../Qt5.5.1/5.5/clang_64/lib/QtGui.framework/Headers/qevent.h
@@ -927,7 +1075,20 @@ obj/ui_header/ui_ItemBarcode.h: ItemBarcode.ui \
 		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/QSettings \
 		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/qsettings.h \
 		../../../../Qt5.5.1/5.5/clang_64/lib/QtWidgets.framework/Headers/QApplication \
-		../../../../Qt5.5.1/5.5/clang_64/lib/QtWidgets.framework/Headers/qapplication.h
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtWidgets.framework/Headers/qapplication.h \
+		CTcpClient.h \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/QStringList \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/qstringlist.h \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/QString \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/qstring.h \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtNetwork.framework/Headers/QTcpSocket \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtNetwork.framework/Headers/qtcpsocket.h \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/QTime \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/qdatetime.h \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/QCoreApplication \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/qcoreapplication.h \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/QElapsedTimer \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/qelapsedtimer.h
 	/Users/chenchaowei/Qt5.5.1/5.5/clang_64/bin/uic ItemBarcode.ui -o obj/ui_header/ui_ItemBarcode.h
 
 obj/ui_header/ui_StageTest.h: StageTest.ui \
@@ -985,6 +1146,19 @@ obj/main.o: main.cpp widget.h \
 		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/qsettings.h \
 		../../../../Qt5.5.1/5.5/clang_64/lib/QtWidgets.framework/Headers/QApplication \
 		../../../../Qt5.5.1/5.5/clang_64/lib/QtWidgets.framework/Headers/qapplication.h \
+		CTcpClient.h \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/QStringList \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/qstringlist.h \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/QString \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/qstring.h \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtNetwork.framework/Headers/QTcpSocket \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtNetwork.framework/Headers/qtcpsocket.h \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/QTime \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/qdatetime.h \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/QCoreApplication \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/qcoreapplication.h \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/QElapsedTimer \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/qelapsedtimer.h \
 		Vkeybord.h \
 		ItemKey.h \
 		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/QPropertyAnimation \

@@ -76,6 +76,7 @@ int Global::writeConfig(QString sKey,QString sValue)
 
 int Global::tcpSend(QString sId,QString sNum)
 {
+    int iRe=9999;
     TcpData input;
     input.iAction=3001;
     input.iType=1;
@@ -83,7 +84,16 @@ int Global::tcpSend(QString sId,QString sNum)
     input.listValue.append(sNum);
 
     TcpData output;
-    return m_tcp.blockTcpSend(input,output,m_config.sIp,m_config.sPort.toInt(),5000);
+    iRe=m_tcp.blockTcpSend(input,output,m_config.sIp,m_config.sPort.toInt(),2000);
+
+    QElapsedTimer timer;
+    timer.start();
+
+    if(timer.elapsed()<3000 && iRe==9999)
+    {
+        QCoreApplication::processEvents();
+    }
+    return iRe;
 }
 
 Global::~Global()

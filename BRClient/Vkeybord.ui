@@ -47,7 +47,7 @@
         <property name="minimumSize">
          <size>
           <width>0</width>
-          <height>60</height>
+          <height>40</height>
          </size>
         </property>
         <property name="font">
@@ -91,7 +91,7 @@
       </item>
       <item row="1" column="0">
        <widget class="QWidget" name="widget_2" native="true">
-        <layout class="QGridLayout" name="gridLayout_8">
+        <layout class="QGridLayout" name="gridLayout_8" rowstretch="1,1,1,1,1">
          <property name="leftMargin">
           <number>0</number>
          </property>
@@ -112,13 +112,13 @@
            <property name="minimumSize">
             <size>
              <width>0</width>
-             <height>80</height>
+             <height>0</height>
             </size>
            </property>
            <property name="maximumSize">
             <size>
              <width>16777215</width>
-             <height>80</height>
+             <height>10000</height>
             </size>
            </property>
            <layout class="QGridLayout" name="gridLayout_3">
@@ -138,10 +138,24 @@
              <number>5</number>
             </property>
             <item row="0" column="0">
-             <widget class="ItemKey" name="btn1" native="true"/>
+             <widget class="ItemKey" name="btn1" native="true">
+              <property name="maximumSize">
+               <size>
+                <width>1000</width>
+                <height>1000</height>
+               </size>
+              </property>
+             </widget>
             </item>
             <item row="0" column="1">
-             <widget class="ItemKey" name="btn2" native="true"/>
+             <widget class="ItemKey" name="btn2" native="true">
+              <property name="maximumSize">
+               <size>
+                <width>1000</width>
+                <height>16777215</height>
+               </size>
+              </property>
+             </widget>
             </item>
             <item row="0" column="2">
              <widget class="ItemKey" name="btn3" native="true"/>
@@ -175,13 +189,13 @@
            <property name="minimumSize">
             <size>
              <width>0</width>
-             <height>80</height>
+             <height>0</height>
             </size>
            </property>
            <property name="maximumSize">
             <size>
              <width>16777215</width>
-             <height>80</height>
+             <height>10000</height>
             </size>
            </property>
            <layout class="QGridLayout" name="gridLayout_4">
@@ -204,13 +218,13 @@
              <widget class="ItemKey" name="e" native="true">
               <property name="minimumSize">
                <size>
-                <width>70</width>
+                <width>0</width>
                 <height>0</height>
                </size>
               </property>
               <property name="maximumSize">
                <size>
-                <width>70</width>
+                <width>1000</width>
                 <height>16777215</height>
                </size>
               </property>
@@ -220,13 +234,13 @@
              <widget class="ItemKey" name="q" native="true">
               <property name="minimumSize">
                <size>
-                <width>70</width>
+                <width>0</width>
                 <height>0</height>
                </size>
               </property>
               <property name="maximumSize">
                <size>
-                <width>70</width>
+                <width>1000</width>
                 <height>16777215</height>
                </size>
               </property>
@@ -236,13 +250,13 @@
              <widget class="ItemKey" name="r" native="true">
               <property name="minimumSize">
                <size>
-                <width>70</width>
+                <width>0</width>
                 <height>0</height>
                </size>
               </property>
               <property name="maximumSize">
                <size>
-                <width>70</width>
+                <width>1000</width>
                 <height>16777215</height>
                </size>
               </property>
@@ -252,13 +266,13 @@
              <widget class="ItemKey" name="w" native="true">
               <property name="minimumSize">
                <size>
-                <width>70</width>
+                <width>0</width>
                 <height>0</height>
                </size>
               </property>
               <property name="maximumSize">
                <size>
-                <width>70</width>
+                <width>1000</width>
                 <height>16777215</height>
                </size>
               </property>
@@ -268,13 +282,13 @@
              <widget class="ItemKey" name="t" native="true">
               <property name="minimumSize">
                <size>
-                <width>70</width>
+                <width>0</width>
                 <height>0</height>
                </size>
               </property>
               <property name="maximumSize">
                <size>
-                <width>70</width>
+                <width>1000</width>
                 <height>16777215</height>
                </size>
               </property>
@@ -284,13 +298,13 @@
              <widget class="ItemKey" name="y" native="true">
               <property name="minimumSize">
                <size>
-                <width>70</width>
+                <width>0</width>
                 <height>0</height>
                </size>
               </property>
               <property name="maximumSize">
                <size>
-                <width>70</width>
+                <width>1000</width>
                 <height>16777215</height>
                </size>
               </property>
@@ -300,13 +314,13 @@
              <widget class="ItemKey" name="i" native="true">
               <property name="minimumSize">
                <size>
-                <width>70</width>
+                <width>0</width>
                 <height>0</height>
                </size>
               </property>
               <property name="maximumSize">
                <size>
-                <width>70</width>
+                <width>1000</width>
                 <height>16777215</height>
                </size>
               </property>
@@ -316,13 +330,13 @@
              <widget class="ItemKey" name="o" native="true">
               <property name="minimumSize">
                <size>
-                <width>70</width>
+                <width>0</width>
                 <height>0</height>
                </size>
               </property>
               <property name="maximumSize">
                <size>
-                <width>70</width>
+                <width>1000</width>
                 <height>16777215</height>
                </size>
               </property>
@@ -332,13 +346,13 @@
              <widget class="ItemKey" name="p" native="true">
               <property name="minimumSize">
                <size>
-                <width>70</width>
+                <width>0</width>
                 <height>0</height>
                </size>
               </property>
               <property name="maximumSize">
                <size>
-                <width>70</width>
+                <width>1000</width>
                 <height>16777215</height>
                </size>
               </property>
@@ -348,13 +362,13 @@
              <widget class="ItemKey" name="u" native="true">
               <property name="minimumSize">
                <size>
-                <width>70</width>
+                <width>0</width>
                 <height>0</height>
                </size>
               </property>
               <property name="maximumSize">
                <size>
-                <width>70</width>
+                <width>1000</width>
                 <height>16777215</height>
                </size>
               </property>
@@ -366,11 +380,11 @@
                <enum>Qt::Horizontal</enum>
               </property>
               <property name="sizeType">
-               <enum>QSizePolicy::Preferred</enum>
+               <enum>QSizePolicy::Minimum</enum>
               </property>
               <property name="sizeHint" stdset="0">
                <size>
-                <width>100</width>
+                <width>20</width>
                 <height>20</height>
                </size>
               </property>
@@ -382,11 +396,11 @@
                <enum>Qt::Horizontal</enum>
               </property>
               <property name="sizeType">
-               <enum>QSizePolicy::Preferred</enum>
+               <enum>QSizePolicy::Minimum</enum>
               </property>
               <property name="sizeHint" stdset="0">
                <size>
-                <width>100</width>
+                <width>20</width>
                 <height>20</height>
                </size>
               </property>
@@ -400,13 +414,13 @@
            <property name="minimumSize">
             <size>
              <width>0</width>
-             <height>80</height>
+             <height>0</height>
             </size>
            </property>
            <property name="maximumSize">
             <size>
              <width>16777215</width>
-             <height>80</height>
+             <height>10000</height>
             </size>
            </property>
            <layout class="QGridLayout" name="gridLayout_5">
@@ -429,13 +443,13 @@
              <widget class="ItemKey" name="s" native="true">
               <property name="minimumSize">
                <size>
-                <width>70</width>
+                <width>0</width>
                 <height>0</height>
                </size>
               </property>
               <property name="maximumSize">
                <size>
-                <width>70</width>
+                <width>10000</width>
                 <height>16777215</height>
                </size>
               </property>
@@ -447,11 +461,11 @@
                <enum>Qt::Horizontal</enum>
               </property>
               <property name="sizeType">
-               <enum>QSizePolicy::Preferred</enum>
+               <enum>QSizePolicy::Minimum</enum>
               </property>
               <property name="sizeHint" stdset="0">
                <size>
-                <width>100</width>
+                <width>40</width>
                 <height>20</height>
                </size>
               </property>
@@ -461,13 +475,13 @@
              <widget class="ItemKey" name="f" native="true">
               <property name="minimumSize">
                <size>
-                <width>70</width>
+                <width>0</width>
                 <height>0</height>
                </size>
               </property>
               <property name="maximumSize">
                <size>
-                <width>70</width>
+                <width>1000</width>
                 <height>16777215</height>
                </size>
               </property>
@@ -477,13 +491,13 @@
              <widget class="ItemKey" name="g" native="true">
               <property name="minimumSize">
                <size>
-                <width>70</width>
+                <width>0</width>
                 <height>0</height>
                </size>
               </property>
               <property name="maximumSize">
                <size>
-                <width>71</width>
+                <width>1000</width>
                 <height>16777215</height>
                </size>
               </property>
@@ -493,13 +507,13 @@
              <widget class="ItemKey" name="h" native="true">
               <property name="minimumSize">
                <size>
-                <width>70</width>
+                <width>0</width>
                 <height>0</height>
                </size>
               </property>
               <property name="maximumSize">
                <size>
-                <width>70</width>
+                <width>1000</width>
                 <height>16777215</height>
                </size>
               </property>
@@ -509,13 +523,13 @@
              <widget class="ItemKey" name="j" native="true">
               <property name="minimumSize">
                <size>
-                <width>70</width>
+                <width>0</width>
                 <height>0</height>
                </size>
               </property>
               <property name="maximumSize">
                <size>
-                <width>70</width>
+                <width>1000</width>
                 <height>16777215</height>
                </size>
               </property>
@@ -525,13 +539,13 @@
              <widget class="ItemKey" name="k" native="true">
               <property name="minimumSize">
                <size>
-                <width>70</width>
+                <width>0</width>
                 <height>0</height>
                </size>
               </property>
               <property name="maximumSize">
                <size>
-                <width>70</width>
+                <width>1000</width>
                 <height>16777215</height>
                </size>
               </property>
@@ -541,13 +555,13 @@
              <widget class="ItemKey" name="d" native="true">
               <property name="minimumSize">
                <size>
-                <width>70</width>
+                <width>0</width>
                 <height>0</height>
                </size>
               </property>
               <property name="maximumSize">
                <size>
-                <width>70</width>
+                <width>10000</width>
                 <height>16777215</height>
                </size>
               </property>
@@ -557,13 +571,13 @@
              <widget class="ItemKey" name="l" native="true">
               <property name="minimumSize">
                <size>
-                <width>70</width>
+                <width>0</width>
                 <height>0</height>
                </size>
               </property>
               <property name="maximumSize">
                <size>
-                <width>70</width>
+                <width>1000</width>
                 <height>16777215</height>
                </size>
               </property>
@@ -575,11 +589,11 @@
                <enum>Qt::Horizontal</enum>
               </property>
               <property name="sizeType">
-               <enum>QSizePolicy::Preferred</enum>
+               <enum>QSizePolicy::Minimum</enum>
               </property>
               <property name="sizeHint" stdset="0">
                <size>
-                <width>100</width>
+                <width>40</width>
                 <height>20</height>
                </size>
               </property>
@@ -589,13 +603,13 @@
              <widget class="ItemKey" name="a" native="true">
               <property name="minimumSize">
                <size>
-                <width>70</width>
+                <width>0</width>
                 <height>0</height>
                </size>
               </property>
               <property name="maximumSize">
                <size>
-                <width>70</width>
+                <width>1000</width>
                 <height>16777215</height>
                </size>
               </property>
@@ -609,13 +623,13 @@
            <property name="minimumSize">
             <size>
              <width>0</width>
-             <height>80</height>
+             <height>0</height>
             </size>
            </property>
            <property name="maximumSize">
             <size>
              <width>16777215</width>
-             <height>80</height>
+             <height>10000</height>
             </size>
            </property>
            <layout class="QGridLayout" name="gridLayout_6">
@@ -638,7 +652,7 @@
              <widget class="QWidget" name="widget_3" native="true">
               <property name="minimumSize">
                <size>
-                <width>90</width>
+                <width>0</width>
                 <height>0</height>
                </size>
               </property>
@@ -665,13 +679,13 @@
                  </property>
                  <property name="minimumSize">
                   <size>
-                   <width>90</width>
+                   <width>0</width>
                    <height>0</height>
                   </size>
                  </property>
                  <property name="maximumSize">
                   <size>
-                   <width>90</width>
+                   <width>1000</width>
                    <height>16777215</height>
                   </size>
                  </property>
@@ -690,13 +704,13 @@
              <widget class="ItemKey" name="x" native="true">
               <property name="minimumSize">
                <size>
-                <width>70</width>
+                <width>0</width>
                 <height>0</height>
                </size>
               </property>
               <property name="maximumSize">
                <size>
-                <width>70</width>
+                <width>1000</width>
                 <height>16777215</height>
                </size>
               </property>
@@ -706,13 +720,13 @@
              <widget class="ItemKey" name="v" native="true">
               <property name="minimumSize">
                <size>
-                <width>70</width>
+                <width>0</width>
                 <height>0</height>
                </size>
               </property>
               <property name="maximumSize">
                <size>
-                <width>70</width>
+                <width>1000</width>
                 <height>16777215</height>
                </size>
               </property>
@@ -722,13 +736,13 @@
              <widget class="ItemKey" name="n" native="true">
               <property name="minimumSize">
                <size>
-                <width>70</width>
+                <width>0</width>
                 <height>0</height>
                </size>
               </property>
               <property name="maximumSize">
                <size>
-                <width>70</width>
+                <width>1000</width>
                 <height>16777215</height>
                </size>
               </property>
@@ -744,7 +758,7 @@
               </property>
               <property name="sizeHint" stdset="0">
                <size>
-                <width>100</width>
+                <width>15</width>
                 <height>20</height>
                </size>
               </property>
@@ -754,13 +768,13 @@
              <widget class="ItemKey" name="m" native="true">
               <property name="minimumSize">
                <size>
-                <width>70</width>
+                <width>0</width>
                 <height>0</height>
                </size>
               </property>
               <property name="maximumSize">
                <size>
-                <width>70</width>
+                <width>1000</width>
                 <height>16777215</height>
                </size>
               </property>
@@ -770,13 +784,13 @@
              <widget class="ItemKey" name="c" native="true">
               <property name="minimumSize">
                <size>
-                <width>70</width>
+                <width>0</width>
                 <height>0</height>
                </size>
               </property>
               <property name="maximumSize">
                <size>
-                <width>70</width>
+                <width>1000</width>
                 <height>16777215</height>
                </size>
               </property>
@@ -786,13 +800,13 @@
              <widget class="ItemKey" name="b" native="true">
               <property name="minimumSize">
                <size>
-                <width>70</width>
+                <width>0</width>
                 <height>0</height>
                </size>
               </property>
               <property name="maximumSize">
                <size>
-                <width>70</width>
+                <width>1000</width>
                 <height>16777215</height>
                </size>
               </property>
@@ -802,13 +816,13 @@
              <widget class="ItemKey" name="z" native="true">
               <property name="minimumSize">
                <size>
-                <width>70</width>
+                <width>0</width>
                 <height>0</height>
                </size>
               </property>
               <property name="maximumSize">
                <size>
-                <width>70</width>
+                <width>1000</width>
                 <height>16777215</height>
                </size>
               </property>
@@ -824,7 +838,7 @@
               </property>
               <property name="sizeHint" stdset="0">
                <size>
-                <width>100</width>
+                <width>15</width>
                 <height>20</height>
                </size>
               </property>
@@ -834,13 +848,13 @@
              <widget class="ItemKey" name="back" native="true">
               <property name="minimumSize">
                <size>
-                <width>100</width>
+                <width>0</width>
                 <height>0</height>
                </size>
               </property>
               <property name="maximumSize">
                <size>
-                <width>100</width>
+                <width>1000</width>
                 <height>16777215</height>
                </size>
               </property>
@@ -854,16 +868,16 @@
            <property name="minimumSize">
             <size>
              <width>0</width>
-             <height>80</height>
+             <height>0</height>
             </size>
            </property>
            <property name="maximumSize">
             <size>
              <width>16777215</width>
-             <height>80</height>
+             <height>10000</height>
             </size>
            </property>
-           <layout class="QGridLayout" name="gridLayout_7">
+           <layout class="QGridLayout" name="gridLayout_7" columnstretch="1,0,0,0,0,0">
             <property name="leftMargin">
              <number>10</number>
             </property>
@@ -883,19 +897,19 @@
              <widget class="QWidget" name="widget_4" native="true">
               <property name="minimumSize">
                <size>
-                <width>120</width>
+                <width>0</width>
                 <height>0</height>
                </size>
               </property>
               <layout class="QGridLayout" name="gridLayout_11">
                <property name="leftMargin">
-                <number>20</number>
+                <number>10</number>
                </property>
                <property name="topMargin">
                 <number>5</number>
                </property>
                <property name="rightMargin">
-                <number>20</number>
+                <number>10</number>
                </property>
                <property name="bottomMargin">
                 <number>5</number>
@@ -910,13 +924,13 @@
                  </property>
                  <property name="minimumSize">
                   <size>
-                   <width>120</width>
+                   <width>0</width>
                    <height>0</height>
                   </size>
                  </property>
                  <property name="maximumSize">
                   <size>
-                   <width>120</width>
+                   <width>1000</width>
                    <height>16777215</height>
                   </size>
                  </property>
@@ -932,13 +946,13 @@
              <widget class="ItemKey" name="space" native="true">
               <property name="minimumSize">
                <size>
-                <width>50</width>
+                <width>0</width>
                 <height>0</height>
                </size>
               </property>
               <property name="maximumSize">
                <size>
-                <width>350</width>
+                <width>1000</width>
                 <height>16777215</height>
                </size>
               </property>
@@ -954,7 +968,7 @@
               </property>
               <property name="sizeHint" stdset="0">
                <size>
-                <width>40</width>
+                <width>20</width>
                 <height>20</height>
                </size>
               </property>
@@ -970,7 +984,7 @@
               </property>
               <property name="sizeHint" stdset="0">
                <size>
-                <width>40</width>
+                <width>20</width>
                 <height>20</height>
                </size>
               </property>
@@ -980,22 +994,22 @@
              <widget class="QWidget" name="widget_5" native="true">
               <property name="minimumSize">
                <size>
-                <width>150</width>
+                <width>0</width>
                 <height>0</height>
                </size>
               </property>
               <layout class="QGridLayout" name="gridLayout_12">
                <property name="leftMargin">
-                <number>20</number>
+                <number>10</number>
                </property>
                <property name="topMargin">
-                <number>5</number>
+                <number>0</number>
                </property>
                <property name="rightMargin">
-                <number>20</number>
+                <number>10</number>
                </property>
                <property name="bottomMargin">
-                <number>5</number>
+                <number>0</number>
                </property>
                <item row="0" column="0">
                 <widget class="QPushButton" name="btnEnter">
@@ -1007,13 +1021,13 @@
                  </property>
                  <property name="minimumSize">
                   <size>
-                   <width>150</width>
+                   <width>0</width>
                    <height>0</height>
                   </size>
                  </property>
                  <property name="maximumSize">
                   <size>
-                   <width>150</width>
+                   <width>1000</width>
                    <height>16777215</height>
                   </size>
                  </property>
@@ -1026,20 +1040,7 @@
              </widget>
             </item>
             <item row="0" column="3">
-             <widget class="ItemKey" name="end" native="true">
-              <property name="minimumSize">
-               <size>
-                <width>70</width>
-                <height>70</height>
-               </size>
-              </property>
-              <property name="maximumSize">
-               <size>
-                <width>70</width>
-                <height>70</height>
-               </size>
-              </property>
-             </widget>
+             <widget class="ItemKey" name="end" native="true"/>
             </item>
            </layout>
           </widget>

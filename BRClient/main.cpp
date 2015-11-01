@@ -19,10 +19,9 @@ void changeLanguage(QString sLanguage)
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
-   // GLOBAL().m_SizeWindow=a.desktop()->size();
-
-    //changeLanguage("En");
-    GLOBAL().m_SizeWindow=QSize(800,480);
+    GLOBAL().m_SizeWindow=a.desktop()->size();
+    //GLOBAL().m_SizeWindow=QSize(480,320);
+    //GLOBAL().m_SizeWindow=QSize(840,480);
     Widget w;
     w.setMaximumSize(GLOBAL().m_SizeWindow);
     w.setMinimumSize(GLOBAL().m_SizeWindow);
