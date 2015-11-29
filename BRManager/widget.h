@@ -1,4 +1,4 @@
-#ifndef WIDGET_H
+﻿#ifndef WIDGET_H
 #define WIDGET_H
 
 #include <QWidget>
@@ -7,7 +7,7 @@
 #include <QProcess>
 #include <QApplication>
 
-#define BRC_PATH QApplication::applicationDirPath()+"/../bin/BRC"
+#define BRC_PATH QApplication::applicationDirPath()+"/../bin/BRClient"
 
 namespace Ui {
 class Widget;

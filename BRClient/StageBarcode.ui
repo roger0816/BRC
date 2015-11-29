@@ -167,16 +167,19 @@
            <widget class="QWidget" name="page">
             <layout class="QGridLayout" name="gridLayout_23">
              <property name="leftMargin">
-              <number>5</number>
+              <number>2</number>
              </property>
              <property name="topMargin">
-              <number>5</number>
+              <number>0</number>
              </property>
              <property name="rightMargin">
-              <number>5</number>
+              <number>2</number>
              </property>
              <property name="bottomMargin">
-              <number>5</number>
+              <number>0</number>
+             </property>
+             <property name="spacing">
+              <number>0</number>
              </property>
              <item row="3" column="0">
               <widget class="ItemBarcode" name="vBarcode3" native="true">

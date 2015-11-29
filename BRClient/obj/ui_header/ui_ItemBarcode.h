@@ -56,7 +56,7 @@ public:
         gridLayout->setContentsMargins(0, 0, 0, 0);
         w0 = new QWidget(ItemBarcode);
         w0->setObjectName(QStringLiteral("w0"));
-        w0->setMinimumSize(QSize(0, 0));
+        w0->setMinimumSize(QSize(121, 0));
         w0->setMaximumSize(QSize(16777215, 100000));
         w0->setStyleSheet(QLatin1String("QWidget#w0{ border: 2px solid gray;\n"
 "    border-radius: 3px;\n"
@@ -82,6 +82,9 @@ public:
         btn0->setSizePolicy(sizePolicy);
         btn0->setMinimumSize(QSize(0, 0));
         btn0->setMaximumSize(QSize(100000, 16777215));
+        QFont font;
+        font.setPointSize(12);
+        btn0->setFont(font);
         btn0->setStyleSheet(QStringLiteral(""));
         btn0->setCheckable(false);
 
@@ -92,19 +95,17 @@ public:
 
         w0_1 = new QWidget(w0);
         w0_1->setObjectName(QStringLiteral("w0_1"));
-        w0_1->setMinimumSize(QSize(160, 0));
+        w0_1->setMinimumSize(QSize(119, 0));
         w0_1->setStyleSheet(QLatin1String("QWidget#w0_1{    border: 1px solid gray;\n"
 "    padding: 1px 18px 1px 3px;\n"
 "    min-width: 6em;}"));
         gridLayout_3 = new QGridLayout(w0_1);
         gridLayout_3->setObjectName(QStringLiteral("gridLayout_3"));
-        gridLayout_3->setContentsMargins(5, 5, 5, 5);
+        gridLayout_3->setContentsMargins(2, 2, 2, 2);
         lbTitle0 = new QLabel(w0_1);
         lbTitle0->setObjectName(QStringLiteral("lbTitle0"));
-        lbTitle0->setMinimumSize(QSize(70, 0));
-        lbTitle0->setMaximumSize(QSize(70, 16777215));
-        QFont font;
-        font.setPointSize(14);
+        lbTitle0->setMinimumSize(QSize(60, 0));
+        lbTitle0->setMaximumSize(QSize(60, 16777215));
         lbTitle0->setFont(font);
 
         gridLayout_3->addWidget(lbTitle0, 0, 0, 1, 1);
@@ -117,6 +118,7 @@ public:
         sizePolicy1.setHeightForWidth(lb0->sizePolicy().hasHeightForWidth());
         lb0->setSizePolicy(sizePolicy1);
         lb0->setMinimumSize(QSize(30, 0));
+        lb0->setFont(font);
 
         gridLayout_3->addWidget(lb0, 0, 1, 1, 1);
 
@@ -125,17 +127,17 @@ public:
 
         w0_2 = new QWidget(w0);
         w0_2->setObjectName(QStringLiteral("w0_2"));
-        w0_2->setMinimumSize(QSize(160, 0));
+        w0_2->setMinimumSize(QSize(119, 0));
         w0_2->setStyleSheet(QLatin1String("QWidget#w0_2{border: 1px solid gray;\n"
 "    padding: 1px 18px 1px 3px;\n"
 "    min-width: 6em;}"));
         gridLayout_8 = new QGridLayout(w0_2);
         gridLayout_8->setObjectName(QStringLiteral("gridLayout_8"));
-        gridLayout_8->setContentsMargins(5, 5, 5, 5);
+        gridLayout_8->setContentsMargins(2, 2, 2, 2);
         lbTitle1 = new QLabel(w0_2);
         lbTitle1->setObjectName(QStringLiteral("lbTitle1"));
-        lbTitle1->setMinimumSize(QSize(70, 0));
-        lbTitle1->setMaximumSize(QSize(70, 16777215));
+        lbTitle1->setMinimumSize(QSize(60, 0));
+        lbTitle1->setMaximumSize(QSize(60, 16777215));
         lbTitle1->setFont(font);
 
         gridLayout_8->addWidget(lbTitle1, 0, 0, 1, 1);
@@ -144,6 +146,7 @@ public:
         lb1->setObjectName(QStringLiteral("lb1"));
         sizePolicy.setHeightForWidth(lb1->sizePolicy().hasHeightForWidth());
         lb1->setSizePolicy(sizePolicy);
+        lb1->setFont(font);
 
         gridLayout_8->addWidget(lb1, 0, 1, 1, 1);
 
@@ -172,8 +175,8 @@ public:
 
         gridLayout_4->setRowStretch(0, 2);
         gridLayout_4->setRowStretch(1, 3);
-        gridLayout_4->setColumnStretch(0, 1);
-        gridLayout_4->setColumnStretch(1, 4);
+        gridLayout_4->setColumnStretch(0, 2);
+        gridLayout_4->setColumnStretch(1, 5);
         gridLayout_4->setColumnStretch(2, 1);
 
         gridLayout->addWidget(w0, 0, 0, 1, 1);

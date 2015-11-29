@@ -1,6 +1,6 @@
 ﻿#include "StageTest.h"
 #include "ui_StageTest.h"
-#include <QSound>
+
 StageTest::StageTest(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::StageTest)
@@ -21,13 +21,13 @@ void StageTest::keyPressEvent(QKeyEvent *e)
 
 void StageTest::on_pushButton_clicked()
 {
-   QSound::play(":/sound/res/sound/REMINDER.wav");
+   //QSound::play(":/sound/res/sound/REMINDER.wav");
 }
 
 void StageTest::on_pushButton_2_clicked()
 {
 
-    QSound::play(":/sound/res/sound/surprise.mp3");
+   // QSound::play(":/sound/res/sound/surprise.mp3");
 }
 
 void StageTest::on_pushButton_3_clicked()

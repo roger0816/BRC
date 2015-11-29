@@ -175,7 +175,7 @@ public:
 
         wNetwork = new QWidget(page);
         wNetwork->setObjectName(QStringLiteral("wNetwork"));
-        wNetwork->setMinimumSize(QSize(40, 40));
+        wNetwork->setMinimumSize(QSize(121, 40));
         wNetwork->setStyleSheet(QLatin1String("QWidget#wNetwork{ border: 2px solid gray;\n"
 "    border-radius: 3px;\n"
 "    padding: 1px 18px 1px 3px;\n"
@@ -192,7 +192,7 @@ public:
         label->setObjectName(QStringLiteral("label"));
         label->setMaximumSize(QSize(1000, 16777215));
         QFont font1;
-        font1.setPointSize(14);
+        font1.setPointSize(12);
         label->setFont(font1);
         label->setAlignment(Qt::AlignCenter);
 
@@ -200,15 +200,15 @@ public:
 
         w0_1 = new QWidget(wNetwork);
         w0_1->setObjectName(QStringLiteral("w0_1"));
-        w0_1->setMinimumSize(QSize(40, 40));
+        w0_1->setMinimumSize(QSize(119, 40));
         QFont font2;
         font2.setPointSize(16);
         w0_1->setFont(font2);
         w0_1->setStyleSheet(QStringLiteral(""));
         gridLayout_11 = new QGridLayout(w0_1);
         gridLayout_11->setObjectName(QStringLiteral("gridLayout_11"));
-        gridLayout_11->setHorizontalSpacing(20);
-        gridLayout_11->setContentsMargins(20, 5, 20, 5);
+        gridLayout_11->setHorizontalSpacing(5);
+        gridLayout_11->setContentsMargins(5, 5, 5, 5);
         txtPort = new Vinput(w0_1);
         txtPort->setObjectName(QStringLiteral("txtPort"));
         QSizePolicy sizePolicy2(QSizePolicy::Minimum, QSizePolicy::Preferred);
@@ -232,30 +232,43 @@ public:
 
         lbTitle0 = new QLabel(w0_1);
         lbTitle0->setObjectName(QStringLiteral("lbTitle0"));
-        lbTitle0->setMinimumSize(QSize(40, 0));
+        QSizePolicy sizePolicy3(QSizePolicy::Maximum, QSizePolicy::Preferred);
+        sizePolicy3.setHorizontalStretch(0);
+        sizePolicy3.setVerticalStretch(0);
+        sizePolicy3.setHeightForWidth(lbTitle0->sizePolicy().hasHeightForWidth());
+        lbTitle0->setSizePolicy(sizePolicy3);
+        lbTitle0->setMinimumSize(QSize(20, 0));
         lbTitle0->setMaximumSize(QSize(40, 16777215));
-        lbTitle0->setFont(font1);
+        QFont font3;
+        font3.setPointSize(14);
+        lbTitle0->setFont(font3);
 
         gridLayout_11->addWidget(lbTitle0, 0, 0, 1, 1);
 
         lb0 = new QLabel(w0_1);
         lb0->setObjectName(QStringLiteral("lb0"));
-        lb0->setMinimumSize(QSize(40, 0));
+        sizePolicy3.setHeightForWidth(lb0->sizePolicy().hasHeightForWidth());
+        lb0->setSizePolicy(sizePolicy3);
+        lb0->setMinimumSize(QSize(20, 0));
         lb0->setMaximumSize(QSize(40, 16777215));
 
         gridLayout_11->addWidget(lb0, 0, 2, 1, 1);
 
+        gridLayout_11->setColumnStretch(0, 1);
+        gridLayout_11->setColumnStretch(1, 5);
+        gridLayout_11->setColumnStretch(2, 2);
+        gridLayout_11->setColumnStretch(3, 3);
 
         gridLayout_4->addWidget(w0_1, 0, 1, 1, 1);
 
         gridLayout_4->setColumnStretch(0, 1);
-        gridLayout_4->setColumnStretch(1, 4);
+        gridLayout_4->setColumnStretch(1, 6);
 
         gridLayout_6->addWidget(wNetwork, 1, 0, 1, 1);
 
         wMachine = new QWidget(page);
         wMachine->setObjectName(QStringLiteral("wMachine"));
-        wMachine->setMinimumSize(QSize(40, 40));
+        wMachine->setMinimumSize(QSize(121, 40));
         wMachine->setStyleSheet(QLatin1String("QWidget#wMachine{ border: 2px solid gray;\n"
 "    border-radius: 3px;\n"
 "    padding: 1px 18px 1px 3px;\n"
@@ -294,7 +307,7 @@ public:
 
         wLanguage = new QWidget(page);
         wLanguage->setObjectName(QStringLiteral("wLanguage"));
-        wLanguage->setMinimumSize(QSize(40, 40));
+        wLanguage->setMinimumSize(QSize(121, 40));
         wLanguage->setMaximumSize(QSize(16777215, 100000));
         wLanguage->setFont(font2);
         wLanguage->setStyleSheet(QLatin1String("QWidget#wLanguage{ border: 2px solid gray;\n"
@@ -321,7 +334,7 @@ public:
 
         w2 = new QWidget(wLanguage);
         w2->setObjectName(QStringLiteral("w2"));
-        w2->setMinimumSize(QSize(0, 0));
+        w2->setMinimumSize(QSize(119, 0));
         gridLayout_8 = new QGridLayout(w2);
         gridLayout_8->setObjectName(QStringLiteral("gridLayout_8"));
         gridLayout_8->setContentsMargins(-1, 5, -1, 5);
@@ -356,7 +369,7 @@ public:
         gridLayout_12->addWidget(w2, 0, 1, 1, 1);
 
         gridLayout_12->setColumnStretch(0, 1);
-        gridLayout_12->setColumnStretch(1, 4);
+        gridLayout_12->setColumnStretch(1, 6);
 
         gridLayout_6->addWidget(wLanguage, 2, 0, 1, 1);
 

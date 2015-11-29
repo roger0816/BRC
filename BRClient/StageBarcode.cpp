@@ -11,6 +11,23 @@ StageBarcode::StageBarcode(QWidget *parent) :
     m_sBarcodeString="";
     setUi();
     m_bIsLock=false;
+
+    m_listMember.append(ui->vBarcode0->m_lb0);
+    m_listMember.append(ui->vBarcode1->m_lb0);
+    m_listMember.append(ui->vBarcode2->m_lb0);
+    m_listMember.append(ui->vBarcode3->m_lb0);
+
+    m_listProduct.append(ui->vBarcode0->m_lb1);
+    m_listProduct.append(ui->vBarcode1->m_lb1);
+    m_listProduct.append(ui->vBarcode2->m_lb1);
+    m_listProduct.append(ui->vBarcode3->m_lb1);
+
+    m_listenKey=new ListenKeyEvent(this);
+
+    connect(m_listenKey,SIGNAL(signalKey(int,QString)),this,SLOT(slotGetKey(int,QString)));
+
+
+
 }
 
 StageBarcode::~StageBarcode()
@@ -35,34 +52,33 @@ void StageBarcode::keyPressEvent(QKeyEvent *e)
 {
   //  qDebug()<<"barcode : "<<e->key();
 
-    //Test keybord
+//    if(m_bIsLock)
+//        return;
 
-    if(m_bIsLock)
-        return;
+//    m_bIsLock=true;
 
-    m_bIsLock=true;
+//    QChar c(e->key());
+//    QString st(c);
 
-    QChar c(e->key());
-    QString st(c);
+//    qDebug()<<" char : "<<st<<" ,key : "<<e->key();
 
-    qDebug()<<" char : "<<st<<" ,key : "<<e->key();
+//    if(e->key()!=16777251 && e->key()!=16777220)
+//    {
+//        QChar c(e->key());
+//        QString st(c);
 
-    if(e->key()!=16777251 && e->key()!=16777220)
-    {
-        QChar c(e->key());
-        QString st(c);
+//        qDebug()<<" char : "<<st<<" ,key : "<<e->key();
+//        m_sBarcodeString.append(st);
 
-        qDebug()<<" char : "<<st<<" ,key : "<<e->key();
-        m_sBarcodeString.append(st);
+//    }
+//    else if(e->key()==16777220)
+//    {
+//        //   qDebug()<<" string : "<<m_sBarcodeString<<" ,key : "<<e->key();
+//        loadBarcode(m_sBarcodeString);
+//        m_sBarcodeString.clear();
+//    }
+//      m_bIsLock=false;
 
-    }
-    else if(e->key()==16777220)
-    {
-        //   qDebug()<<" string : "<<m_sBarcodeString<<" ,key : "<<e->key();
-        loadBarcode(m_sBarcodeString);
-        m_sBarcodeString.clear();
-    }
-    // ui->vBarcode0->m_lb0->setText(ui->vBarcode0->m_lb0->text()+st);
 }
 
 void StageBarcode::loadBarcode(QString st)
@@ -86,7 +102,7 @@ void StageBarcode::loadBarcode(QString st)
     }
 
     qDebug()<<" barcode finish ";
-    m_bIsLock=false;
+
 }
 
 void StageBarcode::slotClicked()
@@ -113,3 +129,29 @@ void StageBarcode::showEvent(QShowEvent *)
 
 }
 
+void StageBarcode::slotGetKey(int iDev, QString sKey)
+{
+    qDebug()<<"get type: "+QString::number(iDev)+" ,Key : "+sKey;
+
+    qBound(0,iDev,m_listMember);
+
+    if(sKey.length()==10)
+    {
+        qDebug()<<"barcode is member";
+        m_listMember[iDev]->setText(sKey);
+    }
+    else if(sKey.length()>10)
+    {
+        qDebug()<<"barcode is product";
+        m_listProduct[iDev]->setText(sKey);
+        slotToTcp();
+    }
+    else
+    {
+        qDebug()<<"barcode error ";
+    }
+
+
+
+
+}

@@ -7,7 +7,7 @@ Vinput::Vinput(QWidget *parent) :
 {
     ui->setupUi(this);
     setObjectName("Vinput");
-
+   // ui->wBg->setStyleSheet("background-color:red");
 }
 
 Vinput::~Vinput()
@@ -27,7 +27,7 @@ QString Vinput::text()
 
 void Vinput::mouseReleaseEvent(QMouseEvent *)
 {
-    GLOBAL().signalOpenKeybord(ui->label);
+    GLOBAL().callKeybord(ui->label);
 }
 
 void Vinput::setText(const QString &text)

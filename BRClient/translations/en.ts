@@ -11,7 +11,7 @@
     <message>
         <location filename="../ItemBarcode.ui" line="131"/>
         <source>條碼機</source>
-        <translation type="unfinished">Barcode reader</translation>
+        <translation type="unfinished">Barcode</translation>
     </message>
     <message>
         <location filename="../ItemBarcode.ui" line="181"/>
@@ -21,7 +21,7 @@
     <message>
         <location filename="../ItemBarcode.ui" line="238"/>
         <source>票號:</source>
-        <translation type="unfinished">ticket number :</translation>
+        <translation type="unfinished">ticket no :</translation>
     </message>
 </context>
 <context>

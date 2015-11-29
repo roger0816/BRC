@@ -4,7 +4,9 @@
 #include <QWidget>
 #include <QDebug>
 #include <QKeyEvent>
+#include <QLabel>
 #include <QPushButton>
+#include "ListenKeyEvent.h"
 namespace Ui {
 class StageBarcode;
 }
@@ -20,7 +22,12 @@ public:
 
 private:
     Ui::StageBarcode *ui;
+    ListenKeyEvent *m_listenKey;
     QString m_sBarcodeString;
+
+    QList<QLabel*> m_listProduct;
+    QList<QLabel*> m_listMember;
+
     void setUi();
     void keyPressEvent(QKeyEvent *e);
 
@@ -31,7 +38,7 @@ signals:
     void clicked(int,QString);
 private slots:
     void slotClicked();
-
+    void slotGetKey(int iDev, QString sKey);
     void slotToTcp();
 
 };

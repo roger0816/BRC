@@ -22,6 +22,8 @@ int main(int argc, char *argv[])
     GLOBAL().m_SizeWindow=a.desktop()->size();
     //GLOBAL().m_SizeWindow=QSize(480,320);
     //GLOBAL().m_SizeWindow=QSize(840,480);
+    GLOBAL().m_SizeWindow=QSize(320,240);
+
     Widget w;
     w.setMaximumSize(GLOBAL().m_SizeWindow);
     w.setMinimumSize(GLOBAL().m_SizeWindow);

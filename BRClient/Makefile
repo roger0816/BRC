@@ -12,10 +12,10 @@ MAKEFILE      = Makefile
 
 CC            = /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang
 CXX           = /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++
-DEFINES       = -DQT_NO_DEBUG -DQT_MULTIMEDIA_LIB -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB
+DEFINES       = -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB
 CFLAGS        = -pipe -O2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk -mmacosx-version-min=10.7 -Wall -W -fPIC $(DEFINES)
 CXXFLAGS      = -pipe -O2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk -mmacosx-version-min=10.7 -Wall -W -fPIC $(DEFINES)
-INCPATH       = -I. -I../../../../Qt5.5.1/5.5/clang_64/lib/QtMultimedia.framework/Headers -I../../../../Qt5.5.1/5.5/clang_64/lib/QtWidgets.framework/Headers -I../../../../Qt5.5.1/5.5/clang_64/lib/QtGui.framework/Headers -I../../../../Qt5.5.1/5.5/clang_64/lib/QtNetwork.framework/Headers -I../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers -Iobj -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/System/Library/Frameworks/OpenGL.framework/Headers -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/System/Library/Frameworks/AGL.framework/Headers -Iobj/ui_header -I../../../../Qt5.5.1/5.5/clang_64/mkspecs/macx-clang -F/Users/chenchaowei/Qt5.5.1/5.5/clang_64/lib
+INCPATH       = -I. -I../../../../Qt5.5.1/5.5/clang_64/lib/QtWidgets.framework/Headers -I../../../../Qt5.5.1/5.5/clang_64/lib/QtGui.framework/Headers -I../../../../Qt5.5.1/5.5/clang_64/lib/QtNetwork.framework/Headers -I../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers -Iobj -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/System/Library/Frameworks/OpenGL.framework/Headers -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/System/Library/Frameworks/AGL.framework/Headers -Iobj/ui_header -I../../../../Qt5.5.1/5.5/clang_64/mkspecs/macx-clang -F/Users/chenchaowei/Qt5.5.1/5.5/clang_64/lib
 QMAKE         = /Users/chenchaowei/Qt5.5.1/5.5/clang_64/bin/qmake
 DEL_FILE      = rm -f
 CHK_DIR_EXISTS= test -d
@@ -36,7 +36,7 @@ DISTNAME      = BRClient1.0.0
 DISTDIR = /Users/chenchaowei/Desktop/git/BRC/BRClient/obj/BRClient1.0.0
 LINK          = /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++
 LFLAGS        = -headerpad_max_install_names -Wl,-syslibroot,/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk -mmacosx-version-min=10.7 -Wl,-rpath,/Users/chenchaowei/Qt5.5.1/5.5/clang_64/lib
-LIBS          = $(SUBLIBS) -F/Users/chenchaowei/Qt5.5.1/5.5/clang_64/lib -framework QtMultimedia -framework QtNetwork -framework QtCore -framework DiskArbitration -framework IOKit -framework QtGui -framework QtWidgets -framework OpenGL -framework AGL 
+LIBS          = $(SUBLIBS) -F/Users/chenchaowei/Qt5.5.1/5.5/clang_64/lib -framework QtWidgets -framework QtGui -framework QtCore -framework DiskArbitration -framework IOKit -framework QtNetwork -framework OpenGL -framework AGL 
 AR            = /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ar cq
 RANLIB        = /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ranlib -s
 SED           = sed
@@ -58,7 +58,9 @@ SOURCES       = main.cpp \
 		Global.cpp \
 		Vinput.cpp \
 		Vkeybord.cpp \
-		ItemKey.cpp ../bin/qrc_res.cpp \
+		ItemKey.cpp \
+		CThread.cpp \
+		ListenKeyEvent.cpp ../bin/qrc_res.cpp \
 		obj/moc_widget.cpp \
 		obj/moc_StageSetting.cpp \
 		obj/moc_StageBarcode.cpp \
@@ -68,7 +70,9 @@ SOURCES       = main.cpp \
 		obj/moc_Global.cpp \
 		obj/moc_Vinput.cpp \
 		obj/moc_Vkeybord.cpp \
-		obj/moc_ItemKey.cpp
+		obj/moc_ItemKey.cpp \
+		obj/moc_CThread.cpp \
+		obj/moc_ListenKeyEvent.cpp
 OBJECTS       = obj/main.o \
 		obj/widget.o \
 		obj/StageSetting.o \
@@ -80,6 +84,8 @@ OBJECTS       = obj/main.o \
 		obj/Vinput.o \
 		obj/Vkeybord.o \
 		obj/ItemKey.o \
+		obj/CThread.o \
+		obj/ListenKeyEvent.o \
 		obj/qrc_res.o \
 		obj/moc_widget.o \
 		obj/moc_StageSetting.o \
@@ -90,7 +96,9 @@ OBJECTS       = obj/main.o \
 		obj/moc_Global.o \
 		obj/moc_Vinput.o \
 		obj/moc_Vkeybord.o \
-		obj/moc_ItemKey.o
+		obj/moc_ItemKey.o \
+		obj/moc_CThread.o \
+		obj/moc_ListenKeyEvent.o
 DIST          = ../../../../Qt5.5.1/5.5/clang_64/mkspecs/features/spec_pre.prf \
 		../../../../Qt5.5.1/5.5/clang_64/mkspecs/qdevice.pri \
 		../../../../Qt5.5.1/5.5/clang_64/mkspecs/features/device_config.prf \
@@ -242,7 +250,9 @@ DIST          = ../../../../Qt5.5.1/5.5/clang_64/mkspecs/features/spec_pre.prf \
 		Global.h \
 		Vinput.h \
 		Vkeybord.h \
-		ItemKey.h main.cpp \
+		ItemKey.h \
+		CThread.h \
+		ListenKeyEvent.h main.cpp \
 		widget.cpp \
 		StageSetting.cpp \
 		StageBarcode.cpp \
@@ -252,7 +262,9 @@ DIST          = ../../../../Qt5.5.1/5.5/clang_64/mkspecs/features/spec_pre.prf \
 		Global.cpp \
 		Vinput.cpp \
 		Vkeybord.cpp \
-		ItemKey.cpp
+		ItemKey.cpp \
+		CThread.cpp \
+		ListenKeyEvent.cpp
 QMAKE_TARGET  = BRClient
 DESTDIR       = ../bin/#avoid trailing-slash linebreak
 TARGET        = ../bin/BRClient.app/Contents/MacOS/BRClient
@@ -438,7 +450,6 @@ Makefile: BRClient.pro ../../../../Qt5.5.1/5.5/clang_64/mkspecs/macx-clang/qmake
 		../../../../Qt5.5.1/5.5/clang_64/mkspecs/features/lex.prf \
 		BRClient.pro \
 		res.qrc \
-		/Users/chenchaowei/Qt5.5.1/5.5/clang_64/lib/QtMultimedia.framework/QtMultimedia.prl \
 		/Users/chenchaowei/Qt5.5.1/5.5/clang_64/lib/QtWidgets.framework/QtWidgets.prl \
 		/Users/chenchaowei/Qt5.5.1/5.5/clang_64/lib/QtGui.framework/QtGui.prl \
 		/Users/chenchaowei/Qt5.5.1/5.5/clang_64/lib/QtNetwork.framework/QtNetwork.prl \
@@ -588,7 +599,6 @@ Makefile: BRClient.pro ../../../../Qt5.5.1/5.5/clang_64/mkspecs/macx-clang/qmake
 ../../../../Qt5.5.1/5.5/clang_64/mkspecs/features/lex.prf:
 BRClient.pro:
 res.qrc:
-/Users/chenchaowei/Qt5.5.1/5.5/clang_64/lib/QtMultimedia.framework/QtMultimedia.prl:
 /Users/chenchaowei/Qt5.5.1/5.5/clang_64/lib/QtWidgets.framework/QtWidgets.prl:
 /Users/chenchaowei/Qt5.5.1/5.5/clang_64/lib/QtGui.framework/QtGui.prl:
 /Users/chenchaowei/Qt5.5.1/5.5/clang_64/lib/QtNetwork.framework/QtNetwork.prl:
@@ -623,8 +633,8 @@ distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
 	$(COPY_FILE) --parents res.qrc $(DISTDIR)/
-	$(COPY_FILE) --parents widget.h StageSetting.h StageBarcode.h ItemBarcode.h StageTest.h CTcpClient.h Global.h Vinput.h Vkeybord.h ItemKey.h $(DISTDIR)/
-	$(COPY_FILE) --parents main.cpp widget.cpp StageSetting.cpp StageBarcode.cpp ItemBarcode.cpp StageTest.cpp CTcpClient.cpp Global.cpp Vinput.cpp Vkeybord.cpp ItemKey.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents widget.h StageSetting.h StageBarcode.h ItemBarcode.h StageTest.h CTcpClient.h Global.h Vinput.h Vkeybord.h ItemKey.h CThread.h ListenKeyEvent.h $(DISTDIR)/
+	$(COPY_FILE) --parents main.cpp widget.cpp StageSetting.cpp StageBarcode.cpp ItemBarcode.cpp StageTest.cpp CTcpClient.cpp Global.cpp Vinput.cpp Vkeybord.cpp ItemKey.cpp CThread.cpp ListenKeyEvent.cpp $(DISTDIR)/
 	$(COPY_FILE) --parents widget.ui StageSetting.ui StageBarcode.ui ItemBarcode.ui StageTest.ui Vinput.ui Vkeybord.ui ItemKey.ui $(DISTDIR)/
 	$(COPY_FILE) --parents /Users/chenchaowei/Desktop/git/BRC/BRClient/translations/tw.ts /Users/chenchaowei/Desktop/git/BRC/BRClient/translations/en.ts /Users/chenchaowei/Desktop/git/BRC/BRClient/translations/cn.ts $(DISTDIR)/
 
@@ -663,9 +673,9 @@ compiler_rcc_clean:
 		res/sound/surprise.mp3
 	/Users/chenchaowei/Qt5.5.1/5.5/clang_64/bin/rcc -name res res.qrc -o ../bin/qrc_res.cpp
 
-compiler_moc_header_make_all: obj/moc_widget.cpp obj/moc_StageSetting.cpp obj/moc_StageBarcode.cpp obj/moc_ItemBarcode.cpp obj/moc_StageTest.cpp obj/moc_CTcpClient.cpp obj/moc_Global.cpp obj/moc_Vinput.cpp obj/moc_Vkeybord.cpp obj/moc_ItemKey.cpp
+compiler_moc_header_make_all: obj/moc_widget.cpp obj/moc_StageSetting.cpp obj/moc_StageBarcode.cpp obj/moc_ItemBarcode.cpp obj/moc_StageTest.cpp obj/moc_CTcpClient.cpp obj/moc_Global.cpp obj/moc_Vinput.cpp obj/moc_Vkeybord.cpp obj/moc_ItemKey.cpp obj/moc_CThread.cpp obj/moc_ListenKeyEvent.cpp
 compiler_moc_header_clean:
-	-$(DEL_FILE) obj/moc_widget.cpp obj/moc_StageSetting.cpp obj/moc_StageBarcode.cpp obj/moc_ItemBarcode.cpp obj/moc_StageTest.cpp obj/moc_CTcpClient.cpp obj/moc_Global.cpp obj/moc_Vinput.cpp obj/moc_Vkeybord.cpp obj/moc_ItemKey.cpp
+	-$(DEL_FILE) obj/moc_widget.cpp obj/moc_StageSetting.cpp obj/moc_StageBarcode.cpp obj/moc_ItemBarcode.cpp obj/moc_StageTest.cpp obj/moc_CTcpClient.cpp obj/moc_Global.cpp obj/moc_Vinput.cpp obj/moc_Vkeybord.cpp obj/moc_ItemKey.cpp obj/moc_CThread.cpp obj/moc_ListenKeyEvent.cpp
 obj/moc_widget.cpp: ../../../../Qt5.5.1/5.5/clang_64/lib/QtWidgets.framework/Headers/QWidget \
 		../../../../Qt5.5.1/5.5/clang_64/lib/QtWidgets.framework/Headers/qwidget.h \
 		../../../../Qt5.5.1/5.5/clang_64/lib/QtWidgets.framework/Headers/QStackedWidget \
@@ -703,7 +713,7 @@ obj/moc_widget.cpp: ../../../../Qt5.5.1/5.5/clang_64/lib/QtWidgets.framework/Hea
 		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/QTranslator \
 		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/qtranslator.h \
 		widget.h
-	/Users/chenchaowei/Qt5.5.1/5.5/clang_64/bin/moc $(DEFINES) -D__APPLE__ -D__GNUC__=4 -D__APPLE_CC__ -I/Users/chenchaowei/Qt5.5.1/5.5/clang_64/mkspecs/macx-clang -I/Users/chenchaowei/Desktop/git/BRC/BRClient -I/Users/chenchaowei/Qt5.5.1/5.5/clang_64/lib/QtMultimedia.framework/Headers -I/Users/chenchaowei/Qt5.5.1/5.5/clang_64/lib/QtWidgets.framework/Headers -I/Users/chenchaowei/Qt5.5.1/5.5/clang_64/lib/QtGui.framework/Headers -I/Users/chenchaowei/Qt5.5.1/5.5/clang_64/lib/QtNetwork.framework/Headers -I/Users/chenchaowei/Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers -F/Users/chenchaowei/Qt5.5.1/5.5/clang_64/lib widget.h -o obj/moc_widget.cpp
+	/Users/chenchaowei/Qt5.5.1/5.5/clang_64/bin/moc $(DEFINES) -D__APPLE__ -D__GNUC__=4 -D__APPLE_CC__ -I/Users/chenchaowei/Qt5.5.1/5.5/clang_64/mkspecs/macx-clang -I/Users/chenchaowei/Desktop/git/BRC/BRClient -I/Users/chenchaowei/Qt5.5.1/5.5/clang_64/lib/QtWidgets.framework/Headers -I/Users/chenchaowei/Qt5.5.1/5.5/clang_64/lib/QtGui.framework/Headers -I/Users/chenchaowei/Qt5.5.1/5.5/clang_64/lib/QtNetwork.framework/Headers -I/Users/chenchaowei/Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers -F/Users/chenchaowei/Qt5.5.1/5.5/clang_64/lib widget.h -o obj/moc_widget.cpp
 
 obj/moc_StageSetting.cpp: ../../../../Qt5.5.1/5.5/clang_64/lib/QtWidgets.framework/Headers/QWidget \
 		../../../../Qt5.5.1/5.5/clang_64/lib/QtWidgets.framework/Headers/qwidget.h \
@@ -738,7 +748,7 @@ obj/moc_StageSetting.cpp: ../../../../Qt5.5.1/5.5/clang_64/lib/QtWidgets.framewo
 		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/QTranslator \
 		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/qtranslator.h \
 		StageSetting.h
-	/Users/chenchaowei/Qt5.5.1/5.5/clang_64/bin/moc $(DEFINES) -D__APPLE__ -D__GNUC__=4 -D__APPLE_CC__ -I/Users/chenchaowei/Qt5.5.1/5.5/clang_64/mkspecs/macx-clang -I/Users/chenchaowei/Desktop/git/BRC/BRClient -I/Users/chenchaowei/Qt5.5.1/5.5/clang_64/lib/QtMultimedia.framework/Headers -I/Users/chenchaowei/Qt5.5.1/5.5/clang_64/lib/QtWidgets.framework/Headers -I/Users/chenchaowei/Qt5.5.1/5.5/clang_64/lib/QtGui.framework/Headers -I/Users/chenchaowei/Qt5.5.1/5.5/clang_64/lib/QtNetwork.framework/Headers -I/Users/chenchaowei/Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers -F/Users/chenchaowei/Qt5.5.1/5.5/clang_64/lib StageSetting.h -o obj/moc_StageSetting.cpp
+	/Users/chenchaowei/Qt5.5.1/5.5/clang_64/bin/moc $(DEFINES) -D__APPLE__ -D__GNUC__=4 -D__APPLE_CC__ -I/Users/chenchaowei/Qt5.5.1/5.5/clang_64/mkspecs/macx-clang -I/Users/chenchaowei/Desktop/git/BRC/BRClient -I/Users/chenchaowei/Qt5.5.1/5.5/clang_64/lib/QtWidgets.framework/Headers -I/Users/chenchaowei/Qt5.5.1/5.5/clang_64/lib/QtGui.framework/Headers -I/Users/chenchaowei/Qt5.5.1/5.5/clang_64/lib/QtNetwork.framework/Headers -I/Users/chenchaowei/Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers -F/Users/chenchaowei/Qt5.5.1/5.5/clang_64/lib StageSetting.h -o obj/moc_StageSetting.cpp
 
 obj/moc_StageBarcode.cpp: ../../../../Qt5.5.1/5.5/clang_64/lib/QtWidgets.framework/Headers/QWidget \
 		../../../../Qt5.5.1/5.5/clang_64/lib/QtWidgets.framework/Headers/qwidget.h \
@@ -749,7 +759,7 @@ obj/moc_StageBarcode.cpp: ../../../../Qt5.5.1/5.5/clang_64/lib/QtWidgets.framewo
 		../../../../Qt5.5.1/5.5/clang_64/lib/QtWidgets.framework/Headers/QPushButton \
 		../../../../Qt5.5.1/5.5/clang_64/lib/QtWidgets.framework/Headers/qpushbutton.h \
 		StageBarcode.h
-	/Users/chenchaowei/Qt5.5.1/5.5/clang_64/bin/moc $(DEFINES) -D__APPLE__ -D__GNUC__=4 -D__APPLE_CC__ -I/Users/chenchaowei/Qt5.5.1/5.5/clang_64/mkspecs/macx-clang -I/Users/chenchaowei/Desktop/git/BRC/BRClient -I/Users/chenchaowei/Qt5.5.1/5.5/clang_64/lib/QtMultimedia.framework/Headers -I/Users/chenchaowei/Qt5.5.1/5.5/clang_64/lib/QtWidgets.framework/Headers -I/Users/chenchaowei/Qt5.5.1/5.5/clang_64/lib/QtGui.framework/Headers -I/Users/chenchaowei/Qt5.5.1/5.5/clang_64/lib/QtNetwork.framework/Headers -I/Users/chenchaowei/Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers -F/Users/chenchaowei/Qt5.5.1/5.5/clang_64/lib StageBarcode.h -o obj/moc_StageBarcode.cpp
+	/Users/chenchaowei/Qt5.5.1/5.5/clang_64/bin/moc $(DEFINES) -D__APPLE__ -D__GNUC__=4 -D__APPLE_CC__ -I/Users/chenchaowei/Qt5.5.1/5.5/clang_64/mkspecs/macx-clang -I/Users/chenchaowei/Desktop/git/BRC/BRClient -I/Users/chenchaowei/Qt5.5.1/5.5/clang_64/lib/QtWidgets.framework/Headers -I/Users/chenchaowei/Qt5.5.1/5.5/clang_64/lib/QtGui.framework/Headers -I/Users/chenchaowei/Qt5.5.1/5.5/clang_64/lib/QtNetwork.framework/Headers -I/Users/chenchaowei/Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers -F/Users/chenchaowei/Qt5.5.1/5.5/clang_64/lib StageBarcode.h -o obj/moc_StageBarcode.cpp
 
 obj/moc_ItemBarcode.cpp: ../../../../Qt5.5.1/5.5/clang_64/lib/QtWidgets.framework/Headers/QWidget \
 		../../../../Qt5.5.1/5.5/clang_64/lib/QtWidgets.framework/Headers/qwidget.h \
@@ -785,7 +795,7 @@ obj/moc_ItemBarcode.cpp: ../../../../Qt5.5.1/5.5/clang_64/lib/QtWidgets.framewor
 		../../../../Qt5.5.1/5.5/clang_64/lib/QtGui.framework/Headers/QMouseEvent \
 		../../../../Qt5.5.1/5.5/clang_64/lib/QtGui.framework/Headers/qevent.h \
 		ItemBarcode.h
-	/Users/chenchaowei/Qt5.5.1/5.5/clang_64/bin/moc $(DEFINES) -D__APPLE__ -D__GNUC__=4 -D__APPLE_CC__ -I/Users/chenchaowei/Qt5.5.1/5.5/clang_64/mkspecs/macx-clang -I/Users/chenchaowei/Desktop/git/BRC/BRClient -I/Users/chenchaowei/Qt5.5.1/5.5/clang_64/lib/QtMultimedia.framework/Headers -I/Users/chenchaowei/Qt5.5.1/5.5/clang_64/lib/QtWidgets.framework/Headers -I/Users/chenchaowei/Qt5.5.1/5.5/clang_64/lib/QtGui.framework/Headers -I/Users/chenchaowei/Qt5.5.1/5.5/clang_64/lib/QtNetwork.framework/Headers -I/Users/chenchaowei/Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers -F/Users/chenchaowei/Qt5.5.1/5.5/clang_64/lib ItemBarcode.h -o obj/moc_ItemBarcode.cpp
+	/Users/chenchaowei/Qt5.5.1/5.5/clang_64/bin/moc $(DEFINES) -D__APPLE__ -D__GNUC__=4 -D__APPLE_CC__ -I/Users/chenchaowei/Qt5.5.1/5.5/clang_64/mkspecs/macx-clang -I/Users/chenchaowei/Desktop/git/BRC/BRClient -I/Users/chenchaowei/Qt5.5.1/5.5/clang_64/lib/QtWidgets.framework/Headers -I/Users/chenchaowei/Qt5.5.1/5.5/clang_64/lib/QtGui.framework/Headers -I/Users/chenchaowei/Qt5.5.1/5.5/clang_64/lib/QtNetwork.framework/Headers -I/Users/chenchaowei/Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers -F/Users/chenchaowei/Qt5.5.1/5.5/clang_64/lib ItemBarcode.h -o obj/moc_ItemBarcode.cpp
 
 obj/moc_StageTest.cpp: ../../../../Qt5.5.1/5.5/clang_64/lib/QtWidgets.framework/Headers/QWidget \
 		../../../../Qt5.5.1/5.5/clang_64/lib/QtWidgets.framework/Headers/qwidget.h \
@@ -816,7 +826,7 @@ obj/moc_StageTest.cpp: ../../../../Qt5.5.1/5.5/clang_64/lib/QtWidgets.framework/
 		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/QElapsedTimer \
 		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/qelapsedtimer.h \
 		StageTest.h
-	/Users/chenchaowei/Qt5.5.1/5.5/clang_64/bin/moc $(DEFINES) -D__APPLE__ -D__GNUC__=4 -D__APPLE_CC__ -I/Users/chenchaowei/Qt5.5.1/5.5/clang_64/mkspecs/macx-clang -I/Users/chenchaowei/Desktop/git/BRC/BRClient -I/Users/chenchaowei/Qt5.5.1/5.5/clang_64/lib/QtMultimedia.framework/Headers -I/Users/chenchaowei/Qt5.5.1/5.5/clang_64/lib/QtWidgets.framework/Headers -I/Users/chenchaowei/Qt5.5.1/5.5/clang_64/lib/QtGui.framework/Headers -I/Users/chenchaowei/Qt5.5.1/5.5/clang_64/lib/QtNetwork.framework/Headers -I/Users/chenchaowei/Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers -F/Users/chenchaowei/Qt5.5.1/5.5/clang_64/lib StageTest.h -o obj/moc_StageTest.cpp
+	/Users/chenchaowei/Qt5.5.1/5.5/clang_64/bin/moc $(DEFINES) -D__APPLE__ -D__GNUC__=4 -D__APPLE_CC__ -I/Users/chenchaowei/Qt5.5.1/5.5/clang_64/mkspecs/macx-clang -I/Users/chenchaowei/Desktop/git/BRC/BRClient -I/Users/chenchaowei/Qt5.5.1/5.5/clang_64/lib/QtWidgets.framework/Headers -I/Users/chenchaowei/Qt5.5.1/5.5/clang_64/lib/QtGui.framework/Headers -I/Users/chenchaowei/Qt5.5.1/5.5/clang_64/lib/QtNetwork.framework/Headers -I/Users/chenchaowei/Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers -F/Users/chenchaowei/Qt5.5.1/5.5/clang_64/lib StageTest.h -o obj/moc_StageTest.cpp
 
 obj/moc_CTcpClient.cpp: ../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/QObject \
 		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/qobject.h \
@@ -833,7 +843,7 @@ obj/moc_CTcpClient.cpp: ../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/He
 		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/QCoreApplication \
 		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/qcoreapplication.h \
 		CTcpClient.h
-	/Users/chenchaowei/Qt5.5.1/5.5/clang_64/bin/moc $(DEFINES) -D__APPLE__ -D__GNUC__=4 -D__APPLE_CC__ -I/Users/chenchaowei/Qt5.5.1/5.5/clang_64/mkspecs/macx-clang -I/Users/chenchaowei/Desktop/git/BRC/BRClient -I/Users/chenchaowei/Qt5.5.1/5.5/clang_64/lib/QtMultimedia.framework/Headers -I/Users/chenchaowei/Qt5.5.1/5.5/clang_64/lib/QtWidgets.framework/Headers -I/Users/chenchaowei/Qt5.5.1/5.5/clang_64/lib/QtGui.framework/Headers -I/Users/chenchaowei/Qt5.5.1/5.5/clang_64/lib/QtNetwork.framework/Headers -I/Users/chenchaowei/Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers -F/Users/chenchaowei/Qt5.5.1/5.5/clang_64/lib CTcpClient.h -o obj/moc_CTcpClient.cpp
+	/Users/chenchaowei/Qt5.5.1/5.5/clang_64/bin/moc $(DEFINES) -D__APPLE__ -D__GNUC__=4 -D__APPLE_CC__ -I/Users/chenchaowei/Qt5.5.1/5.5/clang_64/mkspecs/macx-clang -I/Users/chenchaowei/Desktop/git/BRC/BRClient -I/Users/chenchaowei/Qt5.5.1/5.5/clang_64/lib/QtWidgets.framework/Headers -I/Users/chenchaowei/Qt5.5.1/5.5/clang_64/lib/QtGui.framework/Headers -I/Users/chenchaowei/Qt5.5.1/5.5/clang_64/lib/QtNetwork.framework/Headers -I/Users/chenchaowei/Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers -F/Users/chenchaowei/Qt5.5.1/5.5/clang_64/lib CTcpClient.h -o obj/moc_CTcpClient.cpp
 
 obj/moc_Global.cpp: ../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/QObject \
 		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/qobject.h \
@@ -859,7 +869,7 @@ obj/moc_Global.cpp: ../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Header
 		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/QElapsedTimer \
 		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/qelapsedtimer.h \
 		Global.h
-	/Users/chenchaowei/Qt5.5.1/5.5/clang_64/bin/moc $(DEFINES) -D__APPLE__ -D__GNUC__=4 -D__APPLE_CC__ -I/Users/chenchaowei/Qt5.5.1/5.5/clang_64/mkspecs/macx-clang -I/Users/chenchaowei/Desktop/git/BRC/BRClient -I/Users/chenchaowei/Qt5.5.1/5.5/clang_64/lib/QtMultimedia.framework/Headers -I/Users/chenchaowei/Qt5.5.1/5.5/clang_64/lib/QtWidgets.framework/Headers -I/Users/chenchaowei/Qt5.5.1/5.5/clang_64/lib/QtGui.framework/Headers -I/Users/chenchaowei/Qt5.5.1/5.5/clang_64/lib/QtNetwork.framework/Headers -I/Users/chenchaowei/Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers -F/Users/chenchaowei/Qt5.5.1/5.5/clang_64/lib Global.h -o obj/moc_Global.cpp
+	/Users/chenchaowei/Qt5.5.1/5.5/clang_64/bin/moc $(DEFINES) -D__APPLE__ -D__GNUC__=4 -D__APPLE_CC__ -I/Users/chenchaowei/Qt5.5.1/5.5/clang_64/mkspecs/macx-clang -I/Users/chenchaowei/Desktop/git/BRC/BRClient -I/Users/chenchaowei/Qt5.5.1/5.5/clang_64/lib/QtWidgets.framework/Headers -I/Users/chenchaowei/Qt5.5.1/5.5/clang_64/lib/QtGui.framework/Headers -I/Users/chenchaowei/Qt5.5.1/5.5/clang_64/lib/QtNetwork.framework/Headers -I/Users/chenchaowei/Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers -F/Users/chenchaowei/Qt5.5.1/5.5/clang_64/lib Global.h -o obj/moc_Global.cpp
 
 obj/moc_Vinput.cpp: ../../../../Qt5.5.1/5.5/clang_64/lib/QtWidgets.framework/Headers/QWidget \
 		../../../../Qt5.5.1/5.5/clang_64/lib/QtWidgets.framework/Headers/qwidget.h \
@@ -890,7 +900,7 @@ obj/moc_Vinput.cpp: ../../../../Qt5.5.1/5.5/clang_64/lib/QtWidgets.framework/Hea
 		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/QElapsedTimer \
 		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/qelapsedtimer.h \
 		Vinput.h
-	/Users/chenchaowei/Qt5.5.1/5.5/clang_64/bin/moc $(DEFINES) -D__APPLE__ -D__GNUC__=4 -D__APPLE_CC__ -I/Users/chenchaowei/Qt5.5.1/5.5/clang_64/mkspecs/macx-clang -I/Users/chenchaowei/Desktop/git/BRC/BRClient -I/Users/chenchaowei/Qt5.5.1/5.5/clang_64/lib/QtMultimedia.framework/Headers -I/Users/chenchaowei/Qt5.5.1/5.5/clang_64/lib/QtWidgets.framework/Headers -I/Users/chenchaowei/Qt5.5.1/5.5/clang_64/lib/QtGui.framework/Headers -I/Users/chenchaowei/Qt5.5.1/5.5/clang_64/lib/QtNetwork.framework/Headers -I/Users/chenchaowei/Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers -F/Users/chenchaowei/Qt5.5.1/5.5/clang_64/lib Vinput.h -o obj/moc_Vinput.cpp
+	/Users/chenchaowei/Qt5.5.1/5.5/clang_64/bin/moc $(DEFINES) -D__APPLE__ -D__GNUC__=4 -D__APPLE_CC__ -I/Users/chenchaowei/Qt5.5.1/5.5/clang_64/mkspecs/macx-clang -I/Users/chenchaowei/Desktop/git/BRC/BRClient -I/Users/chenchaowei/Qt5.5.1/5.5/clang_64/lib/QtWidgets.framework/Headers -I/Users/chenchaowei/Qt5.5.1/5.5/clang_64/lib/QtGui.framework/Headers -I/Users/chenchaowei/Qt5.5.1/5.5/clang_64/lib/QtNetwork.framework/Headers -I/Users/chenchaowei/Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers -F/Users/chenchaowei/Qt5.5.1/5.5/clang_64/lib Vinput.h -o obj/moc_Vinput.cpp
 
 obj/moc_Vkeybord.cpp: ../../../../Qt5.5.1/5.5/clang_64/lib/QtWidgets.framework/Headers/QWidget \
 		../../../../Qt5.5.1/5.5/clang_64/lib/QtWidgets.framework/Headers/qwidget.h \
@@ -904,12 +914,35 @@ obj/moc_Vkeybord.cpp: ../../../../Qt5.5.1/5.5/clang_64/lib/QtWidgets.framework/H
 		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/QEventLoop \
 		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/qeventloop.h \
 		Vkeybord.h
-	/Users/chenchaowei/Qt5.5.1/5.5/clang_64/bin/moc $(DEFINES) -D__APPLE__ -D__GNUC__=4 -D__APPLE_CC__ -I/Users/chenchaowei/Qt5.5.1/5.5/clang_64/mkspecs/macx-clang -I/Users/chenchaowei/Desktop/git/BRC/BRClient -I/Users/chenchaowei/Qt5.5.1/5.5/clang_64/lib/QtMultimedia.framework/Headers -I/Users/chenchaowei/Qt5.5.1/5.5/clang_64/lib/QtWidgets.framework/Headers -I/Users/chenchaowei/Qt5.5.1/5.5/clang_64/lib/QtGui.framework/Headers -I/Users/chenchaowei/Qt5.5.1/5.5/clang_64/lib/QtNetwork.framework/Headers -I/Users/chenchaowei/Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers -F/Users/chenchaowei/Qt5.5.1/5.5/clang_64/lib Vkeybord.h -o obj/moc_Vkeybord.cpp
+	/Users/chenchaowei/Qt5.5.1/5.5/clang_64/bin/moc $(DEFINES) -D__APPLE__ -D__GNUC__=4 -D__APPLE_CC__ -I/Users/chenchaowei/Qt5.5.1/5.5/clang_64/mkspecs/macx-clang -I/Users/chenchaowei/Desktop/git/BRC/BRClient -I/Users/chenchaowei/Qt5.5.1/5.5/clang_64/lib/QtWidgets.framework/Headers -I/Users/chenchaowei/Qt5.5.1/5.5/clang_64/lib/QtGui.framework/Headers -I/Users/chenchaowei/Qt5.5.1/5.5/clang_64/lib/QtNetwork.framework/Headers -I/Users/chenchaowei/Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers -F/Users/chenchaowei/Qt5.5.1/5.5/clang_64/lib Vkeybord.h -o obj/moc_Vkeybord.cpp
 
 obj/moc_ItemKey.cpp: ../../../../Qt5.5.1/5.5/clang_64/lib/QtWidgets.framework/Headers/QWidget \
 		../../../../Qt5.5.1/5.5/clang_64/lib/QtWidgets.framework/Headers/qwidget.h \
 		ItemKey.h
-	/Users/chenchaowei/Qt5.5.1/5.5/clang_64/bin/moc $(DEFINES) -D__APPLE__ -D__GNUC__=4 -D__APPLE_CC__ -I/Users/chenchaowei/Qt5.5.1/5.5/clang_64/mkspecs/macx-clang -I/Users/chenchaowei/Desktop/git/BRC/BRClient -I/Users/chenchaowei/Qt5.5.1/5.5/clang_64/lib/QtMultimedia.framework/Headers -I/Users/chenchaowei/Qt5.5.1/5.5/clang_64/lib/QtWidgets.framework/Headers -I/Users/chenchaowei/Qt5.5.1/5.5/clang_64/lib/QtGui.framework/Headers -I/Users/chenchaowei/Qt5.5.1/5.5/clang_64/lib/QtNetwork.framework/Headers -I/Users/chenchaowei/Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers -F/Users/chenchaowei/Qt5.5.1/5.5/clang_64/lib ItemKey.h -o obj/moc_ItemKey.cpp
+	/Users/chenchaowei/Qt5.5.1/5.5/clang_64/bin/moc $(DEFINES) -D__APPLE__ -D__GNUC__=4 -D__APPLE_CC__ -I/Users/chenchaowei/Qt5.5.1/5.5/clang_64/mkspecs/macx-clang -I/Users/chenchaowei/Desktop/git/BRC/BRClient -I/Users/chenchaowei/Qt5.5.1/5.5/clang_64/lib/QtWidgets.framework/Headers -I/Users/chenchaowei/Qt5.5.1/5.5/clang_64/lib/QtGui.framework/Headers -I/Users/chenchaowei/Qt5.5.1/5.5/clang_64/lib/QtNetwork.framework/Headers -I/Users/chenchaowei/Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers -F/Users/chenchaowei/Qt5.5.1/5.5/clang_64/lib ItemKey.h -o obj/moc_ItemKey.cpp
+
+obj/moc_CThread.cpp: ../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/QDir \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/qdir.h \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/QObject \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/qobject.h \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/QThread \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/qthread.h \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/QDebug \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/qdebug.h \
+		CThread.h
+	/Users/chenchaowei/Qt5.5.1/5.5/clang_64/bin/moc $(DEFINES) -D__APPLE__ -D__GNUC__=4 -D__APPLE_CC__ -I/Users/chenchaowei/Qt5.5.1/5.5/clang_64/mkspecs/macx-clang -I/Users/chenchaowei/Desktop/git/BRC/BRClient -I/Users/chenchaowei/Qt5.5.1/5.5/clang_64/lib/QtWidgets.framework/Headers -I/Users/chenchaowei/Qt5.5.1/5.5/clang_64/lib/QtGui.framework/Headers -I/Users/chenchaowei/Qt5.5.1/5.5/clang_64/lib/QtNetwork.framework/Headers -I/Users/chenchaowei/Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers -F/Users/chenchaowei/Qt5.5.1/5.5/clang_64/lib CThread.h -o obj/moc_CThread.cpp
+
+obj/moc_ListenKeyEvent.cpp: ../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/QObject \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/qobject.h \
+		CThread.h \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/QDir \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/qdir.h \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/QThread \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/qthread.h \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/QDebug \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/qdebug.h \
+		ListenKeyEvent.h
+	/Users/chenchaowei/Qt5.5.1/5.5/clang_64/bin/moc $(DEFINES) -D__APPLE__ -D__GNUC__=4 -D__APPLE_CC__ -I/Users/chenchaowei/Qt5.5.1/5.5/clang_64/mkspecs/macx-clang -I/Users/chenchaowei/Desktop/git/BRC/BRClient -I/Users/chenchaowei/Qt5.5.1/5.5/clang_64/lib/QtWidgets.framework/Headers -I/Users/chenchaowei/Qt5.5.1/5.5/clang_64/lib/QtGui.framework/Headers -I/Users/chenchaowei/Qt5.5.1/5.5/clang_64/lib/QtNetwork.framework/Headers -I/Users/chenchaowei/Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers -F/Users/chenchaowei/Qt5.5.1/5.5/clang_64/lib ListenKeyEvent.h -o obj/moc_ListenKeyEvent.cpp
 
 compiler_moc_source_make_all:
 compiler_moc_source_clean:
@@ -1201,6 +1234,29 @@ obj/Vkeybord.o: Vkeybord.cpp
 obj/ItemKey.o: ItemKey.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/ItemKey.o ItemKey.cpp
 
+obj/CThread.o: CThread.cpp CThread.h \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/QDir \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/qdir.h \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/QObject \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/qobject.h \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/QThread \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/qthread.h \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/QDebug \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/qdebug.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/CThread.o CThread.cpp
+
+obj/ListenKeyEvent.o: ListenKeyEvent.cpp ListenKeyEvent.h \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/QObject \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/qobject.h \
+		CThread.h \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/QDir \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/qdir.h \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/QThread \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/qthread.h \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/QDebug \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/qdebug.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/ListenKeyEvent.o ListenKeyEvent.cpp
+
 obj/qrc_res.o: ../bin/qrc_res.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/qrc_res.o ../bin/qrc_res.cpp
 
@@ -1233,6 +1289,12 @@ obj/moc_Vkeybord.o: obj/moc_Vkeybord.cpp
 
 obj/moc_ItemKey.o: obj/moc_ItemKey.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/moc_ItemKey.o obj/moc_ItemKey.cpp
+
+obj/moc_CThread.o: obj/moc_CThread.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/moc_CThread.o obj/moc_CThread.cpp
+
+obj/moc_ListenKeyEvent.o: obj/moc_ListenKeyEvent.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/moc_ListenKeyEvent.o obj/moc_ListenKeyEvent.cpp
 
 ####### Install
 

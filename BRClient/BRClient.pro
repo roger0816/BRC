@@ -4,7 +4,7 @@
 #
 #-------------------------------------------------
 
-QT       += core gui network multimedia
+QT       += core gui network #multimedia
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -33,7 +33,9 @@ SOURCES += main.cpp\
     Global.cpp \
     Vinput.cpp \
     Vkeybord.cpp \
-    ItemKey.cpp
+    ItemKey.cpp \
+    CThread.cpp \
+    ListenKeyEvent.cpp
 
 HEADERS  += widget.h \
     StageSetting.h \
@@ -44,7 +46,9 @@ HEADERS  += widget.h \
     Global.h \
     Vinput.h \
     Vkeybord.h \
-    ItemKey.h
+    ItemKey.h \
+    CThread.h \
+    ListenKeyEvent.h
 
 
 FORMS    += widget.ui \
