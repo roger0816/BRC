@@ -41,6 +41,7 @@ public:
 
 signals:
     void signalKey(int, QString);
+    void signalDevNum(int);
 };
 
 

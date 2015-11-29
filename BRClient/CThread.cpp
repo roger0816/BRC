@@ -170,11 +170,13 @@ void CThread::run()
     QString text = "";
 
     fd = openDev(m_sPath);
+#if 0
     if (fd == -1) {
         emit signalKey(m_iIndex, "N/A");
     } else {
         emit signalKey(m_iIndex, "Please scan!");
     }
+#endif
     qDebug()<< "m_iIndex=" << m_iIndex << ", m_sPath=" << m_sPath << ", fd=" << fd;
 
     while(1) {
@@ -191,6 +193,7 @@ void CThread::run()
             }
 #endif
             m_iDevNumber = m_devList.length();
+            emit signalDevNum(m_iDevNumber);
             qDebug()<< "m_iIndex=" << m_iIndex << ", m_sPath=" << m_sPath << ", fd=" << fd;
         }
         //QFileInfo device(m_sPath);

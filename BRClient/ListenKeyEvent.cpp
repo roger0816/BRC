@@ -11,6 +11,7 @@ ListenKeyEvent::ListenKeyEvent(QObject *parent) : QObject(parent)
         thread->setDevNumber(thread->getDevList());
         thread->setDev(i);
         connect(thread,SIGNAL(signalKey(int,QString)),this,SIGNAL(signalKey(int,QString)));
+        connect(thread,SIGNAL(signalDevNum(int)),this,SIGNAL(signalDevNum(int)));
 
         thread->start();
 
