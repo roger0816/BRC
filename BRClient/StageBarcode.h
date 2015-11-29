@@ -7,7 +7,7 @@
 #include <QLabel>
 #include <QPushButton>
 #include "Vinput.h"
-//#include "ListenKeyEvent.h"
+#include "ListenKeyEvent.h"
 namespace Ui {
 class StageBarcode;
 }
@@ -23,7 +23,7 @@ public:
 
 private:
     Ui::StageBarcode *ui;
-    //ListenKeyEvent *m_listenKey;
+    ListenKeyEvent *m_listenKey;
     QString m_sBarcodeString;
 
     QList<Vinput*> m_listProduct;
