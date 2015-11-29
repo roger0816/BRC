@@ -24,9 +24,9 @@ StageBarcode::StageBarcode(QWidget *parent) :
 
 
 
-//    m_listenKey=new ListenKeyEvent(this);
+    m_listenKey=new ListenKeyEvent(this);
 
-//    connect(m_listenKey,SIGNAL(signalKey(int,QString)),this,SLOT(slotGetKey(int,QString)));
+    connect(m_listenKey,SIGNAL(signalKey(int,QString)),this,SLOT(slotGetKey(int,QString)));
 
 
 

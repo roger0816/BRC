@@ -1,8 +1,8 @@
-﻿#include "ListenKeyEvent.h"
+#include "ListenKeyEvent.h"
 using namespace  std;
 ListenKeyEvent::ListenKeyEvent(QObject *parent) : QObject(parent)
 {
-#if Q_OS_LINUX
+
     for(int i=0;i<4;i++)
     {
         CThread *thread=new CThread(this);
@@ -16,7 +16,6 @@ ListenKeyEvent::ListenKeyEvent(QObject *parent) : QObject(parent)
 
         m_listThread.append(thread);
     }
-#endif
 
 
 

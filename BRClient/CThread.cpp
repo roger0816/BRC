@@ -1,4 +1,4 @@
-﻿#include "CThread.h"
+#include "CThread.h"
 
 CThread::CThread(QObject *parent) :QThread(parent)
 {
@@ -18,7 +18,6 @@ CThread::~CThread()
 
 QString CThread::eventCodeToString(int code)
 {
-#if Q_OS_LINUX
     switch (code)
     {
     case KEY_0 :
@@ -96,7 +95,6 @@ QString CThread::eventCodeToString(int code)
     default:
         return "-";
     }
-#endif
 }
 int CThread::openDev(QString dev_name)
 {
@@ -105,7 +103,6 @@ int CThread::openDev(QString dev_name)
 
 void CThread::readDevEvent(int fd, int index, QString *text)
 {
-#if Q_OS_LINUX
     //this->thread()->msleep(5);
     struct input_event ev;
     read(fd, &ev, sizeof (struct input_event));
@@ -120,8 +117,6 @@ void CThread::readDevEvent(int fd, int index, QString *text)
             *text = "";
         }
     }
-
-#endif
 }
 
 void CThread::setIndex(int index)

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
  <class>StageSetting</class>
  <widget class="QWidget" name="StageSetting">
@@ -829,7 +829,6 @@ QWidget#w2{    border: 1px solid gray;
             <zorder>wNetwork</zorder>
             <zorder>wMachine</zorder>
             <zorder>wLanguage</zorder>
-            <zorder>w0_2</zorder>
             <zorder>wUpdate</zorder>
            </widget>
            <widget class="QWidget" name="page_2"/>
