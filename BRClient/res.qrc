@@ -1,8 +1,8 @@
 <RCC>
     <qresource prefix="/language">
-        <file>translations/en.qm</file>
         <file>translations/tw.qm</file>
         <file>translations/cn.qm</file>
+        <file>translations/en.qm</file>
     </qresource>
     <qresource prefix="/sound">
         <file>res/sound/NOTIFY.wav</file>

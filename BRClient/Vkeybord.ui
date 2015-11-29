@@ -384,7 +384,7 @@
               </property>
               <property name="sizeHint" stdset="0">
                <size>
-                <width>20</width>
+                <width>5</width>
                 <height>20</height>
                </size>
               </property>
@@ -400,7 +400,7 @@
               </property>
               <property name="sizeHint" stdset="0">
                <size>
-                <width>20</width>
+                <width>5</width>
                 <height>20</height>
                </size>
               </property>
@@ -465,7 +465,7 @@
               </property>
               <property name="sizeHint" stdset="0">
                <size>
-                <width>40</width>
+                <width>10</width>
                 <height>20</height>
                </size>
               </property>
@@ -593,7 +593,7 @@
               </property>
               <property name="sizeHint" stdset="0">
                <size>
-                <width>40</width>
+                <width>10</width>
                 <height>20</height>
                </size>
               </property>
@@ -688,6 +688,11 @@
                    <width>1000</width>
                    <height>16777215</height>
                   </size>
+                 </property>
+                 <property name="font">
+                  <font>
+                   <pointsize>10</pointsize>
+                  </font>
                  </property>
                  <property name="text">
                   <string>shift</string>
@@ -877,7 +882,7 @@
              <height>10000</height>
             </size>
            </property>
-           <layout class="QGridLayout" name="gridLayout_7" columnstretch="1,0,0,0,0,0">
+           <layout class="QGridLayout" name="gridLayout_7" columnstretch="1,2,5,2,2,1">
             <property name="leftMargin">
              <number>10</number>
             </property>
@@ -933,6 +938,11 @@
                    <width>1000</width>
                    <height>16777215</height>
                   </size>
+                 </property>
+                 <property name="font">
+                  <font>
+                   <pointsize>10</pointsize>
+                  </font>
                  </property>
                  <property name="text">
                   <string>close</string>
@@ -1031,6 +1041,11 @@
                    <height>16777215</height>
                   </size>
                  </property>
+                 <property name="font">
+                  <font>
+                   <pointsize>10</pointsize>
+                  </font>
+                 </property>
                  <property name="text">
                   <string>enter</string>
                  </property>
@@ -1040,7 +1055,32 @@
              </widget>
             </item>
             <item row="0" column="3">
-             <widget class="ItemKey" name="end" native="true"/>
+             <widget class="QWidget" name="end2" native="true">
+              <layout class="QGridLayout" name="gridLayout_13">
+               <property name="leftMargin">
+                <number>10</number>
+               </property>
+               <property name="topMargin">
+                <number>2</number>
+               </property>
+               <property name="rightMargin">
+                <number>10</number>
+               </property>
+               <property name="bottomMargin">
+                <number>1</number>
+               </property>
+               <item row="0" column="0">
+                <widget class="ItemKey" name="end" native="true">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
             </item>
            </layout>
           </widget>

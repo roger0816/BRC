@@ -170,7 +170,7 @@
               <number>2</number>
              </property>
              <property name="topMargin">
-              <number>0</number>
+              <number>8</number>
              </property>
              <property name="rightMargin">
               <number>2</number>
@@ -178,8 +178,11 @@
              <property name="bottomMargin">
               <number>0</number>
              </property>
-             <property name="spacing">
+             <property name="horizontalSpacing">
               <number>0</number>
+             </property>
+             <property name="verticalSpacing">
+              <number>4</number>
              </property>
              <item row="3" column="0">
               <widget class="ItemBarcode" name="vBarcode3" native="true">

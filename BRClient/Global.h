@@ -16,6 +16,8 @@
 #define CONFIG_IP "ip"
 #define CONFIG_PORT "port"
 #define CONFIG_LANGUAGE "language"
+#define CONFIG_UPDATE_IP "update ip"
+#define CONFIG_UPDATE_PORT "update port"
 
 #define LANGUAGE_EN "en"
 #define LANGUAGE_CN "cn"
@@ -40,6 +42,8 @@ namespace ConfigFile
        QString sIp;
        QString sPort;
        QString sLanguage;
+       QString sUpdateIp;
+       QString sUpdatePort;
    };
 }
 

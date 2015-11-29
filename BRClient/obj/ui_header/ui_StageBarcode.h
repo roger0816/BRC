@@ -124,9 +124,10 @@ public:
         page = new QWidget();
         page->setObjectName(QStringLiteral("page"));
         gridLayout_23 = new QGridLayout(page);
-        gridLayout_23->setSpacing(0);
         gridLayout_23->setObjectName(QStringLiteral("gridLayout_23"));
-        gridLayout_23->setContentsMargins(2, 0, 2, 0);
+        gridLayout_23->setHorizontalSpacing(0);
+        gridLayout_23->setVerticalSpacing(4);
+        gridLayout_23->setContentsMargins(2, 8, 2, 0);
         vBarcode3 = new ItemBarcode(page);
         vBarcode3->setObjectName(QStringLiteral("vBarcode3"));
         vBarcode3->setMinimumSize(QSize(0, 40));

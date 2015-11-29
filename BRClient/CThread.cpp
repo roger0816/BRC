@@ -1,4 +1,4 @@
-#include "CThread.h"
+﻿#include "CThread.h"
 
 CThread::CThread(QObject *parent) :QThread(parent)
 {
@@ -18,6 +18,7 @@ CThread::~CThread()
 
 QString CThread::eventCodeToString(int code)
 {
+#if Q_OS_LINUX
     switch (code)
     {
     case KEY_0 :
@@ -95,6 +96,7 @@ QString CThread::eventCodeToString(int code)
     default:
         return "-";
     }
+#endif
 }
 int CThread::openDev(QString dev_name)
 {
@@ -103,6 +105,7 @@ int CThread::openDev(QString dev_name)
 
 void CThread::readDevEvent(int fd, int index, QString *text)
 {
+#if Q_OS_LINUX
     //this->thread()->msleep(5);
     struct input_event ev;
     read(fd, &ev, sizeof (struct input_event));
@@ -117,6 +120,8 @@ void CThread::readDevEvent(int fd, int index, QString *text)
             *text = "";
         }
     }
+
+#endif
 }
 
 void CThread::setIndex(int index)
@@ -175,7 +180,7 @@ void CThread::run()
     } else {
         emit signalKey(m_iIndex, "Please scan!");
     }
-    qDebug()<< "m_iIndex" << m_iIndex << ", m_sPath=" << m_sPath;
+    qDebug()<< "m_iIndex=" << m_iIndex << ", m_sPath=" << m_sPath << ", fd=" << fd;
 
     while(1) {
         getDevList();
@@ -183,16 +188,19 @@ void CThread::run()
         {
             setDev(m_iIndex);
             fd = openDev(m_sPath);
+#if 0
             if (fd == -1) {
                 emit signalKey(m_iIndex, "N/A");
             } else {
                 emit signalKey(m_iIndex, "Please scan!");
             }
+#endif
             m_iDevNumber = m_devList.length();
-            qDebug()<< "m_iIndex" << m_iIndex << ", m_sPath=" << m_sPath;
+            qDebug()<< "m_iIndex=" << m_iIndex << ", m_sPath=" << m_sPath << ", fd=" << fd;
         }
-        QFileInfo device(m_sPath);
+        //QFileInfo device(m_sPath);
         //read device event
-        readDevEvent(fd, m_iIndex, &text);
+        if (fd != -1)
+            readDevEvent(fd, m_iIndex, &text);
     }
 }

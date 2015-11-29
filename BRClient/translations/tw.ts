@@ -9,17 +9,17 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ItemBarcode.ui" line="131"/>
+        <location filename="../ItemBarcode.ui" line="136"/>
         <source>條碼機</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ItemBarcode.ui" line="181"/>
+        <location filename="../ItemBarcode.ui" line="192"/>
         <source>員工編號:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ItemBarcode.ui" line="238"/>
+        <location filename="../ItemBarcode.ui" line="266"/>
         <source>票號:</source>
         <translation type="unfinished"></translation>
     </message>
@@ -63,52 +63,64 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../StageSetting.ui" line="209"/>
+        <location filename="../StageSetting.ui" line="193"/>
         <source>連線</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../StageSetting.ui" line="284"/>
+        <location filename="../StageSetting.ui" line="286"/>
+        <location filename="../StageSetting.ui" line="613"/>
         <source>IP:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../StageSetting.ui" line="303"/>
+        <location filename="../StageSetting.ui" line="311"/>
+        <location filename="../StageSetting.ui" line="638"/>
         <source>PORT:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../StageSetting.ui" line="379"/>
+        <location filename="../StageSetting.ui" line="387"/>
         <source>語系</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../StageSetting.ui" line="398"/>
+        <location filename="../StageSetting.ui" line="418"/>
         <source>English</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../StageSetting.ui" line="417"/>
+        <location filename="../StageSetting.ui" line="437"/>
         <source>繁體中文</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../StageSetting.ui" line="436"/>
+        <location filename="../StageSetting.ui" line="456"/>
         <source>简体中文</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../StageSetting.ui" line="488"/>
+        <location filename="../StageSetting.ui" line="520"/>
+        <source>更新</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../StageSetting.ui" line="769"/>
         <source>取消</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../StageSetting.ui" line="513"/>
+        <location filename="../StageSetting.ui" line="807"/>
         <source>確定</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../StageSetting.ui" line="567"/>
+        <location filename="../StageSetting.ui" line="820"/>
+        <source>link test</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../StageSetting.ui" line="688"/>
         <source>機器代號:</source>
         <translation type="unfinished"></translation>
     </message>
@@ -118,6 +130,17 @@
     <message>
         <location filename="../StageTest.ui" line="14"/>
         <source>Form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../StageTest.ui" line="44"/>
+        <location filename="../StageTest.ui" line="57"/>
+        <source>PushButton</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../StageTest.ui" line="70"/>
+        <source>send socket</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -137,17 +160,17 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Vkeybord.ui" line="679"/>
+        <location filename="../Vkeybord.ui" line="698"/>
         <source>shift</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Vkeybord.ui" line="924"/>
+        <location filename="../Vkeybord.ui" line="948"/>
         <source>close</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Vkeybord.ui" line="1021"/>
+        <location filename="../Vkeybord.ui" line="1050"/>
         <source>enter</source>
         <translation type="unfinished"></translation>
     </message>

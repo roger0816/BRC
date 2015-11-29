@@ -99,6 +99,8 @@ public:
     QWidget *widget_5;
     QGridLayout *gridLayout_12;
     QPushButton *btnEnter;
+    QWidget *end2;
+    QGridLayout *gridLayout_13;
     ItemKey *end;
 
     void setupUi(QWidget *Vkeybord)
@@ -294,11 +296,11 @@ public:
 
         gridLayout_4->addWidget(u, 0, 7, 1, 1);
 
-        horizontalSpacer = new QSpacerItem(20, 20, QSizePolicy::Minimum, QSizePolicy::Minimum);
+        horizontalSpacer = new QSpacerItem(5, 20, QSizePolicy::Minimum, QSizePolicy::Minimum);
 
         gridLayout_4->addItem(horizontalSpacer, 0, 0, 1, 1);
 
-        horizontalSpacer_2 = new QSpacerItem(20, 20, QSizePolicy::Minimum, QSizePolicy::Minimum);
+        horizontalSpacer_2 = new QSpacerItem(5, 20, QSizePolicy::Minimum, QSizePolicy::Minimum);
 
         gridLayout_4->addItem(horizontalSpacer_2, 0, 11, 1, 1);
 
@@ -320,7 +322,7 @@ public:
 
         gridLayout_5->addWidget(s, 0, 2, 1, 1);
 
-        horizontalSpacer_3 = new QSpacerItem(40, 20, QSizePolicy::Minimum, QSizePolicy::Minimum);
+        horizontalSpacer_3 = new QSpacerItem(10, 20, QSizePolicy::Minimum, QSizePolicy::Minimum);
 
         gridLayout_5->addItem(horizontalSpacer_3, 0, 0, 1, 1);
 
@@ -373,7 +375,7 @@ public:
 
         gridLayout_5->addWidget(l, 0, 9, 1, 1);
 
-        horizontalSpacer_4 = new QSpacerItem(40, 20, QSizePolicy::Minimum, QSizePolicy::Minimum);
+        horizontalSpacer_4 = new QSpacerItem(10, 20, QSizePolicy::Minimum, QSizePolicy::Minimum);
 
         gridLayout_5->addItem(horizontalSpacer_4, 0, 10, 1, 1);
 
@@ -407,6 +409,9 @@ public:
         btnShift->setSizePolicy(sizePolicy1);
         btnShift->setMinimumSize(QSize(0, 0));
         btnShift->setMaximumSize(QSize(1000, 16777215));
+        QFont font2;
+        font2.setPointSize(10);
+        btnShift->setFont(font2);
         btnShift->setCheckable(true);
 
         gridLayout_10->addWidget(btnShift, 0, 0, 1, 1);
@@ -501,6 +506,7 @@ public:
         btnClose->setSizePolicy(sizePolicy1);
         btnClose->setMinimumSize(QSize(0, 0));
         btnClose->setMaximumSize(QSize(1000, 16777215));
+        btnClose->setFont(font2);
 
         gridLayout_11->addWidget(btnClose, 0, 0, 1, 1);
 
@@ -534,18 +540,34 @@ public:
         btnEnter->setSizePolicy(sizePolicy1);
         btnEnter->setMinimumSize(QSize(0, 0));
         btnEnter->setMaximumSize(QSize(1000, 16777215));
+        btnEnter->setFont(font2);
 
         gridLayout_12->addWidget(btnEnter, 0, 0, 1, 1);
 
 
         gridLayout_7->addWidget(widget_5, 0, 4, 1, 1);
 
-        end = new ItemKey(wNumber_5);
+        end2 = new QWidget(wNumber_5);
+        end2->setObjectName(QStringLiteral("end2"));
+        gridLayout_13 = new QGridLayout(end2);
+        gridLayout_13->setObjectName(QStringLiteral("gridLayout_13"));
+        gridLayout_13->setContentsMargins(10, 2, 10, 1);
+        end = new ItemKey(end2);
         end->setObjectName(QStringLiteral("end"));
+        sizePolicy1.setHeightForWidth(end->sizePolicy().hasHeightForWidth());
+        end->setSizePolicy(sizePolicy1);
 
-        gridLayout_7->addWidget(end, 0, 3, 1, 1);
+        gridLayout_13->addWidget(end, 0, 0, 1, 1);
+
+
+        gridLayout_7->addWidget(end2, 0, 3, 1, 1);
 
         gridLayout_7->setColumnStretch(0, 1);
+        gridLayout_7->setColumnStretch(1, 2);
+        gridLayout_7->setColumnStretch(2, 5);
+        gridLayout_7->setColumnStretch(3, 2);
+        gridLayout_7->setColumnStretch(4, 2);
+        gridLayout_7->setColumnStretch(5, 1);
 
         gridLayout_8->addWidget(wNumber_5, 4, 0, 1, 1);
 

@@ -1,6 +1,8 @@
-#ifndef CTHREAD_H
+﻿#ifndef CTHREAD_H
 #define CTHREAD_H
+#if Q_OS_LINU
 #include <linux/input.h>
+#endif
 #include<fcntl.h>
 #include <unistd.h>
 #include <QDir>

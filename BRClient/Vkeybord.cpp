@@ -38,7 +38,7 @@ Vkeybord::Vkeybord(QWidget *parent) :
         connect(m_listNumWord[j],SIGNAL(clicked()),this,SLOT(slotInput()));
     }
 
-    ui->back->setText("back");
+    ui->back->setText("←");
     ui->end->setText(".");
     for(int k=0;k<m_listSpecailWord.length();k++)
     {
@@ -125,7 +125,7 @@ void Vkeybord::slotChangeUpper(bool)
 void Vkeybord::slotOpenKeyBord(QLabel *lb)
 {
    // ui->wBg->move(0,height());
-    ui->lineEdit->setText("");
+    ui->lineEdit->setText(lb->text());
     m_ani->setStartValue(QPoint(0,height()));
     m_ani->setEndValue(QPoint(0,0));
     m_ani->start();

@@ -756,8 +756,32 @@ obj/moc_StageBarcode.cpp: ../../../../Qt5.5.1/5.5/clang_64/lib/QtWidgets.framewo
 		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/qdebug.h \
 		../../../../Qt5.5.1/5.5/clang_64/lib/QtGui.framework/Headers/QKeyEvent \
 		../../../../Qt5.5.1/5.5/clang_64/lib/QtGui.framework/Headers/qevent.h \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtWidgets.framework/Headers/QLabel \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtWidgets.framework/Headers/qlabel.h \
 		../../../../Qt5.5.1/5.5/clang_64/lib/QtWidgets.framework/Headers/QPushButton \
 		../../../../Qt5.5.1/5.5/clang_64/lib/QtWidgets.framework/Headers/qpushbutton.h \
+		Vinput.h \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtGui.framework/Headers/QMouseEvent \
+		Global.h \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/QObject \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/qobject.h \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/QSettings \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/qsettings.h \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtWidgets.framework/Headers/QApplication \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtWidgets.framework/Headers/qapplication.h \
+		CTcpClient.h \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/QStringList \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/qstringlist.h \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/QString \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/qstring.h \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtNetwork.framework/Headers/QTcpSocket \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtNetwork.framework/Headers/qtcpsocket.h \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/QTime \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/qdatetime.h \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/QCoreApplication \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/qcoreapplication.h \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/QElapsedTimer \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/qelapsedtimer.h \
 		StageBarcode.h
 	/Users/chenchaowei/Qt5.5.1/5.5/clang_64/bin/moc $(DEFINES) -D__APPLE__ -D__GNUC__=4 -D__APPLE_CC__ -I/Users/chenchaowei/Qt5.5.1/5.5/clang_64/mkspecs/macx-clang -I/Users/chenchaowei/Desktop/git/BRC/BRClient -I/Users/chenchaowei/Qt5.5.1/5.5/clang_64/lib/QtWidgets.framework/Headers -I/Users/chenchaowei/Qt5.5.1/5.5/clang_64/lib/QtGui.framework/Headers -I/Users/chenchaowei/Qt5.5.1/5.5/clang_64/lib/QtNetwork.framework/Headers -I/Users/chenchaowei/Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers -F/Users/chenchaowei/Qt5.5.1/5.5/clang_64/lib StageBarcode.h -o obj/moc_StageBarcode.cpp
 
@@ -991,8 +1015,32 @@ obj/ui_header/ui_widget.h: widget.ui \
 		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/qdebug.h \
 		../../../../Qt5.5.1/5.5/clang_64/lib/QtGui.framework/Headers/QKeyEvent \
 		../../../../Qt5.5.1/5.5/clang_64/lib/QtGui.framework/Headers/qevent.h \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtWidgets.framework/Headers/QLabel \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtWidgets.framework/Headers/qlabel.h \
 		../../../../Qt5.5.1/5.5/clang_64/lib/QtWidgets.framework/Headers/QPushButton \
 		../../../../Qt5.5.1/5.5/clang_64/lib/QtWidgets.framework/Headers/qpushbutton.h \
+		Vinput.h \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtGui.framework/Headers/QMouseEvent \
+		Global.h \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/QObject \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/qobject.h \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/QSettings \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/qsettings.h \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtWidgets.framework/Headers/QApplication \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtWidgets.framework/Headers/qapplication.h \
+		CTcpClient.h \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/QStringList \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/qstringlist.h \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/QString \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/qstring.h \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtNetwork.framework/Headers/QTcpSocket \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtNetwork.framework/Headers/qtcpsocket.h \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/QTime \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/qdatetime.h \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/QCoreApplication \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/qcoreapplication.h \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/QElapsedTimer \
+		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/qelapsedtimer.h \
 		../../../../Qt5.5.1/5.5/clang_64/lib/QtWidgets.framework/Headers/QWidget \
 		../../../../Qt5.5.1/5.5/clang_64/lib/QtWidgets.framework/Headers/qwidget.h \
 		../../../../Qt5.5.1/5.5/clang_64/lib/QtGui.framework/Headers/QKeyEvent \
@@ -1234,27 +1282,10 @@ obj/Vkeybord.o: Vkeybord.cpp
 obj/ItemKey.o: ItemKey.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/ItemKey.o ItemKey.cpp
 
-obj/CThread.o: CThread.cpp CThread.h \
-		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/QDir \
-		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/qdir.h \
-		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/QObject \
-		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/qobject.h \
-		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/QThread \
-		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/qthread.h \
-		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/QDebug \
-		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/qdebug.h
+obj/CThread.o: CThread.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/CThread.o CThread.cpp
 
-obj/ListenKeyEvent.o: ListenKeyEvent.cpp ListenKeyEvent.h \
-		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/QObject \
-		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/qobject.h \
-		CThread.h \
-		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/QDir \
-		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/qdir.h \
-		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/QThread \
-		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/qthread.h \
-		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/QDebug \
-		../../../../Qt5.5.1/5.5/clang_64/lib/QtCore.framework/Headers/qdebug.h
+obj/ListenKeyEvent.o: ListenKeyEvent.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/ListenKeyEvent.o ListenKeyEvent.cpp
 
 obj/qrc_res.o: ../bin/qrc_res.cpp 

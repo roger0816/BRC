@@ -30,6 +30,8 @@ int Global::readConfig(ConfigFile::Ini &ini)
     ini.sIp=settings.value(CONFIG_IP,"127.0.0.1").toString();
     ini.sPort=settings.value(CONFIG_PORT,"60000").toString();
     ini.sLanguage=settings.value(CONFIG_LANGUAGE,"EN").toString();
+    ini.sUpdateIp=settings.value(CONFIG_UPDATE_IP,"127.0.0.1").toString();
+    ini.sUpdatePort=settings.value(CONFIG_PORT,"60000").toString();
     iRe=0;
 
     QString sPath=":/language/translations/";//cn.qm";
@@ -62,6 +64,14 @@ int Global::writeConfig(QString sKey,QString sValue)
     else if(sKey==CONFIG_LANGUAGE)
     {
         m_config.sLanguage=sValue;
+    }
+    else if(sKey==CONFIG_UPDATE_IP)
+    {
+        m_config.sUpdateIp=sValue;
+    }
+    else if(sKey==CONFIG_UPDATE_PORT)
+    {
+        m_config.sUpdatePort=sValue;
     }
     else
         iRe=-1;

@@ -6,7 +6,8 @@
 #include <QKeyEvent>
 #include <QLabel>
 #include <QPushButton>
-#include "ListenKeyEvent.h"
+#include "Vinput.h"
+//#include "ListenKeyEvent.h"
 namespace Ui {
 class StageBarcode;
 }
@@ -22,18 +23,18 @@ public:
 
 private:
     Ui::StageBarcode *ui;
-    ListenKeyEvent *m_listenKey;
+    //ListenKeyEvent *m_listenKey;
     QString m_sBarcodeString;
 
-    QList<QLabel*> m_listProduct;
-    QList<QLabel*> m_listMember;
+    QList<Vinput*> m_listProduct;
+    QList<Vinput*> m_listMember;
 
     void setUi();
     void keyPressEvent(QKeyEvent *e);
 
     void showEvent(QShowEvent *);
     bool m_bIsLock;
-    void loadBarcode(QString st);
+    //void loadBarcode(QString st);
 signals:
     void clicked(int,QString);
 private slots:

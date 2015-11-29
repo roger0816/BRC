@@ -38,7 +38,8 @@ void StageSetting::showEvent(QShowEvent *)
     ui->txtMachineId->setText(GLOBAL().m_config.sMachineId);
     ui->txtIp->setText(GLOBAL().m_config.sIp);
     ui->txtPort->setText(GLOBAL().m_config.sPort);
-
+    ui->txtUpdateIp->setText(GLOBAL().m_config.sUpdateIp);
+    ui->txtUpdatePort->setText(GLOBAL().m_config.sUpdatePort);
     QString sLanguage=GLOBAL().m_config.sLanguage;
 
     ui->btnCn->setChecked(false);
@@ -114,7 +115,8 @@ void StageSetting::on_btnCheck_released()
     GLOBAL().writeConfig(CONFIG_IP,ui->txtIp->text());
     GLOBAL().writeConfig(CONFIG_PORT,ui->txtPort->text());
     GLOBAL().writeConfig(CONFIG_LANGUAGE,sLanguage);
-
+    GLOBAL().writeConfig(CONFIG_UPDATE_IP,ui->txtUpdateIp->text());
+    GLOBAL().writeConfig(CONFIG_UPDATE_PORT,ui->txtUpdatePort->text());
     clicked(StageIdx::_barcode);
 }
 

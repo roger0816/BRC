@@ -7,7 +7,7 @@ Vinput::Vinput(QWidget *parent) :
 {
     ui->setupUi(this);
     setObjectName("Vinput");
-   // ui->wBg->setStyleSheet("background-color:red");
+    ui->wBg->setStyleSheet("background-color:rgba(193,193,193,40)");
 }
 
 Vinput::~Vinput()
