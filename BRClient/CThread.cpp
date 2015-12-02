@@ -180,11 +180,16 @@ void CThread::run()
     qDebug()<< "m_iIndex=" << m_iIndex << ", m_sPath=" << m_sPath << ", fd=" << fd;
 
     while(1) {
+
         getDevList();
+
+        qDebug()<<"AA: "<<m_devList.length()<<" , "<<m_iDevNumber;
         if (m_devList.length() != m_iDevNumber)
         {
+              this->msleep(3000);
             setDev(m_iIndex);
             fd = openDev(m_sPath);
+
 #if 0
             if (fd == -1) {
                 emit signalKey(m_iIndex, "N/A");

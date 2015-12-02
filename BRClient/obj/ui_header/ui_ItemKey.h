@@ -1,7 +1,8 @@
 /********************************************************************************
 ** Form generated from reading UI file 'ItemKey.ui'
 **
-** Created by: Qt User Interface Compiler version 5.5.1
+** Created: Wed Dec 2 07:13:57 2015
+**      by: Qt User Interface Compiler version 4.8.2
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -10,13 +11,13 @@
 #define UI_ITEMKEY_H
 
 #include <QtCore/QVariant>
-#include <QtWidgets/QAction>
-#include <QtWidgets/QApplication>
-#include <QtWidgets/QButtonGroup>
-#include <QtWidgets/QGridLayout>
-#include <QtWidgets/QHeaderView>
-#include <QtWidgets/QPushButton>
-#include <QtWidgets/QWidget>
+#include <QtGui/QAction>
+#include <QtGui/QApplication>
+#include <QtGui/QButtonGroup>
+#include <QtGui/QGridLayout>
+#include <QtGui/QHeaderView>
+#include <QtGui/QPushButton>
+#include <QtGui/QWidget>
 
 QT_BEGIN_NAMESPACE
 
@@ -29,14 +30,14 @@ public:
     void setupUi(QWidget *ItemKey)
     {
         if (ItemKey->objectName().isEmpty())
-            ItemKey->setObjectName(QStringLiteral("ItemKey"));
+            ItemKey->setObjectName(QString::fromUtf8("ItemKey"));
         ItemKey->resize(197, 186);
         gridLayout = new QGridLayout(ItemKey);
         gridLayout->setSpacing(0);
-        gridLayout->setObjectName(QStringLiteral("gridLayout"));
+        gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
         gridLayout->setContentsMargins(0, 0, 0, 0);
         pushButton = new QPushButton(ItemKey);
-        pushButton->setObjectName(QStringLiteral("pushButton"));
+        pushButton->setObjectName(QString::fromUtf8("pushButton"));
         QSizePolicy sizePolicy(QSizePolicy::Minimum, QSizePolicy::Minimum);
         sizePolicy.setHorizontalStretch(0);
         sizePolicy.setVerticalStretch(0);
@@ -56,7 +57,7 @@ public:
 
     void retranslateUi(QWidget *ItemKey)
     {
-        ItemKey->setWindowTitle(QApplication::translate("ItemKey", "Form", 0));
+        ItemKey->setWindowTitle(QApplication::translate("ItemKey", "Form", 0, QApplication::UnicodeUTF8));
         pushButton->setText(QString());
     } // retranslateUi
 

@@ -268,6 +268,8 @@ TcpData CTcpClient::decodeStream(QString st)
         }
     }
 
+    dObj.sOldCode=st;
+
     return dObj;
 }
 

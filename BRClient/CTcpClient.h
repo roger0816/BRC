@@ -20,6 +20,7 @@ struct TcpData
     int iType;
     QStringList listValue;
     QList<QStringList> dData;
+    QString sOldCode;
 };
 
 

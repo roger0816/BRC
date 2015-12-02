@@ -6,7 +6,7 @@ Global::Global()
 
     qDebug()<<"global class ok";
 
-
+    m_sVer="";
     readConfig(m_config);
 }
 
@@ -31,7 +31,8 @@ int Global::readConfig(ConfigFile::Ini &ini)
     ini.sPort=settings.value(CONFIG_PORT,"60000").toString();
     ini.sLanguage=settings.value(CONFIG_LANGUAGE,"EN").toString();
     ini.sUpdateIp=settings.value(CONFIG_UPDATE_IP,"127.0.0.1").toString();
-    ini.sUpdatePort=settings.value(CONFIG_PORT,"60000").toString();
+    ini.sUpdatePort=settings.value(CONFIG_UPDATE_PORT,"60000").toString();
+    m_sVer=settings.value("version","").toString();
     iRe=0;
 
     QString sPath=":/language/translations/";//cn.qm";
@@ -84,7 +85,7 @@ int Global::writeConfig(QString sKey,QString sValue)
     return iRe;
 }
 
-int Global::tcpSend(QString sId,QString sNum)
+int Global::tcpSend(QString sId,QString sNum,QString &sOut)
 {
     int iRe=9999;
     TcpData input;
@@ -103,6 +104,8 @@ int Global::tcpSend(QString sId,QString sNum)
     {
         QCoreApplication::processEvents();
     }
+
+    sOut=output.sOldCode;
     return iRe;
 }
 

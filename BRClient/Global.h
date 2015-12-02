@@ -63,7 +63,9 @@ public:
 
     Ini m_config;
 
-    int tcpSend(QString sId, QString sNum);
+    QString m_sVer;
+
+    int tcpSend(QString sId, QString sNum, QString &sOut);
 
     QSize m_SizeWindow;
 

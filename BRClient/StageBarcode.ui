@@ -14,16 +14,7 @@
    <string>Form</string>
   </property>
   <layout class="QGridLayout" name="gridLayout">
-   <property name="leftMargin">
-    <number>0</number>
-   </property>
-   <property name="topMargin">
-    <number>0</number>
-   </property>
-   <property name="rightMargin">
-    <number>0</number>
-   </property>
-   <property name="bottomMargin">
+   <property name="margin">
     <number>0</number>
    </property>
    <property name="spacing">
@@ -36,16 +27,7 @@
 </string>
      </property>
      <layout class="QGridLayout" name="gridLayout_2" rowstretch="1,5">
-      <property name="leftMargin">
-       <number>0</number>
-      </property>
-      <property name="topMargin">
-       <number>0</number>
-      </property>
-      <property name="rightMargin">
-       <number>0</number>
-      </property>
-      <property name="bottomMargin">
+      <property name="margin">
        <number>0</number>
       </property>
       <property name="spacing">
@@ -69,16 +51,7 @@
          <string notr="true">QWidget#wTitle{background-color: rgb(102, 102, 102);}</string>
         </property>
         <layout class="QGridLayout" name="gridLayout_5" columnstretch="1,4,1">
-         <property name="leftMargin">
-          <number>0</number>
-         </property>
-         <property name="topMargin">
-          <number>0</number>
-         </property>
-         <property name="rightMargin">
-          <number>0</number>
-         </property>
-         <property name="bottomMargin">
+         <property name="margin">
           <number>0</number>
          </property>
          <property name="spacing">
@@ -141,16 +114,7 @@
       <item row="1" column="0">
        <widget class="QWidget" name="wBody" native="true">
         <layout class="QGridLayout" name="gridLayout_10">
-         <property name="leftMargin">
-          <number>0</number>
-         </property>
-         <property name="topMargin">
-          <number>0</number>
-         </property>
-         <property name="rightMargin">
-          <number>0</number>
-         </property>
-         <property name="bottomMargin">
+         <property name="margin">
           <number>0</number>
          </property>
          <property name="spacing">
@@ -176,7 +140,7 @@
               <number>2</number>
              </property>
              <property name="bottomMargin">
-              <number>0</number>
+              <number>10</number>
              </property>
              <property name="horizontalSpacing">
               <number>0</number>
@@ -185,7 +149,7 @@
               <number>4</number>
              </property>
              <item row="3" column="0">
-              <widget class="ItemBarcode" name="vBarcode3" native="true">
+              <widget class="QWidget" name="vBarcode3" native="true">
                <property name="minimumSize">
                 <size>
                  <width>0</width>
@@ -198,6 +162,15 @@
                  <height>400</height>
                 </size>
                </property>
+               <layout class="QGridLayout" name="gridLayout_3">
+                <item row="0" column="0">
+                 <widget class="QLabel" name="label">
+                  <property name="text">
+                   <string/>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
               </widget>
              </item>
              <item row="1" column="0">
@@ -260,6 +233,13 @@
                 </size>
                </property>
               </spacer>
+             </item>
+             <item row="5" column="0">
+              <widget class="QLabel" name="lbVersion">
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
              </item>
             </layout>
            </widget>

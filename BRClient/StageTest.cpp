@@ -32,5 +32,5 @@ void StageTest::on_pushButton_2_clicked()
 
 void StageTest::on_pushButton_3_clicked()
 {
-    GLOBAL().tcpSend("AAA","BBB");
+  //  GLOBAL().tcpSend("AAA","BBB");
 }

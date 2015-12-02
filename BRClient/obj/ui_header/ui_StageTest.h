@@ -1,7 +1,8 @@
 /********************************************************************************
 ** Form generated from reading UI file 'StageTest.ui'
 **
-** Created by: Qt User Interface Compiler version 5.5.1
+** Created: Wed Dec 2 07:13:57 2015
+**      by: Qt User Interface Compiler version 4.8.2
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -10,13 +11,13 @@
 #define UI_STAGETEST_H
 
 #include <QtCore/QVariant>
-#include <QtWidgets/QAction>
-#include <QtWidgets/QApplication>
-#include <QtWidgets/QButtonGroup>
-#include <QtWidgets/QGridLayout>
-#include <QtWidgets/QHeaderView>
-#include <QtWidgets/QPushButton>
-#include <QtWidgets/QWidget>
+#include <QtGui/QAction>
+#include <QtGui/QApplication>
+#include <QtGui/QButtonGroup>
+#include <QtGui/QGridLayout>
+#include <QtGui/QHeaderView>
+#include <QtGui/QPushButton>
+#include <QtGui/QWidget>
 #include "Vkeybord.h"
 
 QT_BEGIN_NAMESPACE
@@ -33,22 +34,22 @@ public:
     void setupUi(QWidget *StageTest)
     {
         if (StageTest->objectName().isEmpty())
-            StageTest->setObjectName(QStringLiteral("StageTest"));
+            StageTest->setObjectName(QString::fromUtf8("StageTest"));
         StageTest->resize(426, 401);
         gridLayout = new QGridLayout(StageTest);
         gridLayout->setSpacing(0);
-        gridLayout->setObjectName(QStringLiteral("gridLayout"));
+        gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
         gridLayout->setContentsMargins(0, 0, 0, 0);
         widget = new Vkeybord(StageTest);
-        widget->setObjectName(QStringLiteral("widget"));
+        widget->setObjectName(QString::fromUtf8("widget"));
         pushButton = new QPushButton(widget);
-        pushButton->setObjectName(QStringLiteral("pushButton"));
+        pushButton->setObjectName(QString::fromUtf8("pushButton"));
         pushButton->setGeometry(QRect(140, 160, 113, 32));
         pushButton_2 = new QPushButton(widget);
-        pushButton_2->setObjectName(QStringLiteral("pushButton_2"));
+        pushButton_2->setObjectName(QString::fromUtf8("pushButton_2"));
         pushButton_2->setGeometry(QRect(140, 230, 113, 32));
         pushButton_3 = new QPushButton(widget);
-        pushButton_3->setObjectName(QStringLiteral("pushButton_3"));
+        pushButton_3->setObjectName(QString::fromUtf8("pushButton_3"));
         pushButton_3->setGeometry(QRect(140, 310, 113, 32));
 
         gridLayout->addWidget(widget, 0, 0, 1, 1);
@@ -61,10 +62,10 @@ public:
 
     void retranslateUi(QWidget *StageTest)
     {
-        StageTest->setWindowTitle(QApplication::translate("StageTest", "Form", 0));
-        pushButton->setText(QApplication::translate("StageTest", "PushButton", 0));
-        pushButton_2->setText(QApplication::translate("StageTest", "PushButton", 0));
-        pushButton_3->setText(QApplication::translate("StageTest", "send socket", 0));
+        StageTest->setWindowTitle(QApplication::translate("StageTest", "Form", 0, QApplication::UnicodeUTF8));
+        pushButton->setText(QApplication::translate("StageTest", "PushButton", 0, QApplication::UnicodeUTF8));
+        pushButton_2->setText(QApplication::translate("StageTest", "PushButton", 0, QApplication::UnicodeUTF8));
+        pushButton_3->setText(QApplication::translate("StageTest", "send socket", 0, QApplication::UnicodeUTF8));
     } // retranslateUi
 
 };

@@ -10,9 +10,12 @@ Widget::Widget(QWidget *parent) :
     ui->setupUi(this);
     m_iSec=-1;
 
-  //  QObject::startTimer(1000);
+    m_sBRclient=BRC_PATH;
+    //  QObject::startTimer(1000);
     m_cUsb.connect(&m_cUsb,SIGNAL(singalDetectBarcode(bool)),this,SLOT(slotDetectBarcode(bool)));
     m_cUsb.start();
+
+    this->on_btn_clicked();
 
 }
 
@@ -36,19 +39,26 @@ void Widget::timerEvent(QTimerEvent *)
 
 void Widget::on_btn_clicked()
 {
-    qDebug()<<"AA: "<<m_brc.isOpen();
-
-    if(!m_brc.isOpen())
-    {
-        m_brc.start(BRC_PATH);
-
-    }
-    else
-    {
-        m_brc.close();
-    }
 
 
+
+    QSettings settings(CONFIG_PATH, QSettings::IniFormat);
+    settings.setIniCodec("UTF-8");
+    settings.beginGroup("BRClient");
+    QString sIp=settings.value(CONFIG_UPDATE_IP,"127.0.0.1").toString();
+    QString sPort=settings.value(CONFIG_UPDATE_PORT,"60000").toString();
+
+    CFtpTransfer *ftpTransfer=new CFtpTransfer(this);
+    ftpTransfer->setUrl("192.168.43.130","brc","0000");
+    ftpTransfer->downloadDir("");
+
+    QSettings settingsVersion(VERSION_PATH, QSettings::IniFormat);
+    settingsVersion.setIniCodec("UTF-8");
+    settingsVersion.beginGroup("VERSION");
+    QString sVer=settingsVersion.value("version","").toString();
+    m_sBRclient=BRC_PATH+sVer;
+
+    settings.setValue("version","v"+sVer);
 
 
 }
@@ -64,7 +74,16 @@ void Widget::slotDetectBarcode(bool bHas)
     {
         if(m_brc.isOpen())
             m_brc.close();
-        m_brc.start(BRC_PATH);
+
+        m_brc.startDetached("sudo chmod +x "+m_sBRclient);
+        QElapsedTimer timer;
+        timer.start();
+        while(timer.elapsed()<1000)
+        {
+
+        }
+        m_brc.close();
+        m_brc.start(m_sBRclient);
     }
     else
     {

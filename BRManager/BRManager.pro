@@ -4,7 +4,7 @@
 #
 #-------------------------------------------------
 
-QT       += core gui
+QT       += core gui network
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -20,10 +20,12 @@ UI_DIR = $$PWD/obj/ui_header
 
 SOURCES += main.cpp\
         widget.cpp \
-    CUsbDetect.cpp
+    CUsbDetect.cpp \
+    CFtpTransfer.cpp
 
 HEADERS  += widget.h \
-    CUsbDetect.h
+    CUsbDetect.h \
+    CFtpTransfer.h
 
 FORMS    += widget.ui
 

@@ -122,5 +122,5 @@ void StageSetting::on_btnCheck_released()
 
 void StageSetting::on_btnLinkTest_clicked()
 {
-    GLOBAL().tcpSend("AA","BB");
+
 }

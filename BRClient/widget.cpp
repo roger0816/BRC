@@ -58,10 +58,7 @@ void Widget::slotSetting(int iPageIdx,QString)
         }
     }
 
-
     ui->stackedWidget->currentWidget()->setFocus();
-
-
 
 }
 

@@ -1,7 +1,8 @@
 /********************************************************************************
 ** Form generated from reading UI file 'widget.ui'
 **
-** Created by: Qt User Interface Compiler version 5.5.1
+** Created: Wed Dec 2 07:13:57 2015
+**      by: Qt User Interface Compiler version 4.8.2
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -10,12 +11,12 @@
 #define UI_WIDGET_H
 
 #include <QtCore/QVariant>
-#include <QtWidgets/QAction>
-#include <QtWidgets/QApplication>
-#include <QtWidgets/QButtonGroup>
-#include <QtWidgets/QHeaderView>
-#include <QtWidgets/QStackedWidget>
-#include <QtWidgets/QWidget>
+#include <QtGui/QAction>
+#include <QtGui/QApplication>
+#include <QtGui/QButtonGroup>
+#include <QtGui/QHeaderView>
+#include <QtGui/QStackedWidget>
+#include <QtGui/QWidget>
 #include "StageBarcode.h"
 #include "StageSetting.h"
 #include "StageTest.h"
@@ -33,19 +34,19 @@ public:
     void setupUi(QWidget *Widget)
     {
         if (Widget->objectName().isEmpty())
-            Widget->setObjectName(QStringLiteral("Widget"));
+            Widget->setObjectName(QString::fromUtf8("Widget"));
         Widget->resize(400, 300);
         stackedWidget = new QStackedWidget(Widget);
-        stackedWidget->setObjectName(QStringLiteral("stackedWidget"));
+        stackedWidget->setObjectName(QString::fromUtf8("stackedWidget"));
         stackedWidget->setGeometry(QRect(0, 0, 400, 300));
         vTest = new StageTest();
-        vTest->setObjectName(QStringLiteral("vTest"));
+        vTest->setObjectName(QString::fromUtf8("vTest"));
         stackedWidget->addWidget(vTest);
         vSetting = new StageSetting();
-        vSetting->setObjectName(QStringLiteral("vSetting"));
+        vSetting->setObjectName(QString::fromUtf8("vSetting"));
         stackedWidget->addWidget(vSetting);
         vBarcode = new StageBarcode();
-        vBarcode->setObjectName(QStringLiteral("vBarcode"));
+        vBarcode->setObjectName(QString::fromUtf8("vBarcode"));
         stackedWidget->addWidget(vBarcode);
 
         retranslateUi(Widget);
@@ -55,7 +56,7 @@ public:
 
     void retranslateUi(QWidget *Widget)
     {
-        Widget->setWindowTitle(QApplication::translate("Widget", "Widget", 0));
+        Widget->setWindowTitle(QApplication::translate("Widget", "Widget", 0, QApplication::UnicodeUTF8));
     } // retranslateUi
 
 };

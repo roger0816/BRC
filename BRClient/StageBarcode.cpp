@@ -15,12 +15,12 @@ StageBarcode::StageBarcode(QWidget *parent) :
     m_listMember.append(ui->vBarcode0->m_lb0);
     m_listMember.append(ui->vBarcode1->m_lb0);
     m_listMember.append(ui->vBarcode2->m_lb0);
-    m_listMember.append(ui->vBarcode3->m_lb0);
+ //   m_listMember.append(ui->vBarcode3->m_lb0);
 
     m_listProduct.append(ui->vBarcode0->m_lb1);
     m_listProduct.append(ui->vBarcode1->m_lb1);
     m_listProduct.append(ui->vBarcode2->m_lb1);
-    m_listProduct.append(ui->vBarcode3->m_lb1);
+   // m_listProduct.append(ui->vBarcode3->m_lb1);
 
 
 
@@ -44,7 +44,7 @@ void StageBarcode::setUi()
     connect(ui->vBarcode0->m_btn,SIGNAL(released()),this,SLOT(slotClicked()));
     connect(ui->vBarcode1->m_btn,SIGNAL(released()),this,SLOT(slotClicked()));
     connect(ui->vBarcode2->m_btn,SIGNAL(released()),this,SLOT(slotClicked()));
-    connect(ui->vBarcode3->m_btn,SIGNAL(released()),this,SLOT(slotClicked()));
+   // connect(ui->vBarcode3->m_btn,SIGNAL(released()),this,SLOT(slotClicked()));
 
 
 
@@ -119,7 +119,9 @@ void StageBarcode::slotClicked()
 
 void StageBarcode::slotToTcp()
 {
-    GLOBAL().tcpSend(ui->vBarcode0->m_lb0->text(),ui->vBarcode0->m_lb1->text());
+    QString sOut;
+    GLOBAL().tcpSend(ui->vBarcode0->m_lb0->text(),ui->vBarcode0->m_lb1->text(),sOut);
+    ui->label->setText(sOut);
 }
 
 void StageBarcode::showEvent(QShowEvent *)
@@ -127,6 +129,7 @@ void StageBarcode::showEvent(QShowEvent *)
     QTranslator qtTranslator;
     qtTranslator.load(GLOBAL().m_sNowTransPath);
     QApplication::installTranslator(&qtTranslator);
+    ui->lbVersion->setText(GLOBAL().m_sVer);
     ui->retranslateUi(this);
 
 }

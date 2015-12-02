@@ -4,11 +4,19 @@
 #include <QWidget>
 #include <QTimerEvent>
 #include "CUsbDetect.h"
+#include <QDebug>
+#include <QSettings>
 #include <QProcess>
 #include <QApplication>
+#include "CFtpTransfer.h"
 
 #define BRC_PATH QApplication::applicationDirPath()+"/../bin/BRClient"
+#define CONFIG_PATH QApplication::applicationDirPath()+"/../bin/config.ini"
+#define VERSION_PATH QApplication::applicationDirPath()+"/../bin/version.ini"
 
+
+#define CONFIG_UPDATE_IP "update ip"
+#define CONFIG_UPDATE_PORT "update port"
 namespace Ui {
 class Widget;
 }
@@ -31,6 +39,9 @@ private:
     CUsbDetect m_cUsb;
 
     QProcess m_brc;
+
+    QString m_sBRclient;
+
 
     void timerEvent(QTimerEvent *);
 private slots:
