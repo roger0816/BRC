@@ -1,4 +1,4 @@
-#include "widget.h"
+﻿#include "widget.h"
 #include "ui_widget.h"
 
 
@@ -49,7 +49,7 @@ void Widget::on_btn_clicked()
     QString sPort=settings.value(CONFIG_UPDATE_PORT,"60000").toString();
 
     CFtpTransfer *ftpTransfer=new CFtpTransfer(this);
-    ftpTransfer->setUrl("192.168.43.130","brc","0000");
+    ftpTransfer->setUrl(sIp,"brc",sPort);
     ftpTransfer->downloadDir("");
 
     QSettings settingsVersion(VERSION_PATH, QSettings::IniFormat);
