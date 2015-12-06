@@ -1,4 +1,4 @@
-#include "CFtpTransfer.h"
+﻿#include "CFtpTransfer.h"
 
 CFtpTransfer::CFtpTransfer(QObject *parent) :
     QObject(parent)
@@ -7,18 +7,8 @@ CFtpTransfer::CFtpTransfer(QObject *parent) :
     m_flagProcessOk=false;
     m_flagFtpOk=false;
 
-
-    qDebug()<<"DGK2Server :: Ftp IP : ";
-    //ftp的路徑與帳密
-    //        m_url.setUrl(EZ_CARD_FTP);
-    //        m_url.setUserName("56200000");
-    //        m_url.setPassword("56200000");
-
-    QString sFtpIp="ftp://";//+Global().g_config.sFtpIP;
+    QString sFtpIp="ftp://";
     m_url.setUrl(sFtpIp);
-
-    //    m_url.setUserName(Global().g_config.sFtpUser);
-    //    m_url.setPassword(Global().g_config.sFtpPassword);
 
 
     connect(&m_ftp,SIGNAL(done(bool)),this,SLOT(slotFtpDone(bool)));
@@ -100,76 +90,6 @@ bool CFtpTransfer::upLoad(const QString sFilePath,const QString sFtpDir)
 }
 
 
-
-void CFtpTransfer::downloadEzCardDir(QString sDir)
-{
-
-    m_listFile.clear();
-    m_flagProcessOk=false;
-    m_ftp.connectToHost(m_url.host(),m_url.port(21));
-    m_ftp.login(m_url.userName(),m_url.password());
-    // m_ftp.cd(sDirPath);
-    m_ftp.cd(sDir);
-    m_ftp.list();
-    int iRe=cTimeOut(5000,m_flagProcessOk);
-    m_ftp.close();
-    if(iRe!=0)
-    {
-        qDebug()<<"DGK2Server :: EZCard FTP connect false or out dir no data";
-        return;
-    }
-
-    QString sSaveRoot=QApplication::applicationDirPath()+"/ftp_files/";
-    QString sNowDay=getDate();
-    QDir dir;
-    if(!dir.exists(sSaveRoot))
-    {
-        dir.mkdir(sSaveRoot);
-    }
-    if(!dir.exists(sSaveRoot+sNowDay))
-    {
-        dir.mkdir(sSaveRoot+sNowDay);
-    }
-    if(!dir.exists(sSaveRoot+sNowDay+"/"+sDir))
-    {
-        dir.mkdir(sSaveRoot+sNowDay+"/"+sDir);
-    }
-
-    QString sSavePath=sSaveRoot+sNowDay+"/"+sDir;
-    for(int i=0;i<m_listFile.length();i++)
-    {
-        QString file=sDir+m_listFile.at(i);
-        downLoad(file,sSavePath);
-    }
-
-}
-
-
-void CFtpTransfer::uploadEzCardDir(QString sDate)
-{
-    QString sSaveRoot=QApplication::applicationDirPath()+"/ftp_files/";
-    QString sNowDay;
-    if(sDate=="")
-        sNowDay=getDate();
-    else
-        sNowDay=sDate;
-    QString sSavePath=sSaveRoot+sNowDay+"/in/";
-    qDebug()<<"Dir :  "<<sSavePath;
-    QDir dir(sSavePath);
-    dir.setFilter(QDir::Files | QDir::Hidden | QDir::NoSymLinks);
-    dir.setSorting(QDir::Size | QDir::Reversed);
-
-    QFileInfoList list = dir.entryInfoList();
-    std::cout << "     Bytes Filename" << std::endl;
-    for (int i = 0; i < list.size(); ++i) {
-        QFileInfo fileInfo = list.at(i);
-        std::cout << qPrintable(QString("%1 %2").arg(fileInfo.size(), 10)
-                                .arg(fileInfo.fileName()));
-        std::cout << std::endl;
-        this->upLoad(sSavePath+fileInfo.fileName(),"in/");
-    }
-
-}
 
 
 int CFtpTransfer::cTimeOut(int iMilliseconds,bool &bIsReturn)

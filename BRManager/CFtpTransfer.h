@@ -1,4 +1,4 @@
-#ifndef CFTPTRANSFER_H
+﻿#ifndef CFTPTRANSFER_H
 #define CFTPTRANSFER_H
 #include <QFtp>
 #include <QFile>
