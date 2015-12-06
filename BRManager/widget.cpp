@@ -40,8 +40,6 @@ void Widget::timerEvent(QTimerEvent *)
 void Widget::on_btn_clicked()
 {
 
-
-
     QSettings settings(CONFIG_PATH, QSettings::IniFormat);
     settings.setIniCodec("UTF-8");
     settings.beginGroup("BRClient");
