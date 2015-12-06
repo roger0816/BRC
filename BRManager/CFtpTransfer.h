@@ -26,20 +26,6 @@ public:
 
     //--------------------------------------------------------------------------------
     /**
-     * @brief downloadEzCardDir 兜上完整的悠遊卡下載流程與路徑
-     * @param sDir
-     */
-    void downloadEzCardDir(QString sDir="out/");
-
-    //--------------------------------------------------------------------------------
-    /**
-     * @brief uploadEzCardDir 兜上完整的悠遊卡上傳流程與路徑
-     * @param sDate
-     */
-    void uploadEzCardDir(QString sDate="");
-
-    //--------------------------------------------------------------------------------
-    /**
      * @brief cTimeOut 設time out 防止連不上
      * @param iMilliseconds
      * @param bIsReturn
