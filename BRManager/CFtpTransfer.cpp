@@ -171,36 +171,22 @@ void CFtpTransfer::downloadDir(QString sDir, QString sSaveRoot)
         dir.mkdir(sSaveRoot);
     }
 
-    if(!dir.exists(sSaveRoot+"/"+sDir))
-    {
-        dir.mkdir(sSaveRoot+"/"+sDir);
-    }
+//    if(!dir.exists(sSaveRoot+"/"+sDir))
+//    {
+//        dir.mkdir(sSaveRoot+"/"+sDir);
+//    }
 
-    QString sSavePath=sSaveRoot+"/"+sDir;
+//    QString sSavePath=sSaveRoot+"/"+sDir;
 
-   // QStringList listDir;
+
     for(int i=0;i<m_listFile.length();i++)
     {
-        QString sFile=sDir+m_listFile.at(i);
+        QString sFile="/"+sDir+"/"+m_listFile.at(i);
+        qDebug()<<"down file : "<<sFile;
+        qDebug()<<"sava path: "<<sSaveRoot;
+      //  sFile="aa/BRClient/20151130_2";
 
-        QFileInfo info("ftp://"+m_url.host()+"/"+sFile);
-        qDebug()<<"ftp://"+m_url.host()+"/"+sFile+" is file : "<<info.isFile();
-        qDebug()<<"ftp://"+m_url.host()+"/"+sFile+" is dir : "<<info.isDir();
-
-
-        downLoad(sFile,sSavePath);
-        //        if(bFalse)
-        //        {
-        //            listDir.append(sFile);
-        //        }
-
-        //        if(listDir.length()>0)
-        //        {
-        //            for(int i=0;i<listDir.length();i++)
-        //            {
-        //                downloadDir(listDir.at(i),sSavePath+listDir.at(i));
-        //            }
-        //        }
+        downLoad(sFile,sSaveRoot+"/");
 
     }
 

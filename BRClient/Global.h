@@ -12,12 +12,18 @@
 
 #define CONFIG_PATH QApplication::applicationDirPath()+"/config.ini"
 
-#define CONFIG_MACHINE_ID "machine id"
+#define CONFIG_SYSTEM_PASSWORD "system_passsword"
+
+#define CONFIG_MACHINE_ID "machine_id"
 #define CONFIG_IP "ip"
 #define CONFIG_PORT "port"
 #define CONFIG_LANGUAGE "language"
-#define CONFIG_UPDATE_IP "update ip"
-#define CONFIG_UPDATE_PORT "update port"
+#define CONFIG_UPDATE_IP "update_ip"
+#define CONFIG_UPDATE_PORT "update_port"
+#define CONFIG_UPDATE_USER "ftp_user"
+#define CONFIG_UPDATE_PASS "ftp_pass"
+#define CONFIG_UPDATE_PATH "ftp_path"
+
 
 #define LANGUAGE_EN "en"
 #define LANGUAGE_CN "cn"
@@ -44,6 +50,9 @@ namespace ConfigFile
        QString sLanguage;
        QString sUpdateIp;
        QString sUpdatePort;
+       QString sUpdateUser;
+       QString sUpdatePass;
+       QString sUpdatePath;
    };
 }
 
@@ -64,6 +73,8 @@ public:
     Ini m_config;
 
     QString m_sVer;
+
+    QString m_sSystemPassword;
 
     int tcpSend(QString sId, QString sNum, QString &sOut);
 

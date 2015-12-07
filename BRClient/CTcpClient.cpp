@@ -30,9 +30,6 @@ int CTcpClient::blockTcpSend(const QByteArray arrInput, QByteArray &arrOutput, Q
 
     QTcpSocket *socket = new QTcpSocket();
 
-
-
-
     socket->connectToHost(sIp,iPort);
 
     if(socket->waitForConnected(iTimeOutMilliSec))

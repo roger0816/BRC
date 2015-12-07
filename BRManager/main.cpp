@@ -8,7 +8,7 @@ int main(int argc, char *argv[])
     qDebug()<<"BR manager start";
     Widget w;
     w.resize(a.desktop()->size());
-   // w.show();
+    w.show();
     
     return a.exec();
 }

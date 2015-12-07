@@ -15,8 +15,11 @@
 #define VERSION_PATH QApplication::applicationDirPath()+"/../bin/version.ini"
 
 
-#define CONFIG_UPDATE_IP "update ip"
-#define CONFIG_UPDATE_PORT "update port"
+#define CONFIG_UPDATE_IP "update_ip"
+#define CONFIG_UPDATE_PORT "update_port"
+#define CONFIG_UPDATE_USER "ftp_user"
+#define CONFIG_UPDATE_PASS "ftp_pass"
+#define CONFIG_UPDATE_PATH "ftp_path"
 namespace Ui {
 class Widget;
 }
@@ -42,10 +45,11 @@ private:
 
     QString m_sBRclient;
 
+    void checkFtpAndUpdate();
 
     void timerEvent(QTimerEvent *);
 private slots:
-    void on_btn_clicked();
+
     void slotDetectBarcode(bool bHas);
 };
 

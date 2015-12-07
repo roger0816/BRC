@@ -26,12 +26,18 @@ int Global::readConfig(ConfigFile::Ini &ini)
     QSettings settings(CONFIG_PATH, QSettings::IniFormat);
     settings.setIniCodec("UTF-8");
     settings.beginGroup("BRClient");
-    ini.sMachineId=settings.value(CONFIG_MACHINE_ID,"A001").toString();
+    m_sSystemPassword=settings.value(CONFIG_SYSTEM_PASSWORD,"00000").toString();
+    ini.sMachineId=settings.value(CONFIG_MACHINE_ID,"A0000").toString();
     ini.sIp=settings.value(CONFIG_IP,"127.0.0.1").toString();
     ini.sPort=settings.value(CONFIG_PORT,"60000").toString();
     ini.sLanguage=settings.value(CONFIG_LANGUAGE,"EN").toString();
     ini.sUpdateIp=settings.value(CONFIG_UPDATE_IP,"127.0.0.1").toString();
     ini.sUpdatePort=settings.value(CONFIG_UPDATE_PORT,"60000").toString();
+    ini.sUpdateUser=settings.value(CONFIG_UPDATE_USER,"").toString();
+    ini.sUpdatePass=settings.value(CONFIG_UPDATE_PASS,"").toString();
+    ini.sUpdatePath=settings.value(CONFIG_UPDATE_PATH,"").toString();
+
+
     m_sVer=settings.value("version","").toString();
     iRe=0;
 
@@ -73,6 +79,18 @@ int Global::writeConfig(QString sKey,QString sValue)
     else if(sKey==CONFIG_UPDATE_PORT)
     {
         m_config.sUpdatePort=sValue;
+    }
+    else if(sKey==CONFIG_UPDATE_USER)
+    {
+        m_config.sUpdateUser=sValue;
+    }
+    else if(sKey==CONFIG_UPDATE_PASS)
+    {
+        m_config.sUpdatePass=sValue;
+    }
+    else if(sKey==CONFIG_UPDATE_PATH)
+    {
+        m_config.sUpdatePath=sValue;
     }
     else
         iRe=-1;

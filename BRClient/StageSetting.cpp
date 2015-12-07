@@ -34,18 +34,31 @@ void StageSetting::slotLanguageClicked()
 
 void StageSetting::showEvent(QShowEvent *)
 {
+    //set language
+    QString sLanguage=GLOBAL().m_config.sLanguage;
+    QString sPath=":/language/translations/";//cn.qm";
+    sPath=sPath+sLanguage.toLower()+".qm";
+    QTranslator qtTranslator;
+    qtTranslator.load(sPath);
+    QApplication::installTranslator(&qtTranslator);
+    GLOBAL().m_sNowTransPath=sPath;
+    ui->retranslateUi(this);
 
-    ui->txtMachineId->setText(GLOBAL().m_config.sMachineId);
+    //set label
+    ui->lbM->setText(GLOBAL().m_config.sMachineId);
+    qDebug()<<"machineidAA : "<<GLOBAL().m_config.sMachineId;
     ui->txtIp->setText(GLOBAL().m_config.sIp);
     ui->txtPort->setText(GLOBAL().m_config.sPort);
     ui->txtUpdateIp->setText(GLOBAL().m_config.sUpdateIp);
     ui->txtUpdatePort->setText(GLOBAL().m_config.sUpdatePort);
-    QString sLanguage=GLOBAL().m_config.sLanguage;
+    ui->txtUpdateUser->setText(GLOBAL().m_config.sUpdateUser);
+    ui->txtUpdatePass->setText(GLOBAL().m_config.sUpdatePass);
+    ui->txtUpdatePath->setText(GLOBAL().m_config.sUpdatePath);
 
+    //set button select
     ui->btnCn->setChecked(false);
     ui->btnEn->setChecked(false);
     ui->btnTw->setChecked(false);
-
     if(sLanguage==LANGUAGE_EN)
     {
         ui->btnEn->setChecked(true);
@@ -58,16 +71,6 @@ void StageSetting::showEvent(QShowEvent *)
     {
         ui->btnTw->setChecked(true);
     }
-
-
-    QString sPath=":/language/translations/";//cn.qm";
-    sPath=sPath+sLanguage.toLower()+".qm";
-    QTranslator qtTranslator;
-    qtTranslator.load(sPath);
-    QApplication::installTranslator(&qtTranslator);
-    GLOBAL().m_sNowTransPath=sPath;
-    ui->retranslateUi(this);
-
 
 }
 
@@ -86,9 +89,6 @@ void StageSetting::on_btnCancel_released()
 
 void StageSetting::on_btnCheck_released()
 {
-
-
-
     QString sLanguage=LANGUAGE_TW;
     if(ui->btnCn->isChecked())
         sLanguage=LANGUAGE_CN;
@@ -111,12 +111,16 @@ void StageSetting::on_btnCheck_released()
 
 
 
-    GLOBAL().writeConfig(CONFIG_MACHINE_ID,ui->txtMachineId->text());
+    GLOBAL().writeConfig(CONFIG_MACHINE_ID,ui->lbM->text());
     GLOBAL().writeConfig(CONFIG_IP,ui->txtIp->text());
     GLOBAL().writeConfig(CONFIG_PORT,ui->txtPort->text());
     GLOBAL().writeConfig(CONFIG_LANGUAGE,sLanguage);
     GLOBAL().writeConfig(CONFIG_UPDATE_IP,ui->txtUpdateIp->text());
     GLOBAL().writeConfig(CONFIG_UPDATE_PORT,ui->txtUpdatePort->text());
+    GLOBAL().writeConfig(CONFIG_UPDATE_USER,ui->txtUpdateUser->text());
+    GLOBAL().writeConfig(CONFIG_UPDATE_PASS,ui->txtUpdatePass->text());
+    GLOBAL().writeConfig(CONFIG_UPDATE_PATH,ui->txtUpdatePath->text());
+
     clicked(StageIdx::_barcode);
 }
 

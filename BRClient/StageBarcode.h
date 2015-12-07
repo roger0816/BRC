@@ -6,7 +6,9 @@
 #include <QKeyEvent>
 #include <QLabel>
 #include <QPushButton>
+#include <QSound>
 #include "Vinput.h"
+#include "ItemBarcode.h"
 #include "ListenKeyEvent.h"
 namespace Ui {
 class StageBarcode;
@@ -26,8 +28,10 @@ private:
     ListenKeyEvent *m_listenKey;
     QString m_sBarcodeString;
 
-    QList<Vinput*> m_listProduct;
-    QList<Vinput*> m_listMember;
+//    QList<Vinput*> m_listProduct;
+//    QList<Vinput*> m_listMember;
+    QList<ItemBarcode*> m_listItemBarcode;
+
 
     void setUi();
     void keyPressEvent(QKeyEvent *e);
@@ -40,7 +44,7 @@ signals:
 private slots:
     void slotClicked();
     void slotGetKey(int iDev, QString sKey);
-    void slotToTcp();
+    void slotToTcp(int iIdx);
 
 };
 

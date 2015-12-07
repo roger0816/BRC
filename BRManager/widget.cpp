@@ -15,7 +15,7 @@ Widget::Widget(QWidget *parent) :
     m_cUsb.connect(&m_cUsb,SIGNAL(singalDetectBarcode(bool)),this,SLOT(slotDetectBarcode(bool)));
     m_cUsb.start();
 
-    this->on_btn_clicked();
+    checkFtpAndUpdate();
 
 }
 
@@ -37,19 +37,23 @@ void Widget::timerEvent(QTimerEvent *)
 
 }
 
-void Widget::on_btn_clicked()
+void Widget::checkFtpAndUpdate()
 {
-
+    //get ftp ip
     QSettings settings(CONFIG_PATH, QSettings::IniFormat);
     settings.setIniCodec("UTF-8");
     settings.beginGroup("BRClient");
     QString sIp=settings.value(CONFIG_UPDATE_IP,"127.0.0.1").toString();
     QString sPort=settings.value(CONFIG_UPDATE_PORT,"60000").toString();
-
+    QString sUser=settings.value(CONFIG_UPDATE_USER,"").toString();
+    QString sPassword=settings.value(CONFIG_UPDATE_PASS,"").toString();
+    QString sPath=settings.value(CONFIG_UPDATE_PATH,"").toString();
+    //done ftp
     CFtpTransfer *ftpTransfer=new CFtpTransfer(this);
-    ftpTransfer->setUrl(sIp,"brc",sPort);
-    ftpTransfer->downloadDir("");
+    ftpTransfer->setUrl(sIp,sUser,sPassword);
+    ftpTransfer->downloadDir(sPath);
 
+    //get version.ini
     QSettings settingsVersion(VERSION_PATH, QSettings::IniFormat);
     settingsVersion.setIniCodec("UTF-8");
     settingsVersion.beginGroup("VERSION");
@@ -58,6 +62,7 @@ void Widget::on_btn_clicked()
 
     settings.setValue("version","v"+sVer);
 
+    ui->lbVersion->setText("v"+sVer);
 
 }
 

@@ -183,7 +183,7 @@ void CThread::run()
 
         getDevList();
 
-        qDebug()<<"AA: "<<m_devList.length()<<" , "<<m_iDevNumber;
+      //  qDebug()<<"AA: "<<m_devList.length()<<" , "<<m_iDevNumber;
         if (m_devList.length() != m_iDevNumber)
         {
               this->msleep(3000);
