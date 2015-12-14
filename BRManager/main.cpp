@@ -11,6 +11,6 @@ int main(int argc, char *argv[])
     w.show();
     w.checkFtpAndUpdate();
     w.checkBarcode();
-    w.slotDetectBarcode(true);
+  //  w.slotDetectBarcode(true);
     return a.exec();
 }

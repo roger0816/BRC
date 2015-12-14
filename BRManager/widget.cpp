@@ -58,10 +58,16 @@ void Widget::checkFtpAndUpdate()
 
     if(sVer!=sOldVer)
     {
-        settings.setValue("version",sVer);
+
+        ftpTransfer->m_flagSizeOk=false;
+
         ftpTransfer->downloadDir(sPath);
+
+        if(ftpTransfer->m_flagSizeOk)
+            settings.setValue("version",sVer);
+
     }
-    ui->lbVersion->setText("v"+sVer);
+    ui->lbVersion->setText("v"+settings.value("version").toString());
 
     ui->dialogUpdate->hide();
 
@@ -101,3 +107,4 @@ void Widget::slotDetectBarcode(bool bHas)
             m_brc.close();
     }
 }
+

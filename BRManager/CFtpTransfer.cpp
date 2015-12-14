@@ -13,7 +13,7 @@ CFtpTransfer::CFtpTransfer(QObject *parent) :
 
     connect(&m_ftp,SIGNAL(done(bool)),this,SLOT(slotFtpDone(bool)));
     connect(&m_ftp,SIGNAL(listInfo(const QUrlInfo&)),this,SLOT(slotListInfo(const QUrlInfo&)));
-
+    connect(&m_ftp,SIGNAL(dataTransferProgress(qint64,qint64)),this,SLOT(slotDownloadProcess(qint64,qint64)));
 }
 
 
@@ -153,7 +153,7 @@ void CFtpTransfer::downloadDir(QString sDir, QString sSaveRoot)
         sSaveRoot=QApplication::applicationDirPath();
     m_listFile.clear();
     m_flagProcessOk=false;
-    m_ftp.connectToHost(m_url.host(),m_url.port(21));
+    m_ftp.connectToHost(m_url.host(),m_url.port());
     m_ftp.login(m_url.userName(),m_url.password());
     // m_ftp.cd(sDirPath);
     m_ftp.cd(sDir);
@@ -196,4 +196,32 @@ void CFtpTransfer::downloadDir(QString sDir, QString sSaveRoot)
 void CFtpTransfer::downloadFile(QString sFile, QString sSaveRoot)
 {
     downLoad(sFile);
+}
+
+
+void CFtpTransfer::slotFtpDone(bool bError)
+{
+    qDebug()<<"FTP Done";
+    if(bError)
+    {
+        std::cerr<<"Error : "<<qPrintable(m_ftp.errorString())<<std::endl;
+    }
+
+    m_file.close();
+
+    emit done();
+    m_flagFtpOk=true;
+}
+
+void CFtpTransfer::slotListInfo(const QUrlInfo &urlInfo)
+{
+    qDebug()<<"urlinfo"<<urlInfo.size();
+    m_listFile.append(urlInfo.name());
+    m_flagProcessOk=true;
+}
+
+void CFtpTransfer::slotDownloadProcess(qint64 iNow, qint64 iAll)
+{
+    if(iNow==iAll)
+        m_flagSizeOk=true;
 }

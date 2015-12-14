@@ -60,39 +60,26 @@ public:
     void downloadFile(QString sFile,QString sSaveRoot="");
 
 
-
-private:
     QFtp m_ftp;
+
+    bool m_flagSizeOk;
+private:
+
     QFile m_file;
     QUrl m_url;
     QList<QString> m_listFile;
     bool m_flagFtpOk;
     bool m_flagProcessOk;
 
+
 signals:
     void done();
 public slots:
-    void slotFtpDone(bool bError)
-    {
-        qDebug()<<"FTP Done";
-        if(bError)
-        {
-            std::cerr<<"Error : "<<qPrintable(m_ftp.errorString())<<std::endl;
-        }
+    void slotFtpDone(bool bError);
 
-        m_file.close();
+    void slotListInfo(const QUrlInfo &urlInfo);
 
-        emit done();
-        m_flagFtpOk=true;
-    }
-
-    void slotListInfo(const QUrlInfo &urlInfo)
-    {
-
-        m_listFile.append(urlInfo.name());
-        m_flagProcessOk=true;
-    }
-
+    void slotDownloadProcess(qint64 iNow, qint64 iAll);
 };
 
 #endif // CFTPTRANSFER_H

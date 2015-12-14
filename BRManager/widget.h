@@ -53,6 +53,7 @@ private:
 public slots:
 
     void slotDetectBarcode(bool bHas);
+
 };
 
 #endif // WIDGET_H
