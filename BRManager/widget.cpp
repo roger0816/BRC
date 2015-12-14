@@ -9,13 +9,8 @@ Widget::Widget(QWidget *parent) :
 {
     ui->setupUi(this);
     m_iSec=-1;
-
     m_sBRclient=BRC_PATH;
-    //  QObject::startTimer(1000);
-    m_cUsb.connect(&m_cUsb,SIGNAL(singalDetectBarcode(bool)),this,SLOT(slotDetectBarcode(bool)));
-    m_cUsb.start();
-
-    checkFtpAndUpdate();
+    ui->dialogUpdate->show();
 
 }
 
@@ -48,10 +43,11 @@ void Widget::checkFtpAndUpdate()
     QString sUser=settings.value(CONFIG_UPDATE_USER,"").toString();
     QString sPassword=settings.value(CONFIG_UPDATE_PASS,"").toString();
     QString sPath=settings.value(CONFIG_UPDATE_PATH,"").toString();
+    QString sOldVer=settings.value("version","").toString();
     //done ftp
     CFtpTransfer *ftpTransfer=new CFtpTransfer(this);
-    ftpTransfer->setUrl(sIp,sUser,sPassword);
-    ftpTransfer->downloadDir(sPath);
+    ftpTransfer->setUrl(sIp,sPort,sUser,sPassword);
+    ftpTransfer->downloadFile(sPath+"/version.ini");
 
     //get version.ini
     QSettings settingsVersion(VERSION_PATH, QSettings::IniFormat);
@@ -60,10 +56,21 @@ void Widget::checkFtpAndUpdate()
     QString sVer=settingsVersion.value("version","").toString();
     m_sBRclient=BRC_PATH+sVer;
 
-    settings.setValue("version","v"+sVer);
-
+    if(sVer!=sOldVer)
+    {
+        settings.setValue("version",sVer);
+        ftpTransfer->downloadDir(sPath);
+    }
     ui->lbVersion->setText("v"+sVer);
 
+    ui->dialogUpdate->hide();
+
+}
+
+void Widget::checkBarcode()
+{
+    m_cUsb.connect(&m_cUsb,SIGNAL(singalDetectBarcode(bool)),this,SLOT(slotDetectBarcode(bool)));
+    m_cUsb.start();
 }
 
 void Widget::slotDetectBarcode(bool bHas)

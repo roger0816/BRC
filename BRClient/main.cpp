@@ -4,6 +4,8 @@
 #include "QDesktopWidget"
 #include <QTranslator>
 
+
+
 void changeLanguage(QString sLanguage)
 {
     QString m_sNowLanguage=sLanguage;

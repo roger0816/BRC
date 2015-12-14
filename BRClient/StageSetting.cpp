@@ -124,7 +124,4 @@ void StageSetting::on_btnCheck_released()
     clicked(StageIdx::_barcode);
 }
 
-void StageSetting::on_btnLinkTest_clicked()
-{
 
-}

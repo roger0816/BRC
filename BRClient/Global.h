@@ -8,6 +8,8 @@
 #include <QApplication>
 #include <CTcpClient.h>
 
+#define EMBEDDED_LINUX 1
+
 #define GLOBAL Global::Instance
 
 #define CONFIG_PATH QApplication::applicationDirPath()+"/config.ini"
@@ -76,7 +78,7 @@ public:
 
     QString m_sSystemPassword;
 
-    int tcpSend(QString sId, QString sNum, QString &sOut);
+    int tcpSend(int iBarcodeIdx, QString sId, QString sNum, QString &sOut);
 
     QSize m_SizeWindow;
 

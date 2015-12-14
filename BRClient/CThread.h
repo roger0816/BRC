@@ -1,12 +1,21 @@
-#ifndef CTHREAD_H
+﻿#ifndef CTHREAD_H
 #define CTHREAD_H
+
+
+#include "Global.h"
+#if EMBEDDED_LINUX
 #include <linux/input.h>
+#endif
+
 #include<fcntl.h>
 #include <unistd.h>
 #include <QDir>
 #include <QObject>
 #include <QThread>
 #include <QDebug>
+
+#define INPUT_DEV_DIR "/dev/input/by-path/"
+#define SCANNER_LINK_DIR "/tmp/barcode-scanner/"
 
 class CThread :public QThread
 {
@@ -19,9 +28,13 @@ public:
 
     int m_iDevNumber;
 
+    bool m_bUpperCase;
+
     QString m_sPath;
 
     QStringList m_devList;
+
+    QStringList m_scannerList;
 
     QString eventCodeToString(int code);
 
@@ -34,6 +47,14 @@ public:
     void setDev(int index);
 
     int getDevList();
+
+    int getScannerList();
+
+    void createScannerLink();
+
+    bool isBarcodeScanner(QString devName);
+
+    void removeOldScannerLink();
 
     void setDevNumber(int dev_num);
 

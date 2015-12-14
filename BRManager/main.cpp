@@ -9,6 +9,8 @@ int main(int argc, char *argv[])
     Widget w;
     w.resize(a.desktop()->size());
     w.show();
-    
+    w.checkFtpAndUpdate();
+    w.checkBarcode();
+    w.slotDetectBarcode(true);
     return a.exec();
 }

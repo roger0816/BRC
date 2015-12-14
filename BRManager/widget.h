@@ -32,7 +32,9 @@ public:
     explicit Widget(QWidget *parent = 0);
     ~Widget();
 
+    void checkFtpAndUpdate();
 
+    void checkBarcode();
 
 private:
     Ui::Widget *ui;
@@ -45,10 +47,10 @@ private:
 
     QString m_sBRclient;
 
-    void checkFtpAndUpdate();
+
 
     void timerEvent(QTimerEvent *);
-private slots:
+public slots:
 
     void slotDetectBarcode(bool bHas);
 };

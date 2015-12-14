@@ -34,7 +34,7 @@ public:
     int cTimeOut(int iMilliseconds,bool &bIsReturn);
 
     //
-    bool setUrl(QString sIp, QString sUserName, QString sPassword);
+    bool setUrl(QString sIp, QString sPort, QString sUserName, QString sPassword);
     //--------------------------------------------------------------------------------
     /**
      * @brief downLoad
@@ -57,6 +57,7 @@ public:
 
     void downloadDir(QString sDir="out/",QString sSaveRoot="");
 
+    void downloadFile(QString sFile,QString sSaveRoot="");
 
 
 

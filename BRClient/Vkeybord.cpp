@@ -12,7 +12,7 @@ Vkeybord::Vkeybord(QWidget *parent) :
     m_listEnWord<<ui->a<<ui->b<<ui->c<<ui->d<<ui->e<<ui->f<<ui->g<<ui->h<<ui->i<<ui->j<<ui->k<<ui->l<<ui->m
                <<ui->n<<ui->o<<ui->p<<ui->q<<ui->r<<ui->s<<ui->t<<ui->u<<ui->v<<ui->w<<ui->x<<ui->y<<ui->z;
 
-    m_listSpecailWord<<ui->space<<ui->back<<ui->end;
+    m_listSpecailWord<<ui->space<<ui->back<<ui->end<<ui->mouse<<ui->add<<ui->sub<<ui->slice;
 
     for(int i=0;i<m_listEnWord.length();i++)
     {
@@ -38,7 +38,11 @@ Vkeybord::Vkeybord(QWidget *parent) :
         connect(m_listNumWord[j],SIGNAL(clicked()),this,SLOT(slotInput()));
     }
 
-    ui->back->setText("←");
+    ui->back->setText("Backspace");
+    ui->mouse->setText("@");
+    ui->add->setText("+");
+    ui->sub->setText("-");
+    ui->slice->setText("/");
     ui->end->setText(".");
     for(int k=0;k<m_listSpecailWord.length();k++)
     {
@@ -77,6 +81,23 @@ void Vkeybord::slotInput()
         sInput=" ";
     else if(key==ui->end)
         sInput=".";
+    else if(key==ui->mouse)
+    {
+        sInput="@";
+    }
+    else if(key==ui->add)
+    {
+        sInput="+";
+    }
+    else if(key==ui->sub)
+    {
+        sInput="-";
+    }
+    else if(key==ui->slice)
+    {
+        sInput="/";
+    }
+
 
     if(key==ui->back)
     {

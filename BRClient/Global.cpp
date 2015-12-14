@@ -38,7 +38,7 @@ int Global::readConfig(ConfigFile::Ini &ini)
     ini.sUpdatePath=settings.value(CONFIG_UPDATE_PATH,"").toString();
 
 
-    m_sVer=settings.value("version","").toString();
+    m_sVer=settings.value("version","ver ").toString();
     iRe=0;
 
     QString sPath=":/language/translations/";//cn.qm";
@@ -103,12 +103,12 @@ int Global::writeConfig(QString sKey,QString sValue)
     return iRe;
 }
 
-int Global::tcpSend(QString sId,QString sNum,QString &sOut)
+int Global::tcpSend(int iBarcodeIdx,QString sId,QString sNum,QString &sOut)
 {
     int iRe=9999;
     TcpData input;
     input.iAction=3001;
-    input.iType=1;
+    input.iType=iBarcodeIdx;
     input.listValue.append(sId);
     input.listValue.append(sNum);
 

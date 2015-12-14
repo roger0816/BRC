@@ -23,6 +23,7 @@ public:
     void setLbTitle(QString sBtnTitle, QString sLb0, QString sLb1);
     Vinput *m_lb0;
     Vinput *m_lb1;
+    QLabel *m_lb2;
 
 private:
     Ui::ItemBarcode *ui;

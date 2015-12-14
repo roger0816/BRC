@@ -117,10 +117,11 @@ int CFtpTransfer::cTimeOut(int iMilliseconds,bool &bIsReturn)
     return 0;
 }
 
-bool CFtpTransfer::setUrl(QString sIp, QString sUserName, QString sPassword)
+bool CFtpTransfer::setUrl(QString sIp,QString sPort, QString sUserName, QString sPassword)
 {
     QString sFtpIp="ftp://"+sIp;
     m_url.setUrl(sFtpIp);
+    m_url.setPort(sPort.toInt());
     m_url.setUserName(sUserName);
     m_url.setPassword(sPassword);
     return true;
@@ -190,4 +191,9 @@ void CFtpTransfer::downloadDir(QString sDir, QString sSaveRoot)
 
     }
 
+}
+
+void CFtpTransfer::downloadFile(QString sFile, QString sSaveRoot)
+{
+    downLoad(sFile);
 }

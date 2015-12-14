@@ -3,10 +3,13 @@
 
 #include <QWidget>
 #include <QDebug>
+#include "Global.h"
 #include <QKeyEvent>
 #include <QLabel>
 #include <QPushButton>
+#if EMBEDDED_LINUX
 #include <QSound>
+#endif
 #include "Vinput.h"
 #include "ItemBarcode.h"
 #include "ListenKeyEvent.h"
@@ -34,7 +37,6 @@ private:
 
 
     void setUi();
-    void keyPressEvent(QKeyEvent *e);
 
     void showEvent(QShowEvent *);
     bool m_bIsLock;

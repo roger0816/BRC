@@ -9,6 +9,7 @@ ItemBarcode::ItemBarcode(QWidget *parent) :
     m_btn=ui->btn0;
     m_lb0=ui->lb0;
     m_lb1=ui->lb1;
+    m_lb2=ui->lb2;
 }
 
 ItemBarcode::~ItemBarcode()
