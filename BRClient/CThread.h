@@ -36,6 +36,8 @@ public:
 
     QStringList m_scannerList;
 
+    QStringList m_allScannerList;
+
     QString eventCodeToString(int code);
 
     int openDev(QString dev_name);

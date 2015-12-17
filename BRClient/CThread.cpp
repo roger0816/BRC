@@ -154,6 +154,7 @@ int CThread::getDevList()
     QDir dir(INPUT_DEV_DIR);
     QFileInfoList dev_list = dir.entryInfoList();
     int idx = 0;
+    bool scannerAlreadyRegistered;
 
     // Get all keyboard device name
     dir.setFilter(QDir::Dirs);
@@ -162,6 +163,18 @@ int CThread::getDevList()
         if (file_info.fileName().endsWith("kbd")) {
             m_devList << file_info.fileName();
             //qDebug() << qPrintable(file_info.fileName());
+            if (isBarcodeScanner(INPUT_DEV_DIR+file_info.fileName())) {
+                scannerAlreadyRegistered = false;
+                for (int j = 0;j < m_allScannerList.length();j++) {
+                    //qDebug() << "m_allScannerList.at(" << j << ")=" << m_allScannerList.at(j);
+                    if (file_info.fileName() == m_allScannerList.at(j).mid(2)) {
+                        scannerAlreadyRegistered = true;
+                    }
+                }
+                if (scannerAlreadyRegistered == false) {
+                    m_allScannerList << QString::number(m_allScannerList.length())+"-"+file_info.fileName();
+                }
+            }
         }
         idx++;
     } while (idx < dev_list.size());
@@ -195,29 +208,18 @@ int CThread::getScannerList()
 
 void CThread::createScannerLink()
 {
-    bool scannerAlreadyRegistered;
-    int scannerNumber = m_scannerList.length();
-
-    for (int i = 0;i < m_devList.length();i++) {
-        //qDebug() << "m_devList.at(" << i << ")=" << m_devList.at(i) << ", isBarcodeScanner=" << isBarcodeScanner(INPUT_DEV_DIR+m_devList.at(i));
-        if (isBarcodeScanner(INPUT_DEV_DIR+m_devList.at(i))) {
-            scannerAlreadyRegistered = false;
-            for (int j = 0;j < m_scannerList.length();j++) {
-                //qDebug() << "m_devList.at(" << i << ")=" << m_devList.at(i) << ", m_scannerList.at(" << j << ").mid(2)=" << m_scannerList.at(j).mid(2);
-                if (m_devList.at(i) == m_scannerList.at(j).mid(2)) {
-                    scannerAlreadyRegistered = true;
-                    //break;
-                }
-            }
-            //Create a link to /tmp/bacode-scanner/<link_name> with the device name
-            if (scannerAlreadyRegistered == false) {
-                // ln -s /tmp/bacode-scanner/<link_name> /dev/input/by-path/<dev_name>
-                QFile::link(INPUT_DEV_DIR+m_devList.at(i), SCANNER_LINK_DIR+(QString::number(scannerNumber)+"-"+m_devList.at(i)));
-                scannerNumber++;
+    bool scannerLinkExist;
+    for (int i = 0;i < m_allScannerList.length();i++) {
+        scannerLinkExist = false;
+        for (int j = 0;j < m_scannerList.length();j++) {
+            if (m_allScannerList.at(i) == m_scannerList.at(j)) {
+                scannerLinkExist = true;
             }
         }
+        if (scannerLinkExist == false) {
+            QFile::link(INPUT_DEV_DIR+m_allScannerList.at(i).mid(2), SCANNER_LINK_DIR+m_allScannerList.at(i));
+        }
     }
-
 }
 
 bool CThread::isBarcodeScanner(QString devName)
@@ -275,6 +277,7 @@ void CThread::run()
     int fd;
     QString text = "";
     m_bUpperCase = false;
+    char name[256] = "";
 
     fd = openDev(m_sPath);
 #if 0
@@ -291,7 +294,7 @@ void CThread::run()
         getScannerList();
 
         if (m_scannerList.length() != m_iDevNumber) {
-            //  qDebug()<<"AA: "<<m_devList.length()<<" , "<<m_iDevNumber;
+            //qDebug()<<"AA: "<<m_devList.length()<<" , "<<m_iDevNumber;
             this->msleep(3000);
             setDev(m_iIndex);
             fd = openDev(m_sPath);
@@ -310,7 +313,11 @@ void CThread::run()
         //QFileInfo device(m_sPath);
         //read device event
         if (fd != -1) {
-            readDevEvent(fd, m_iIndex, &text);
+            memset(name,0,sizeof(name));
+            ioctl(fd,EVIOCGNAME (sizeof(name)),name);
+            if (QString(name).contains("Barcode")) {
+                readDevEvent(fd, m_iIndex, &text);
+            }
         }
     }
 }
